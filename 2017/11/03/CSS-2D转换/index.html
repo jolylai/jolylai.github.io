@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="2D转换"/>
+
+
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/03/CSS-2D转换/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> 2D转换 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          2D转换
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#旋转"><span class="toc-text">旋转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平移"><span class="toc-text">平移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缩放"><span class="toc-text">缩放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综合"><span class="toc-text">综合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#形变中心点"><span class="toc-text">形变中心点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#透视"><span class="toc-text">透视</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒子阴影和文字阴影"><span class="toc-text">盒子阴影和文字阴影</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x65CB;&#x8F6C; &#x7F29;&#x653E; &#x5E73;&#x79FB; &#x900F;&#x89C6;<br><a id="more"></a></p>
+<h2 id="&#x65CB;&#x8F6C;"><a href="#&#x65CB;&#x8F6C;" class="headerlink" title="&#x65CB;&#x8F6C;"></a>&#x65CB;&#x8F6C;</h2><ul>
+<li>&#x60F3;&#x56F4;&#x7ED5;&#x54EA;&#x4E2A;&#x8F74;&#x65CB;&#x8F6C;, &#x90A3;&#x4E48;&#x53EA;&#x9700;&#x8981;&#x5728;rotate&#x540E;&#x9762;&#x52A0;&#x4E0A;&#x54EA;&#x4E2A;&#x8F74;&#x5373;&#x53EF;</li>
+<li><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x6240;&#x6709;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x662F;&#x4EE5;&#x81EA;&#x5DF1;&#x7684;&#x4E2D;&#x5FC3;&#x70B9;&#x4F5C;&#x4E3A;&#x53C2;&#x8003;&#x6765;&#x65CB;&#x8F6C;&#x7684;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5F62;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;&#x5C5E;&#x6027;&#x6765;&#x4FEE;&#x6539;&#x5B83;&#x7684;&#x53C2;&#x8003;&#x70B9;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(2)</span>{</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(45deg);</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(45deg);</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(45deg);</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(45deg);</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x5176;&#x4E2D;deg&#x662F;&#x5355;&#x4F4D;, &#x4EE3;&#x8868;&#x591A;&#x5C11;&#x5EA6;</p>
+</li>
+<li>&#x65CB;&#x8F6C;&#x4E4B;&#x65F6;&#xFF0C;XYZ&#x8F74;&#x90FD;&#x8DDF;&#x7740;&#x65CB;&#x8F6C;</li>
+</ul>
+<h2 id="&#x5E73;&#x79FB;"><a href="#&#x5E73;&#x79FB;" class="headerlink" title="&#x5E73;&#x79FB;"></a>&#x5E73;&#x79FB;</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(3)</span>{</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(100px, 0px);</div><div class="line">}</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;:&#x6C34;&#x5E73;&#x65B9;&#x5411;</li>
+<li><p>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;:&#x5782;&#x76F4;&#x65B9;&#x5411;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span>{</div><div class="line">    <span class="attribute">transition</span>: transform <span class="number">1s</span>;</div><div class="line">    <span class="attribute">transform-origin</span>: center bottom;</div><div class="line">}</div><div class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">img</span>{</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(80deg);</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+<li><p>transform-origin: center bottom;&#x7684;&#x4F4D;&#x7F6E;</p>
+</li>
+</ul>
+<h2 id="&#x7F29;&#x653E;"><a href="#&#x7F29;&#x653E;" class="headerlink" title="&#x7F29;&#x653E;"></a>&#x7F29;&#x653E;</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(4)</span>{</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(0.5, 0.5);</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(0.5);</div><div class="line">}</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;:&#x6C34;&#x5E73;&#x65B9;&#x5411;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;:&#x5782;&#x76F4;&#x65B9;&#x5411;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>&#x5982;&#x679C;&#x53D6;&#x503C;&#x662F;1, &#x4EE3;&#x8868;&#x4E0D;&#x53D8;</li>
+<li>&#x5982;&#x679C;&#x53D6;&#x503C;&#x5927;&#x4E8E;1, &#x4EE3;&#x8868;&#x9700;&#x8981;&#x653E;&#x5927;</li>
+<li>&#x5982;&#x679C;&#x53D6;&#x503C;&#x5C0F;&#x4E8E;1, &#x4EE3;&#x8868;&#x9700;&#x8981;&#x7F29;&#x5C0F;</li>
+<li>&#x5982;&#x679C;&#x6C34;&#x5E73;&#x548C;&#x5782;&#x76F4;&#x7F29;&#x653E;&#x90FD;&#x4E00;&#x6837;, &#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x7B80;&#x5199;&#x4E3A;&#x4E00;&#x4E2A;&#x53C2;&#x6570;</li>
+</ul>
+<h2 id="&#x7EFC;&#x5408;"><a href="#&#x7EFC;&#x5408;" class="headerlink" title="&#x7EFC;&#x5408;"></a>&#x7EFC;&#x5408;</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(5)</span>{</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(45deg) <span class="built_in">translate</span>(100px, 0px) <span class="built_in">scale</span>(1.5, 1.5);</div><div class="line">}</div></pre></td></tr></table></figure>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x591A;&#x4E2A;&#x8F6C;&#x6362;, &#x90A3;&#x4E48;&#x7528;&#x7A7A;&#x683C;&#x9694;&#x5F00;</li>
+<li>2D&#x7684;&#x8F6C;&#x6362;&#x6A21;&#x5757;&#x4F1A;&#x4FEE;&#x6539;&#x5143;&#x7D20;&#x7684;&#x5750;&#x6807;&#x7CFB;, &#x6240;&#x4EE5;&#x65CB;&#x8F6C;&#x4E4B;&#x540E;&#x518D;&#x5E73;&#x79FB;&#x5C31;&#x4E0D;&#x662F;&#x6C34;&#x5E73;&#x5E73;&#x79FB;&#x7684;</li>
+</ul>
+<h2 id="&#x5F62;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;"><a href="#&#x5F62;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;" class="headerlink" title="&#x5F62;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;"></a>&#x5F62;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(5)</span>{</div><div class="line">    <span class="attribute">transform-origin</span>: <span class="number">200px</span> <span class="number">0px</span>;</div><div class="line">    <span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">50%</span>;</div><div class="line">    <span class="attribute">transform-origin</span>: <span class="number">0%</span> <span class="number">0%</span>;</div><div class="line">    <span class="attribute">transform-origin</span>: center center;</div><div class="line">    <span class="attribute">transform-origin</span>: left top;</div><div class="line">}</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;:&#x6C34;&#x5E73;&#x65B9;&#x5411;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;:&#x5782;&#x76F4;&#x65B9;&#x5411;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>&#x53D6;&#x503C;&#x6709;&#x4E09;&#x79CD;&#x5F62;&#x5F0F;</li>
+<li>&#x5177;&#x4F53;&#x50CF;&#x7D20;</li>
+<li>&#x767E;&#x5206;&#x6BD4;</li>
+<li>&#x7279;&#x6B8A;&#x5173;&#x952E;&#x5B57;</li>
+</ul>
+<h2 id="&#x900F;&#x89C6;"><a href="#&#x900F;&#x89C6;" class="headerlink" title="&#x900F;&#x89C6;"></a>&#x900F;&#x89C6;</h2><p>1.&#x4EC0;&#x4E48;&#x662F;&#x900F;&#x89C6;</p>
+<ul>
+<li>&#x8FD1;&#x5927;&#x8FDC;&#x5C0F;<br>2.&#x6CE8;&#x610F;&#x70B9;</li>
+<li>&#x4E00;&#x5B9A;&#x8981;&#x6CE8;&#x610F;, &#x900F;&#x89C6;&#x5C5E;&#x6027;&#x5FC5;&#x987B;&#x6DFB;&#x52A0;&#x5230;&#x9700;&#x8981;&#x5448;&#x73B0;&#x8FD1;&#x5927;&#x8FDC;&#x5C0F;&#x6548;&#x679C;&#x7684;&#x5143;&#x7D20;&#x7684;&#x7236;&#x5143;&#x7D20;&#x4E0A;&#x9762;</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span>{</div><div class="line">    <span class="attribute">perspective</span>: <span class="number">500px</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x76D2;&#x5B50;&#x9634;&#x5F71;&#x548C;&#x6587;&#x5B57;&#x9634;&#x5F71;"><a href="#&#x76D2;&#x5B50;&#x9634;&#x5F71;&#x548C;&#x6587;&#x5B57;&#x9634;&#x5F71;" class="headerlink" title="&#x76D2;&#x5B50;&#x9634;&#x5F71;&#x548C;&#x6587;&#x5B57;&#x9634;&#x5F71;"></a>&#x76D2;&#x5B50;&#x9634;&#x5F71;&#x548C;&#x6587;&#x5B57;&#x9634;&#x5F71;</h2><p>1.&#x5982;&#x4F55;&#x7ED9;&#x76D2;&#x5B50;&#x6DFB;&#x52A0;&#x9634;&#x5F71;</p>
+<ul>
+<li>box-shadow: &#x6C34;&#x5E73;&#x504F;&#x79FB; &#x5782;&#x76F4;&#x504F;&#x79FB; &#x6A21;&#x7CCA;&#x5EA6; &#x9634;&#x5F71;&#x6269;&#x5C55; &#x9634;&#x5F71;&#x989C;&#x8272; &#x5185;&#x5916;&#x9634;&#x5F71;;</li>
+</ul>
+<p>2.&#x6CE8;&#x610F;&#x70B9;</p>
+<ul>
+<li>&#x76D2;&#x5B50;&#x7684;&#x9634;&#x5F71;&#x5206;&#x4E3A;&#x5185;&#x5916;&#x9634;&#x5F71;, &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5C31;&#x662F;&#x5916;&#x9634;&#x5F71;</li>
+<li>&#x5FEB;&#x901F;&#x6DFB;&#x52A0;&#x9634;&#x5F71;&#x53EA;&#x9700;&#x8981;&#x7F16;&#x5199;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x5373;&#x53EF;</li>
+<li><p>box-shadow: &#x6C34;&#x5E73;&#x504F;&#x79FB; &#x5782;&#x76F4;&#x504F;&#x79FB; &#x6A21;&#x7CCA;&#x5EA6;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box1</span>{</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> skyblue;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> skyblue inset;</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x9634;&#x5F71;&#x7684;&#x989C;&#x8272;&#x548C;&#x76D2;&#x5B50;&#x5185;&#x5BB9;&#x7684;&#x989C;&#x8272;&#x4E00;&#x81F4;</p>
+</li>
+</ul>
+<p>3.&#x5982;&#x4F55;&#x7ED9;&#x6587;&#x5B57;&#x6DFB;&#x52A0;&#x9634;&#x5F71;</p>
+<ul>
+<li>text-shadow: &#x6C34;&#x5E73;&#x504F;&#x79FB; &#x5782;&#x76F4;&#x504F;&#x79FB; &#x6A21;&#x7CCA;&#x5EA6; &#x9634;&#x5F71;&#x989C;&#x8272; ;<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box1</span>{</div><div class="line">    <span class="attribute">text-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> black;</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/">CSS</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/03/AwsomeSite/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Awsome Site</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/03/CSS-Background/">
+        <span class="next-text nav-default">背景</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

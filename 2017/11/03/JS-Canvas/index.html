@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="canvas"/>
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/03/JS-Canvas/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> canvas · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          canvas
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本用法"><span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2D上下文"><span class="toc-text">2D上下文</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>canvas&#x52A8;&#x753B;&#x6548;&#x679C;<br><a id="more"></a></p>
+<h3 id="&#x57FA;&#x672C;&#x7528;&#x6CD5;"><a href="#&#x57FA;&#x672C;&#x7528;&#x6CD5;" class="headerlink" title="&#x57FA;&#x672C;&#x7528;&#x6CD5;"></a>&#x57FA;&#x672C;&#x7528;&#x6CD5;</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&apos;drawing&apos; width=&apos;600&apos; height=&apos;600&apos;&gt;&#x4E0D;&#x517C;&#x5BB9;&#x65F6;&#x63D0;&#x793A;&#x7684;&#x6587;&#x5B57;&lt;/canvas&gt;</div><div class="line"></div><div class="line">let drawing= document.querySelector(&apos;#drawing&apos;)</div><div class="line">// &#x786E;&#x5B9A;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;&lt;canvas&gt;&#x5143;&#x7D20;</div><div class="line">if (drawing.getContext){</div><div class="line">  let context = drawing.getContext(&apos;2d&apos;)</div><div class="line">  // do something</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>toDataURL<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// parmas: &apos;image/png&apos; | &apos;image/jpeg&apos;(&#x53EA;&#x652F;&#x6301;&#x8F83;&#x65B0;&#x7248;&#x672C;&#xFF09;</span></div><div class="line"><span class="keyword">let</span> imgURL = context.toDataURL(<span class="string">&apos;image/png&apos;</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="2D&#x4E0A;&#x4E0B;&#x6587;"><a href="#2D&#x4E0A;&#x4E0B;&#x6587;" class="headerlink" title="2D&#x4E0A;&#x4E0B;&#x6587;"></a>2D&#x4E0A;&#x4E0B;&#x6587;</h3><ul>
+<li><p>&#x586B;&#x5145;&#x548C;&#x63CF;&#x8FB9;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// parmas: &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6E10;&#x53D8;&#x5BF9;&#x8C61;&#xFF0C;&#x6A21;&#x5F0F;&#x5BF9;&#x8C61;</span></div><div class="line"><span class="comment">// &apos;#ffffff&apos; &apos;red&apos; &apos;rgba(0,0,255,.5)&apos;  &apos;rgb(0,0,225)&apos;  context.createLinearGridient()  context.createPattern()</span></div><div class="line">context.fillStyle = <span class="string">&apos;rgba(0,0,255,.5)&apos;</span></div><div class="line">context.strokeStyle = <span class="string">&apos;red&apos;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x7ED8;&#x5236;&#x77E9;&#x5F62;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// parmas: x,y,width,height</span></div><div class="line"><span class="comment">// &#x6709;&#x586B;&#x5145;</span></div><div class="line">context.fillStyle = <span class="string">&apos;#0000ff&apos;</span></div><div class="line">context.fillRect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">50</span>, <span class="number">50</span>)            </div><div class="line"><span class="comment">// &#x65E0;&#x586B;&#x5145;</span></div><div class="line">context.strokeStyle = <span class="string">&apos;pink&apos;</span>            </div><div class="line">context.strokeRect(<span class="number">10</span>, <span class="number">80</span>, <span class="number">50</span>, <span class="number">50</span>)</div><div class="line"><span class="comment">// &#x6E05;&#x9664;&#x77E9;&#x5F62;&#x533A;&#x57DF;</span></div><div class="line">context.clearRect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">20</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x7ED8;&#x5236;&#x8DEF;&#x5F84;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &#x5F00;&#x59CB;&#x8DEF;&#x5F84;</span></div><div class="line">context.beginPath()</div><div class="line"></div><div class="line"><span class="comment">// &#x7EBF;&#x5BBD;</span></div><div class="line"><span class="comment">// parmas: integer</span></div><div class="line">context.lineWidth = <span class="number">5</span></div><div class="line"></div><div class="line"><span class="comment">// &#x7EBF;&#x5934;</span></div><div class="line"><span class="comment">// parmas: &apos;butt&apos; (&#x5E73;&#x5934;) | &apos;round&apos; (&#x5706;&#x5934;) | &apos;square&apos; (&#x65B9;&#x5934;)</span></div><div class="line">context.lineCap = <span class="string">&apos;round&apos;</span></div><div class="line"></div><div class="line"><span class="comment">// &#x76F8;&#x4EA4;&#x70B9;</span></div><div class="line"><span class="comment">// parmas: &apos;round&apos; (&#x5706;&#x4EA4;) | &apos;bevel&apos; (&#x659C;&#x4EA4;) | &apos;miter&apos; (&#x659C;&#x63A5;)</span></div><div class="line">context.lineJoin = <span class="string">&apos;bevel&apos;</span></div><div class="line"></div><div class="line"><span class="comment">// &#x7ED8;&#x5236;&#x5706;</span></div><div class="line"><span class="comment">// parmas: x,y,r,begin(rad),end(rad),boolean(false -&gt; &#x987A;&#x65F6;&#x9488;)</span></div><div class="line">context.arc(<span class="number">100</span>, <span class="number">100</span>, <span class="number">99</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="built_in">Math</span>.PI, <span class="literal">false</span>)</div><div class="line"></div><div class="line"><span class="comment">// &#x7ED8;&#x5236;&#x5F27;</span></div><div class="line">arcTo</div><div class="line">bezierCurveTo</div><div class="line">quadraticCurveTo</div><div class="line">react</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x7ED8;&#x5236;&#x6587;&#x672C;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// parmas: &#x6587;&#x672C;&#x6837;&#x5F0F; &#x3001;&#x5927;&#x5C0F;&#x3001;&#x5B57;&#x4F53;</span></div><div class="line">context.font = <span class="string">&apos;14px bold Arial&apos;</span></div><div class="line"><span class="comment">// parmas: start | end | center | left | right (&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;start | end)</span></div><div class="line">context.textAlign = <span class="string">&apos;center&apos;</span></div><div class="line"><span class="comment">// parmas: top | hanging | middle | alphabetic | ideotraphic | bottom</span></div><div class="line">context.textBaseLine = <span class="string">&apos;buttom&apos;</span></div><div class="line"><span class="comment">// parmas: string,x,y</span></div><div class="line">context.fillText(<span class="number">12</span>, <span class="number">300</span>, <span class="number">230</span>)</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/">JavaScript</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/03/Git/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Git</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/03/JS-DOM/">
+        <span class="next-text nav-default">Dom</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

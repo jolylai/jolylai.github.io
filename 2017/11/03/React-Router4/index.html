@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Router 4"/>
+
+
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/03/React-Router4/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Router 4 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Router 4
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#src-router-js"><span class="toc-text">src/router.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-routes-app-js"><span class="toc-text">src/routes/app.js</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>React Router&#x88AB;&#x62C6;&#x5206;&#x6210;&#x4E09;&#x4E2A;&#x5305;&#xFF1A;react-router,react-router-dom&#x548C;react-router-native&#x3002;react-router&#x63D0;&#x4F9B;&#x6838;&#x5FC3;&#x7684;&#x8DEF;&#x7531;&#x7EC4;&#x4EF6;&#x4E0E;&#x51FD;&#x6570;&#x3002;&#x5176;&#x4F59;&#x4E24;&#x4E2A;&#x5219;&#x63D0;&#x4F9B;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#xFF08;&#x5373;&#x6D4F;&#x89C8;&#x5668;&#x4E0E;react-native&#xFF09;&#x6240;&#x9700;&#x7684;&#x7279;&#x5B9A;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x8FDB;&#x884C;&#x7F51;&#x7AD9;&#xFF08;&#x5C06;&#x4F1A;&#x8FD0;&#x884C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x73AF;&#x5883;&#x4E2D;&#xFF09;&#x6784;&#x5EFA;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x5F53;&#x5B89;&#x88C5;react-router-dom&#x3002;react-router-dom&#x66B4;&#x9732;&#x51FA;react-router&#x4E2D;&#x66B4;&#x9732;&#x7684;&#x5BF9;&#x8C61;&#x4E0E;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x5E76;&#x5F15;&#x7528;react-router-dom&#x5373;&#x53EF;&#x3002;</p>
+<a id="more"></a>
+<h2 id="src-router-js"><a href="#src-router-js" class="headerlink" title="src/router.js"></a>src/router.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&apos;react&apos;</span></div><div class="line"><span class="keyword">import</span> { Switch, Route, Redirect, routerRedux } <span class="keyword">from</span> <span class="string">&apos;dva/router&apos;</span></div><div class="line"><span class="keyword">import</span> dynamic <span class="keyword">from</span> <span class="string">&apos;dva/dynamic&apos;</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&apos;./routes/App&apos;</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> { ConnectedRouter } = routerRedux</div><div class="line"></div><div class="line"><span class="keyword">const</span> Routers = <span class="function"><span class="keyword">function</span> (<span class="params">{ history, app }</span>) </span>{</div><div class="line">  <span class="keyword">const</span> error = dynamic({</div><div class="line">    app,</div><div class="line">    <span class="attr">component</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">&apos;./routes/error&apos;</span>),</div><div class="line">  })</div><div class="line">  <span class="keyword">const</span> routes = [</div><div class="line">    {</div><div class="line">      <span class="attr">path</span>: <span class="string">&apos;/dashboard&apos;</span>,</div><div class="line">      <span class="attr">models</span>: <span class="function"><span class="params">()</span> =&gt;</span> [<span class="keyword">import</span>(<span class="string">&apos;./models/dashboard&apos;</span>)],</div><div class="line">      <span class="attr">component</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">&apos;./routes/dashboard/&apos;</span>),</div><div class="line">    }</div><div class="line">  ]</div><div class="line"></div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;ConnectedRouter history={history}&gt;</div><div class="line">      &lt;App&gt;</div><div class="line">        &lt;Switch&gt;</div><div class="line">          &lt;Route exact path=&quot;/&quot; render={() =&gt; (&lt;Redirect to=&quot;/dashboard&quot; /&gt;)} /&gt;</div><div class="line">          {</div><div class="line">            routes.map(({ path, ...dynamics }, key) =&gt; (</div><div class="line">              &lt;Route key={key}</div><div class="line">                exact</div><div class="line">                path={path}</div><div class="line">                component={dynamic({</div><div class="line">                  app,</div><div class="line">                  ...dynamics,</div><div class="line">                })}</div><div class="line">              /&gt;</div><div class="line">            ))</div><div class="line">          }</div><div class="line">          &lt;Route component={error} /&gt;</div><div class="line">        &lt;/Switch&gt;</div><div class="line">      &lt;/App&gt;</div><div class="line">    &lt;/ConnectedRouter&gt;</div><div class="line">  )</div><div class="line">}</div><div class="line"></div><div class="line">export default Routers</div></pre></td></tr></table></figure>
+<ul>
+<li>App&#x4E3A;&#x6240;&#x6709;&#x9875;&#x9762;&#x90FD;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x65E2;&#x5916;&#x90E8;&#x6846;&#x67B6;</li>
+<li>dva/dynamic: &#x89E3;&#x51B3;&#x7EC4;&#x4EF6;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x95EE;&#x9898;&#x7684; util &#x65B9;&#x6CD5;&#xFF0C;&#x57FA;&#x4E8E; react-async-component &#x5B9E;&#x73B0;&#x3002;</li>
+<li>&#x53C2;&#x8003;<a href="https://segmentfault.com/a/1190000010174260" target="_blank" rel="external">&#x6587;&#x7AE0;</a></li>
+</ul>
+<h2 id="src-routes-app-js"><a href="#src-routes-app-js" class="headerlink" title="src/routes/app.js"></a>src/routes/app.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { connect } <span class="keyword">from</span> <span class="string">&apos;dva&apos;</span></div><div class="line"><span class="keyword">import</span> { withRouter } <span class="keyword">from</span> <span class="string">&apos;dva/router&apos;</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> App = ({</div><div class="line">  child</div><div class="line">}) =&gt; {</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">      <span class="tag">&lt;<span class="name">Header</span>&gt;</span></div><div class="line">      {child}</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  )</div><div class="line">}</div><div class="line"></div><div class="line">export default withRouter(connect(({ app, loading }) =&gt; ({ app, loading }))(App))</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x7EC4;&#x4EF6;&#x4F20;&#x5165;withRouter()&#x4E2D;&#xFF0C;&#x4F7F;&#x7EC4;&#x4EF6;&#x5E26;&#x6709;child&#x5C5E;&#x6027;</li>
+<li>child&#x4E3A;&#x8DEF;&#x7531;&#x5339;&#x914D;&#x5230;&#x7684;&#x7EC4;&#x4EF6;</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/React/">React</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/03/React-Redux/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">react-redux</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/03/React-Tabs/">
+        <span class="next-text nav-default">Tabs组件封装</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

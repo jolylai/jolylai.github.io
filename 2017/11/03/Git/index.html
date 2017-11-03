@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Git"/>
+
+
+
+
+  <meta name="keywords" content="Git," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/03/Git/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Git · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Git
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git安装和初始化"><span class="toc-text">Git安装和初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版本库"><span class="toc-text">创建版本库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时光机穿梭"><span class="toc-text">时光机穿梭</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版本回退"><span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#撤销修改"><span class="toc-text">撤销修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件删除"><span class="toc-text">文件删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加远程仓库"><span class="toc-text">添加远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从远程库克隆"><span class="toc-text">从远程库克隆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支管理"><span class="toc-text">分支管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将项目推送到github-pages"><span class="toc-text">将项目推送到github pages</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x672C;&#x7B14;&#x8BB0;&#x662F;&#x8DDF;&#x8DDD;<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">&#x5ED6;&#x96EA;&#x5CF0;</a>&#x7684;Git&#x7F51;&#x7AD9;&#x5199;&#x7684;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;<br><a id="more"></a></p>
+<h2 id="Git&#x5B89;&#x88C5;&#x548C;&#x521D;&#x59CB;&#x5316;"><a href="#Git&#x5B89;&#x88C5;&#x548C;&#x521D;&#x59CB;&#x5316;" class="headerlink" title="Git&#x5B89;&#x88C5;&#x548C;&#x521D;&#x59CB;&#x5316;"></a>Git&#x5B89;&#x88C5;&#x548C;&#x521D;&#x59CB;&#x5316;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">&quot;Your Name&quot;</span></div><div class="line">$ git config --global user.email <span class="string">&quot;email@example.com&quot;</span></div></pre></td></tr></table></figure>
+<p>More info: &#x6CE8;&#x610F;git config&#x547D;&#x4EE4;&#x7684;&#x2013;global&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E86;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x4F60;&#x8FD9;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x6240;&#x6709;&#x7684;Git&#x4ED3;&#x5E93;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x5BF9;&#x67D0;&#x4E2A;&#x4ED3;&#x5E93;&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;Email&#x5730;&#x5740;&#x3002;</p>
+<h2 id="&#x521B;&#x5EFA;&#x7248;&#x672C;&#x5E93;"><a href="#&#x521B;&#x5EFA;&#x7248;&#x672C;&#x5E93;" class="headerlink" title="&#x521B;&#x5EFA;&#x7248;&#x672C;&#x5E93;"></a>&#x521B;&#x5EFA;&#x7248;&#x672C;&#x5E93;</h2><ol>
+<li>&#x9996;&#x5148;&#xFF0C;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5408;&#x9002;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x76EE;&#x5F55;<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mkdir learngit</div><div class="line">$ <span class="built_in">cd</span> learngit</div><div class="line">$ <span class="built_in">pwd</span></div><div class="line">/Users/michael/learngit</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>More info: </p>
+<ul>
+<li>pwd&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x663E;&#x793A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x3002;&#x5728;&#x6211;&#x7684;&#x7535;&#x8111;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E2A;&#x4ED3;&#x5E93;&#x4F4D;&#x4E8E;/Users/michael/learngit<br><strong> &#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;Windows&#x7CFB;&#x7EDF;&#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x9047;&#x5230;&#x5404;&#x79CD;&#x83AB;&#x540D;&#x5176;&#x5999;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x76EE;&#x5F55;&#x540D;&#xFF08;&#x5305;&#x62EC;&#x7236;&#x76EE;&#x5F55;&#xFF09;&#x4E0D;&#x5305;&#x542B;&#x4E2D;&#x6587;&#x3002; </strong></li>
+</ul>
+<ol>
+<li><p>&#x901A;&#x8FC7;git init&#x547D;&#x4EE4;&#x628A;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x53D8;&#x6210;Git&#x53EF;&#x4EE5;&#x7BA1;&#x7406;&#x7684;&#x4ED3;&#x5E93;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git init</div><div class="line">Initialized empty Git repository <span class="keyword">in</span> /Users/michael/learngit/.git/</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x7F16;&#x5199;&#x4E00;&#x4E2A;readme.txt&#x6587;&#x4EF6;(&#x4E00;&#x5B9A;&#x8981;&#x653E;&#x5230;learngit&#x76EE;&#x5F55;&#x4E0B;&#xFF08;&#x5B50;&#x76EE;&#x5F55;&#x4E5F;&#x884C;&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;Git&#x4ED3;&#x5E93;&#xFF0C;&#x653E;&#x5230;&#x5176;&#x4ED6;&#x5730;&#x65B9;Git&#x518D;&#x5389;&#x5BB3;&#x4E5F;&#x627E;&#x4E0D;&#x5230;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x3002;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git is a version control system.</div><div class="line">Git is free software.</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x7528;&#x547D;&#x4EE4;git add&#x544A;&#x8BC9;Git&#xFF0C;&#x628A;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x4ED3;&#x5E93;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x7528;&#x547D;&#x4EE4;git commit&#x544A;&#x8BC9;Git&#xFF0C;&#x628A;&#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;&#x4ED3;&#x5E93;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">&quot;wrote a readme file&quot;</span></div><div class="line">[master (root-commit) cb926e7] wrote a readme file</div><div class="line"> 1 file changed, 2 insertions(+)</div><div class="line"> create mode 100644 readme.txt</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>more info</strong> </p>
+<ul>
+<li>&#x7B80;&#x5355;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;git commit&#x547D;&#x4EE4;&#xFF0C;-m&#x540E;&#x9762;&#x8F93;&#x5165;&#x7684;&#x662F;&#x672C;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x8BF4;&#x660E;&#xFF0C;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x4EFB;&#x610F;&#x5185;&#x5BB9;&#xFF0C;&#x5F53;&#x7136;&#x6700;&#x597D;&#x662F;&#x6709;&#x610F;&#x4E49;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#x4F60;&#x5C31;&#x80FD;&#x4ECE;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x91CC;&#x65B9;&#x4FBF;&#x5730;&#x627E;&#x5230;&#x6539;&#x52A8;&#x8BB0;&#x5F55;&#x3002;<br>6.&#x4E3A;&#x4EC0;&#x4E48;Git&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x9700;&#x8981;add&#xFF0C;commit&#x4E00;&#x5171;&#x4E24;&#x6B65;&#x5462;&#xFF1F;&#x56E0;&#x4E3A;commit&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x5F88;&#x591A;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x53EF;&#x4EE5;&#x591A;&#x6B21;add&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git add file1.txt</div><div class="line">$ git add file2.txt file3.txt</div><div class="line">$ git commit -m <span class="string">&quot;add 3 files.&quot;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x65F6;&#x5149;&#x673A;&#x7A7F;&#x68AD;"><a href="#&#x65F6;&#x5149;&#x673A;&#x7A7F;&#x68AD;" class="headerlink" title="&#x65F6;&#x5149;&#x673A;&#x7A7F;&#x68AD;"></a>&#x65F6;&#x5149;&#x673A;&#x7A7F;&#x68AD;</h2><ol>
+<li><p>&#x8FD0;&#x884C;git status&#x547D;&#x4EE4;&#xFF1A;git status&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x65F6;&#x523B;&#x638C;&#x63E1;&#x4ED3;&#x5E93;&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#xFF0C;readme.txt&#x88AB;&#x4FEE;&#x6539;&#x8FC7;&#x4E86;&#xFF0C;&#x4F46;&#x8FD8;&#x6CA1;&#x6709;&#x51C6;&#x5907;&#x63D0;&#x4EA4;&#x7684;&#x4FEE;&#x6539;&#x3002;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line"><span class="comment"># On branch master</span></div><div class="line"><span class="comment"># Changes not staged for commit:</span></div><div class="line"><span class="comment">#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span></div><div class="line"><span class="comment">#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#    modified:   readme.txt</span></div><div class="line"><span class="comment">#</span></div><div class="line">no changes added to commit (use <span class="string">&quot;git add&quot;</span> and/or <span class="string">&quot;git commit -a&quot;</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x8FD0;&#x884C;git diff&#x547D;&#x4EE4;&#xFF1A;git diff&#x987E;&#x540D;&#x601D;&#x4E49;&#x5C31;&#x662F;&#x67E5;&#x770B;difference&#xFF0C;&#x663E;&#x793A;&#x7684;&#x683C;&#x5F0F;&#x6B63;&#x662F;Unix&#x901A;&#x7528;&#x7684;diff&#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x770B;&#x5230;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C;&#x4E00;&#x884C;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x201C;distributed&#x201D;&#x5355;&#x8BCD;&#x3002;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git diff readme.txt </div><div class="line">diff --git a/readme.txt b/readme.txt</div><div class="line">index 46d49bf..9247db6 100644</div><div class="line">--- a/readme.txt</div><div class="line">+++ b/readme.txt</div><div class="line">@@ -1,2 +1,2 @@</div><div class="line">-Git is a version control system.</div><div class="line">+Git is a distributed version control system.</div><div class="line"> Git is free software.</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x63D0;&#x4EA4;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>&#x540C;&#x6837;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;&#x3002;&#x5728;&#x6267;&#x884C;&#x7B2C;&#x4E8C;&#x6B65;git commit&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x8FD0;&#x884C;git status&#x770B;&#x770B;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line"><span class="comment"># On branch master</span></div><div class="line"><span class="comment"># Changes to be committed:</span></div><div class="line"><span class="comment">#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#       modified:   readme.txt</span></div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>git status&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#xFF0C;&#x5C06;&#x8981;&#x88AB;&#x63D0;&#x4EA4;&#x7684;&#x4FEE;&#x6539;&#x5305;&#x62EC;readme.txt&#xFF0C;&#x4E0B;&#x4E00;&#x6B65;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x653E;&#x5FC3;&#x5730;&#x63D0;&#x4EA4;&#x4E86;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">&quot;add distributed&quot;</span></div><div class="line">[master ea34578] add distributed</div><div class="line"> 1 file changed, 1 insertion(+), 1 deletion(-)</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x63D0;&#x4EA4;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x7528;git status&#x547D;&#x4EE4;&#x770B;&#x770B;&#x4ED3;&#x5E93;&#x7684;&#x5F53;&#x524D;&#x72B6;&#x6001;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line"><span class="comment"># On branch master</span></div><div class="line">nothing to commit (working directory clean)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Git&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x5F53;&#x524D;&#x6CA1;&#x6709;&#x9700;&#x8981;&#x63D0;&#x4EA4;&#x7684;&#x4FEE;&#x6539;&#xFF0C;&#x800C;&#x4E14;&#xFF0C;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x662F;&#x5E72;&#x51C0;&#xFF08;working directory clean&#xFF09;&#x7684;&#x3002;</p>
+<h2 id="&#x7248;&#x672C;&#x56DE;&#x9000;"><a href="#&#x7248;&#x672C;&#x56DE;&#x9000;" class="headerlink" title="&#x7248;&#x672C;&#x56DE;&#x9000;"></a>&#x7248;&#x672C;&#x56DE;&#x9000;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// &#x67E5;&#x770B;&#x6700;&#x8FD1;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;</div><div class="line">git <span class="built_in">log</span></div><div class="line"></div><div class="line">// &#x67E5;&#x770B;&#x6BCF;&#x6B21;&#x64CD;&#x4F5C;</div><div class="line">git reflog</div><div class="line"></div><div class="line">// &#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;</div><div class="line">git reset --hard HEAD^</div><div class="line"></div><div class="line">// &#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E0A;&#x4E2A;&#x7248;&#x672C;</div><div class="line">git reset --hard HEAD^^</div><div class="line"></div><div class="line">// &#x56DE;&#x9000;&#x5230;n&#x4E2A;&#x7248;&#x672C;</div><div class="line">git reset --hard HEAD~n</div><div class="line"></div><div class="line">// &#x56DE;&#x9000;&#x5230;&#x6307;&#x5B9A;&#x7248;&#x672C;</div><div class="line">// commit id &#x53EF;&#x7528; git <span class="built_in">log</span>  &#x548C; git reflog &#x67E5;&#x770B;</div><div class="line">git reset --hard <span class="string">&apos;commit id&apos;</span></div></pre></td></tr></table></figure>
+<h2 id="&#x64A4;&#x9500;&#x4FEE;&#x6539;"><a href="#&#x64A4;&#x9500;&#x4FEE;&#x6539;" class="headerlink" title="&#x64A4;&#x9500;&#x4FEE;&#x6539;"></a>&#x64A4;&#x9500;&#x4FEE;&#x6539;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// &#x64A4;&#x9500;&#x5DE5;&#x4F5C;&#x533A;&#x4FEE;&#x6539;</div><div class="line">git checkout -- file</div><div class="line"></div><div class="line">// &#x64A4;&#x9500;&#x6682;&#x5B58;&#x533A;</div><div class="line">// &#x5C06;&#x6682;&#x5B58;&#x533A;&#x64A4;&#x56DE;&#x81F3;&#x5DE5;&#x4F5C;&#x533A;</div><div class="line">git reset HEAD file</div><div class="line"></div><div class="line">// &#x64A4;&#x9500;&#x7248;&#x672C;&#xFF08;&#x53C2;&#x8003;&#x7248;&#x672C;&#x56DE;&#x9000;&#xFF09;</div></pre></td></tr></table></figure>
+<h2 id="&#x6587;&#x4EF6;&#x5220;&#x9664;"><a href="#&#x6587;&#x4EF6;&#x5220;&#x9664;" class="headerlink" title="&#x6587;&#x4EF6;&#x5220;&#x9664;"></a>&#x6587;&#x4EF6;&#x5220;&#x9664;</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// &#x5220;&#x9664;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;</div><div class="line">rm fileName</div><div class="line"></div><div class="line">// &#x6062;&#x590D;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;</div><div class="line">git checkout -- fileName</div><div class="line"></div><div class="line">// &#x5220;&#x9664;&#x6682;&#x5B58;&#x533A;&#x6587;&#x4EF6;</div><div class="line">git rm fileName</div></pre></td></tr></table></figure>
+<h2 id="&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;"><a href="#&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;" class="headerlink" title="&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;"></a>&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h2><p>1&#x3001;&#x767B;&#x9646;GitHub&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x5728;&#x53F3;&#x4E0A;&#x89D2;&#x627E;&#x5230;&#x201C;Create a new repo&#x201D;&#x6309;&#x94AE;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4ED3;&#x5E93;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:jolylai/&#x65B0;&#x5EFA;&#x4ED3;&#x5E93;&#x540D;.git</div></pre></td></tr></table></figure></p>
+<p>2&#x3001;&#x628A;&#x672C;&#x5730;&#x5E93;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x5E93;&#x4E0A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div><div class="line">Counting objects: 19, done.</div><div class="line">Delta compression using up to 4 threads.</div><div class="line">Compressing objects: 100% (19/19), done.</div><div class="line">Writing objects: 100% (19/19), 13.73 KiB, done.</div><div class="line">Total 23 (delta 6), reused 0 (delta 0)</div><div class="line">To git@github.com:michaelliao/learngit.git</div><div class="line"> * [new branch]      master -&gt; master</div><div class="line">Branch master <span class="built_in">set</span> up to track remote branch master from origin.</div></pre></td></tr></table></figure></p>
+<ul>
+<li>&#x7531;&#x4E8E;&#x8FDC;&#x7A0B;&#x5E93;&#x662F;&#x7A7A;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x7B2C;&#x4E00;&#x6B21;&#x63A8;&#x9001;master&#x5206;&#x652F;&#x65F6;&#xFF0C;&#x52A0;&#x4E0A;&#x4E86;-u&#x53C2;&#x6570;&#xFF0C;Git&#x4E0D;&#x4F46;&#x4F1A;&#x628A;&#x672C;&#x5730;&#x7684;master&#x5206;&#x652F;&#x5185;&#x5BB9;&#x63A8;&#x9001;&#x7684;&#x8FDC;&#x7A0B;&#x65B0;&#x7684;master&#x5206;&#x652F;&#xFF0C;&#x8FD8;&#x4F1A;&#x628A;&#x672C;&#x5730;&#x7684;master&#x5206;&#x652F;&#x548C;&#x8FDC;&#x7A0B;&#x7684;master&#x5206;&#x652F;&#x5173;&#x8054;&#x8D77;&#x6765;&#xFF0C;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x63A8;&#x9001;&#x6216;&#x8005;&#x62C9;&#x53D6;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x547D;&#x4EE4;&#x3002;</li>
+<li>&#x4ECE;&#x73B0;&#x5728;&#x8D77;&#xFF0C;&#x53EA;&#x8981;&#x672C;&#x5730;&#x4F5C;&#x4E86;&#x63D0;&#x4EA4;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push origin master</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x4ECE;&#x8FDC;&#x7A0B;&#x5E93;&#x514B;&#x9686;"><a href="#&#x4ECE;&#x8FDC;&#x7A0B;&#x5E93;&#x514B;&#x9686;" class="headerlink" title="&#x4ECE;&#x8FDC;&#x7A0B;&#x5E93;&#x514B;&#x9686;"></a>&#x4ECE;&#x8FDC;&#x7A0B;&#x5E93;&#x514B;&#x9686;</h2><p>1&#x3001;&#x7528;&#x547D;&#x4EE4;git clone&#x514B;&#x9686;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x5E93;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> git@github.com:jolylai/&#x8981;&#x514B;&#x9686;&#x7684;&#x4ED3;&#x5E93;&#x540D;.git</div><div class="line">Cloning into <span class="string">&apos;gitskills&apos;</span>...</div><div class="line">remote: Counting objects: 3, done.</div><div class="line">remote: Total 3 (delta 0), reused 0 (delta 0)</div><div class="line">Receiving objects: 100% (3/3), done.</div><div class="line"></div><div class="line">$ <span class="built_in">cd</span> gitskills</div><div class="line">$ ls</div><div class="line">README.md</div></pre></td></tr></table></figure></p>
+<h2 id="&#x5206;&#x652F;&#x7BA1;&#x7406;"><a href="#&#x5206;&#x652F;&#x7BA1;&#x7406;" class="headerlink" title="&#x5206;&#x652F;&#x7BA1;&#x7406;"></a>&#x5206;&#x652F;&#x7BA1;&#x7406;</h2><p>1&#x3001;&#x521B;&#x5EFA;&#x4E0E;&#x5408;&#x5E76;&#x5206;&#x652F;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">// &#x521B;&#x5EFA;&#x65B0;&#x5206;&#x652F;</div><div class="line">$ git branch dev</div><div class="line"></div><div class="line">// &#x5207;&#x6362;&#x5206;&#x652F;</div><div class="line">$ git checkout dev</div><div class="line"></div><div class="line">// &#x521B;&#x5EFA;&#x5E76;&#x5207;&#x6362;&#x81F3;&#x65B0;&#x5206;&#x652F;</div><div class="line">$ git checkout -b dev</div><div class="line"></div><div class="line">// &#x67E5;&#x770B;&#x6240;&#x6709;&#x5206;&#x652F;</div><div class="line">// &#x5F53;&#x524D;&#x5206;&#x652F;&#x524D;&#x9762;&#x4F1A;&#x52A0;*&#x53F7;</div><div class="line">$ git branch</div><div class="line"></div><div class="line">// &#x5408;&#x5E76;&#x5206;&#x652F;</div><div class="line">// &#x5C06;dev&#x5206;&#x652F;&#x5408;&#x5E76;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;</div><div class="line">$ git merge dev</div><div class="line"></div><div class="line">// &#x5220;&#x9664;&#x5206;&#x652F;</div><div class="line">$ git branch <span class="_">-d</span> dev</div></pre></td></tr></table></figure></p>
+<p>2&#x3001;&#x89E3;&#x51B3;&#x51B2;&#x7A81;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// &#x67E5;&#x770B;&#x5206;&#x652F;&#x5408;&#x5E76;&#x56FE;</div><div class="line">$ git <span class="built_in">log</span> --graph</div></pre></td></tr></table></figure></p>
+<p>3&#x3001;bug&#x5206;&#x652F;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// &#x5C06;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x73B0;&#x573A;&#x5B58;&#x50A8;</div><div class="line">$ git stash</div><div class="line"></div><div class="line">// &#x67E5;&#x770B;&#x5B58;&#x50A8;&#x5217;&#x8868;</div><div class="line">$ git stash list</div><div class="line"></div><div class="line">// &#x6062;&#x590D;&#x5DE5;&#x4F5C;&#x73B0;&#x573A;</div><div class="line">// &#x6062;&#x590D;&#x540E;&#x4E0D;&#x5220;&#x9664;stash&#x5185;&#x5BB9;</div><div class="line">$ git stash apply stash@{0}</div><div class="line">// &#x6062;&#x590D;&#x540E;&#x5220;&#x9664;stash&#x5185;&#x5BB9;</div><div class="line">$ git stash pop</div></pre></td></tr></table></figure></p>
+<p>4&#x3001;feature&#x5206;&#x652F;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// &#x5F3A;&#x884C;&#x5220;&#x9664;&#x672A;&#x5408;&#x5E76;&#x7684;&#x5206;&#x652F;</div><div class="line">$ git branch -D &lt;name&gt;</div></pre></td></tr></table></figure></p>
+<p>5&#x3001;&#x591A;&#x4EBA;&#x534F;&#x4F5C;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// &#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x5E93;&#x4FE1;&#x606F;</div><div class="line">$ git remote</div><div class="line"></div><div class="line">// &#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x5E93;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x4FE1;&#x606F;</div><div class="line">$ git remote -v</div><div class="line"></div><div class="line">// &#x63A8;&#x9001;&#x5206;&#x652F;</div><div class="line">$ git push origin &lt;branchName&gt;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>&#x9996;&#x5148;&#xFF0C;&#x53EF;&#x4EE5;&#x8BD5;&#x56FE;&#x7528;git push origin branch-name&#x63A8;&#x9001;&#x81EA;&#x5DF1;&#x7684;&#x4FEE;&#x6539;&#xFF1B;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x63A8;&#x9001;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x56E0;&#x4E3A;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x6BD4;&#x4F60;&#x7684;&#x672C;&#x5730;&#x66F4;&#x65B0;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x7528;git pull&#x8BD5;&#x56FE;&#x5408;&#x5E76;&#xFF1B;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x5408;&#x5E76;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x5219;&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#xFF0C;&#x5E76;&#x5728;&#x672C;&#x5730;&#x63D0;&#x4EA4;&#xFF1B;</p>
+</li>
+<li><p>&#x6CA1;&#x6709;&#x51B2;&#x7A81;&#x6216;&#x8005;&#x89E3;&#x51B3;&#x6389;&#x51B2;&#x7A81;&#x540E;&#xFF0C;&#x518D;&#x7528;git push origin branch-name&#x63A8;&#x9001;&#x5C31;&#x80FD;&#x6210;&#x529F;&#xFF01;</p>
+<p>  &#x5982;&#x679C;git pull&#x63D0;&#x793A;&#x201C;no tracking information&#x201D;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x672C;&#x5730;&#x5206;&#x652F;&#x548C;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x7684;&#x94FE;&#x63A5;&#x5173;&#x7CFB;&#x6CA1;&#x6709;&#x521B;&#x5EFA;&#xFF0C;&#x7528;&#x547D;&#x4EE4;git branch &#x2013;set-upstream branch-name origin/branch-name&#x3002;</p>
+</li>
+</ul>
+<p>6&#x3001;&#x6807;&#x7B7E;&#x7BA1;&#x7406;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">// &#x65B0;&#x5EFA;&#x6807;&#x7B7E; &#x9ED8;&#x8BA4;HEAD</div><div class="line">$ git tag &lt;name&gt;</div><div class="line"></div><div class="line">// &#x65B0;&#x5EFA;&#x6807;&#x7B7E;&#x81F3;&#x6307;&#x5B9A;commotion id</div><div class="line">$ git tag &lt;name&gt; &lt;commit id&gt;</div><div class="line"></div><div class="line">// &#x67E5;&#x770B;&#x6807;&#x7B7E;</div><div class="line">$ git tag</div><div class="line"></div><div class="line">// &#x67E5;&#x770B;&#x6807;&#x7B7E;&#x4FE1;&#x606F;</div><div class="line">$ git show &lt;tagname&gt;</div><div class="line"></div><div class="line">// &#x521B;&#x5EFA;&#x5E26;&#x6709;&#x8BF4;&#x660E;&#x7684;&#x6807;&#x7B7E;</div><div class="line">$ git tag <span class="_">-a</span> v0.1 -m <span class="string">&apos;info&apos;</span> &lt;commit id&gt;</div><div class="line"></div><div class="line">// &#x5220;&#x9664;&#x6807;&#x7B7E;</div><div class="line">$ git tag <span class="_">-d</span> &lt;tagname&gt;</div><div class="line"></div><div class="line">// &#x63A8;&#x9001;&#x6807;&#x7B7E;&#x5230;&#x8FDC;&#x7A0B;</div><div class="line">$ git push origin &lt;tagname&gt;</div><div class="line"></div><div class="line">// &#x4E00;&#x6B21;&#x6027;&#x63A8;&#x9001;&#x5168;&#x90E8;&#x6807;&#x7B7E;</div><div class="line">$ git push origin --tags</div><div class="line"></div><div class="line">// &#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x6807;&#x7B7E;</div><div class="line">$ git tag <span class="_">-d</span> &lt;tagname&gt;</div><div class="line">$ git push origin:refs/tags/&lt;tagname&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="&#x5C06;&#x9879;&#x76EE;&#x63A8;&#x9001;&#x5230;github-pages"><a href="#&#x5C06;&#x9879;&#x76EE;&#x63A8;&#x9001;&#x5230;github-pages" class="headerlink" title="&#x5C06;&#x9879;&#x76EE;&#x63A8;&#x9001;&#x5230;github pages"></a>&#x5C06;&#x9879;&#x76EE;&#x63A8;&#x9001;&#x5230;github pages</h2><p>&#x67E5;&#x770B;&#x5730;&#x5740;&#xFF1A;&#x7528;&#x6237;&#x540D;.github.io/&#x9879;&#x76EE;&#x540D;/<br>eg: jolylai.github.io/gallery-by-react/<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git subtree push --prefix=dist origin gh-pages</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Git/">Git</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/03/Database-SQL/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">SQL</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/03/JS-Canvas/">
+        <span class="next-text nav-default">canvas</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

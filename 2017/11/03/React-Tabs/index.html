@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Tabs组件封装"/>
+
+
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/03/React-Tabs/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Tabs组件封装 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Tabs组件封装
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tips"><span class="toc-text">Tips</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件属性"><span class="toc-text">组件属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tabs"><span class="toc-text">Tabs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TabPanel"><span class="toc-text">TabPanel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#status"><span class="toc-text">status</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件使用"><span class="toc-text">组件使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabs-1"><span class="toc-text">Tabs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TabPane"><span class="toc-text">TabPane</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TabNav"><span class="toc-text">TabNav</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TabContent"><span class="toc-text">TabContent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#样式"><span class="toc-text">样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack配置scss"><span class="toc-text">webpack配置scss</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>Tabs&#x7EC4;&#x4EF6;&#x5206;&#x4E3A;Tabs,TabPane,TabNav,TabContent,&#x672C;demo&#x4F7F;&#x7528;create-react-app&#x521B;&#x5EFA;</p>
+<a id="more"></a>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
+<li><a href="http://www.zhangxinxu.com/wordpress/2012/03/wai-aria-%E6%97%A0%E9%9A%9C%E7%A2%8D%E9%98%85%E8%AF%BB/" target="_blank" rel="external">Element aria&#x5C5E;&#x6027;</a></li>
+<li>React.cloneElement()</li>
+<li>React.Children.map()</li>
+</ul>
+<h2 id="&#x7EC4;&#x4EF6;&#x5C5E;&#x6027;"><a href="#&#x7EC4;&#x4EF6;&#x5C5E;&#x6027;" class="headerlink" title="&#x7EC4;&#x4EF6;&#x5C5E;&#x6027;"></a>&#x7EC4;&#x4EF6;&#x5C5E;&#x6027;</h2><h3 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h3><ul>
+<li>classPrefix          &#x6837;&#x5F0F;&#x524D;&#x7F00;&#x540D;</li>
+<li>defaultActiveIndex   &#x9ED8;&#x8BA4;&#x9009;&#x4E2D;Tab</li>
+<li>activeIndex          &#x9009;&#x4E2D;&#x7684;Tab</li>
+<li>onChange             Tab&#x5207;&#x6362;&#x5F0F;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570; onChange({ activeIndex, prevIndex })</li>
+</ul>
+<h3 id="TabPanel"><a href="#TabPanel" class="headerlink" title="TabPanel"></a>TabPanel</h3><ul>
+<li>order                TabPanel&#x6807;&#x8BC6;</li>
+<li>tab                  TabNav&#x4E2D;&#x663E;&#x793A;&#x7684;&#x5185;&#x5BB9;(&#x652F;&#x6301;ReactElement) </li>
+<li>disabled             Tab&#x4E0D;&#x53EF;&#x9009;&#x4E2D;</li>
+</ul>
+<h3 id="status"><a href="#status" class="headerlink" title="status"></a>status</h3><ul>
+<li>activeIndex          &#x5F53;&#x524D;&#x9009;&#x4E2D;&#x7684;Tab</li>
+<li>prevIndex            &#x4E0A;&#x6B21;&#x9009;&#x4E2D;&#x7684;Tab</li>
+</ul>
+<h2 id="&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;"><a href="#&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;" class="headerlink" title="&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;"></a>&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;Tabs defaultActiveIndex={1} activeIndex={1} onChange={(activeIndex, prevIndex) =&gt; {}}&gt;</div><div class="line">  &lt;TabPanel order={1} tab=&apos;tab1&apos;&gt;&#x8FD9;&#x662F;tab1&lt;/TabPanel&gt;</div><div class="line">  &lt;TabPanel order={2} tab=&apos;tab2&apos;&gt;&#x8FD9;&#x662F;tab2&lt;/TabPanel&gt;</div><div class="line">  &lt;TabPanel order={3} tab=&apos;tab3&apos; disabled &gt;&#x8FD9;&#x662F;tab3&lt;/TabPanel&gt;</div><div class="line">&lt;/Tabs&gt;</div></pre></td></tr></table></figure>
+<h2 id="Tabs-1"><a href="#Tabs-1" class="headerlink" title="Tabs"></a>Tabs</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, { Component, PropTypes, cloneElement } <span class="keyword">from</span> <span class="string">&apos;react&apos;</span>;</div><div class="line"><span class="keyword">import</span> classnames <span class="keyword">from</span> <span class="string">&apos;classnames&apos;</span>;</div><div class="line"><span class="keyword">import</span> TabNav <span class="keyword">from</span> <span class="string">&apos;./TabNav&apos;</span>;</div><div class="line"><span class="keyword">import</span> TabContent <span class="keyword">from</span> <span class="string">&apos;./TabContent&apos;</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">&apos;./index.scss&apos;</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tabs</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</div><div class="line">  <span class="keyword">static</span> defaultProps = {</div><div class="line">    <span class="attr">classPrefix</span>: <span class="string">&apos;tabs&apos;</span>,</div><div class="line">    <span class="attr">onChange</span>: <span class="function"><span class="params">()</span> =&gt;</span> { }</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(props) {</div><div class="line">    <span class="keyword">super</span>(props)</div><div class="line">    <span class="keyword">const</span> currProps = <span class="keyword">this</span>.props</div><div class="line">    <span class="keyword">let</span> activeIndex</div><div class="line">    <span class="comment">// &#x521D;&#x59CB;&#x5316; activeIndex state</span></div><div class="line">    <span class="keyword">if</span> (<span class="string">&apos;activeIndex&apos;</span> <span class="keyword">in</span> currProps) {</div><div class="line">      activeIndex = currProps.activeIndex</div><div class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&apos;defaultActiveIndex&apos;</span> <span class="keyword">in</span> currProps) {</div><div class="line">      activeIndex = currProps.defaultActiveIndex</div><div class="line">    }</div><div class="line">    <span class="keyword">this</span>.state = {</div><div class="line">      activeIndex,</div><div class="line">      <span class="attr">prevIndex</span>: activeIndex</div><div class="line">    }</div><div class="line">  }</div><div class="line"></div><div class="line">  componentWillReceiveProps(nextProps) {</div><div class="line">    <span class="comment">// &#x5982;&#x679C;props&#x4F20;&#x5165;activeIndex&#x5219;&#x76F4;&#x63A5;&#x66F4;&#x65B0;</span></div><div class="line">    <span class="keyword">if</span> (<span class="string">&apos;activeIndex&apos;</span> <span class="keyword">in</span> nextProps) {</div><div class="line">      <span class="keyword">this</span>.setState({</div><div class="line">        <span class="attr">activeIndex</span>: nextProps.activeIndex</div><div class="line">      })</div><div class="line">    }</div><div class="line">  }</div><div class="line"></div><div class="line">  handleTabClick = <span class="function">(<span class="params">activeIndex</span>) =&gt;</span> {</div><div class="line">    <span class="keyword">const</span> prevIndex = <span class="keyword">this</span>.state.activeIndex</div><div class="line">    <span class="comment">// &#x5982;&#x679C;&#x5F53;&#x524D;activeIndex&#x4E0E;&#x4F20;&#x5165;&#x7684;activeIndex&#x4E0D;&#x4E00;&#x81F4;</span></div><div class="line">    <span class="comment">// &#x5E76;&#x4E14; props &#x4E2D;&#x5B58;&#x5728; defaultActiveIndex &#x65F6;&#xFF0C; &#x5219;&#x66F4;&#x65B0;</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.state.activeIndex !== activeIndex &amp;&amp; <span class="string">&apos;defaultActiveIndex&apos;</span> <span class="keyword">in</span> <span class="keyword">this</span>.props) {</div><div class="line">      <span class="keyword">this</span>.setState({</div><div class="line">        activeIndex,</div><div class="line">        prevIndex</div><div class="line">      })</div><div class="line"></div><div class="line">      <span class="comment">// &#x66F4;&#x65B0;&#x540E;&#x6267;&#x884C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x629B;&#x51FA;&#x5F53;&#x524D;&#x7D22;&#x5F15;&#x548C;&#x4E0A;&#x4E00;&#x6B21;&#x7D22;&#x5F15;</span></div><div class="line">      <span class="keyword">this</span>.props.onChange({ activeIndex, prevIndex })</div><div class="line">    }</div><div class="line">  }</div><div class="line"></div><div class="line">  renderTabNav = <span class="function"><span class="params">()</span> =&gt;</span> {</div><div class="line">    <span class="keyword">const</span> { classPrefix, children } = <span class="keyword">this</span>.props</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;TabNav</div><div class="line">        key=&apos;tabBar&apos;</div><div class="line">        classPrefix={classPrefix}</div><div class="line">        onTabClick={this.handleTabClick}</div><div class="line">        panels={children}</div><div class="line">        activeIndex={this.state.activeIndex}</div><div class="line">      /&gt;</div><div class="line">    )</div><div class="line">  }</div><div class="line"></div><div class="line">  renderTabContent = () =&gt; {</div><div class="line">    const { classPrefix, children } = this.props</div><div class="line">    return (</div><div class="line">      &lt;TabContent</div><div class="line">        key=&apos;tabContent&apos;</div><div class="line">        classPrefix={classPrefix}</div><div class="line">        panels={children}</div><div class="line">        activeIndex={this.state.activeIndex}</div><div class="line">      /&gt;</div><div class="line">    )</div><div class="line">  }</div><div class="line">  render() {</div><div class="line">    const { className } = this.props</div><div class="line">    const classes = classnames(className, &apos;ui-tabs&apos;)</div><div class="line">    return (</div><div class="line">      &lt;div className={classes}&gt;</div><div class="line">        {this.renderTabNav()}</div><div class="line">        {this.renderTabContent()}</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  }</div><div class="line">}</div><div class="line"></div><div class="line">export default Tabs;</div></pre></td></tr></table></figure>
+<h2 id="TabPane"><a href="#TabPane" class="headerlink" title="TabPane"></a>TabPane</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, { Component } <span class="keyword">from</span> <span class="string">&apos;react&apos;</span>;</div><div class="line"><span class="keyword">import</span> classnames <span class="keyword">from</span> <span class="string">&apos;classnames&apos;</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TabPane</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</div><div class="line">  render() {</div><div class="line">    <span class="keyword">const</span> { className, classPrefix, isActive, children } = <span class="keyword">this</span>.props</div><div class="line">    <span class="keyword">const</span> classes = classnames({</div><div class="line">      [className]: className,</div><div class="line">      [<span class="string">`<span class="subst">${classPrefix}</span>-panel`</span>]: <span class="literal">true</span>,</div><div class="line">      [<span class="string">`<span class="subst">${classPrefix}</span>-active`</span>]: isActive</div><div class="line">    })</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span></span></span></div><div class="line">        <span class="attr">role</span>=<span class="string">&apos;tabpanel&apos;</span></div><div class="line">        <span class="attr">className</span>=<span class="string">{classes}</span></div><div class="line">        <span class="attr">aria-hidden</span>=<span class="string">{!isActive}</span></div><div class="line">      &gt;</div><div class="line">        {children}</div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">  }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TabPane;</div></pre></td></tr></table></figure>
+<h2 id="TabNav"><a href="#TabNav" class="headerlink" title="TabNav"></a>TabNav</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, { Component } <span class="keyword">from</span> <span class="string">&apos;react&apos;</span>;</div><div class="line"><span class="keyword">import</span> classnanes <span class="keyword">from</span> <span class="string">&apos;classnames&apos;</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">&apos;./index.scss&apos;</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TavNav</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</div><div class="line">  getTabs = <span class="function"><span class="params">()</span> =&gt;</span> {</div><div class="line">    <span class="keyword">const</span> { panels, classPrefix, activeIndex } = <span class="keyword">this</span>.props</div><div class="line">    <span class="keyword">return</span> React.Children.map(panels, (child) =&gt; {</div><div class="line">      <span class="keyword">if</span> (!child) <span class="keyword">return</span></div><div class="line">      <span class="keyword">const</span> order = <span class="built_in">parseInt</span>(child.props.order, <span class="number">10</span>)</div><div class="line">      <span class="comment">// &#x5229;&#x7528;class&#x63A7;&#x5236;&#x663E;&#x793A;&#x548C;&#x9690;&#x85CF;</span></div><div class="line">      <span class="keyword">let</span> classes = classnanes({</div><div class="line">        [<span class="string">`<span class="subst">${classPrefix}</span>-tab`</span>]: <span class="literal">true</span>,</div><div class="line">        [<span class="string">`<span class="subst">${classPrefix}</span>-active`</span>]: activeIndex === order,</div><div class="line">        [<span class="string">`<span class="subst">${classPrefix}</span>-disabled`</span>]: child.props.disabled</div><div class="line">      })</div><div class="line"></div><div class="line">      <span class="keyword">let</span> events = {}</div><div class="line">      <span class="keyword">if</span> (!child.props.disabled) {</div><div class="line">        events = {</div><div class="line">          <span class="attr">onClick</span>: <span class="keyword">this</span>.props.onTabClick.bind(<span class="keyword">this</span>, order)</div><div class="line">        }</div><div class="line">      }</div><div class="line"></div><div class="line">      <span class="keyword">const</span> ref = {}</div><div class="line">      <span class="keyword">if</span> (activeIndex === order) {</div><div class="line">        ref.ref = <span class="string">&apos;avtiveTab&apos;</span></div><div class="line">      }</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">li</span></span></span></div><div class="line">          <span class="attr">role</span>=<span class="string">&apos;tab&apos;</span></div><div class="line">          <span class="attr">aria-disabled</span>=<span class="string">{child.props.disabled</span> ? &apos;<span class="attr">true</span>&apos; <span class="attr">:</span> &apos;<span class="attr">false</span>&apos;}</div><div class="line">          <span class="attr">aria-selected</span>=<span class="string">{activeIndex</span> === <span class="string">order</span> ? &apos;<span class="attr">true</span>&apos; <span class="attr">:</span> &apos;<span class="attr">false</span>&apos;}</div><div class="line">          {<span class="attr">...events</span>}</div><div class="line">          <span class="attr">className</span>=<span class="string">{classes}</span></div><div class="line">          <span class="attr">key</span>=<span class="string">{order}</span></div><div class="line">          {<span class="attr">...ref</span>}</div><div class="line">        &gt;</div><div class="line">          {child.props.tab}</div><div class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      )</div><div class="line">    })</div><div class="line">  }</div><div class="line">  render() {</div><div class="line">    <span class="keyword">const</span> { classPrefix } = <span class="keyword">this</span>.props</div><div class="line">    <span class="keyword">const</span> rootClasses = classnanes({</div><div class="line">      [<span class="string">`<span class="subst">${classPrefix}</span>-bar`</span>]: <span class="literal">true</span></div><div class="line">    })</div><div class="line">    <span class="keyword">const</span> classes = classnanes({</div><div class="line">      [<span class="string">`<span class="subst">${classPrefix}</span>-nav`</span>]: <span class="literal">true</span></div><div class="line">    })</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">{rootClasses}</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">className</span>=<span class="string">{classes}</span>&gt;</span></div><div class="line">          {this.getTabs()}</div><div class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">  }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TavNav;</div></pre></td></tr></table></figure>
+<h2 id="TabContent"><a href="#TabContent" class="headerlink" title="TabContent"></a>TabContent</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, { Component } <span class="keyword">from</span> <span class="string">&apos;react&apos;</span>;</div><div class="line"><span class="keyword">import</span> classnames <span class="keyword">from</span> <span class="string">&apos;classnames&apos;</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TabContent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</div><div class="line">  getTabPanes = <span class="function"><span class="params">()</span> =&gt;</span> {</div><div class="line">    <span class="keyword">const</span> { classPrefix, activeIndex, panels } = <span class="keyword">this</span>.props</div><div class="line">    <span class="keyword">return</span> React.Children.map(panels, (child) =&gt; {</div><div class="line">      <span class="keyword">if</span> (!child) <span class="keyword">return</span></div><div class="line">      <span class="keyword">const</span> order = <span class="built_in">parseInt</span>(child.props.order, <span class="number">10</span>)</div><div class="line">      <span class="keyword">const</span> isActive = order === activeIndex</div><div class="line">      <span class="keyword">return</span> React.cloneElement(child, {</div><div class="line">        classPrefix,</div><div class="line">        isActive,</div><div class="line">        <span class="attr">children</span>: child.props.children,</div><div class="line">        <span class="attr">key</span>: <span class="string">`tabpane-<span class="subst">${order}</span>`</span></div><div class="line">      })</div><div class="line">    })</div><div class="line">  }</div><div class="line">  render() {</div><div class="line">    <span class="keyword">const</span> { classPrefix } = <span class="keyword">this</span>.props</div><div class="line">    <span class="keyword">const</span> classes = classnames({</div><div class="line">      [<span class="string">`<span class="subst">${classPrefix}</span>-content`</span>]: <span class="literal">true</span></div><div class="line">    })</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">{classes}</span>&gt;</span></span></div><div class="line">        {this.getTabPanes()}</div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">  }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> TabContent;</div></pre></td></tr></table></figure>
+<h2 id="&#x6837;&#x5F0F;"><a href="#&#x6837;&#x5F0F;" class="headerlink" title="&#x6837;&#x5F0F;"></a>&#x6837;&#x5F0F;</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$class-prefix</span>: <span class="string">&apos;tabs&apos;</span>;</div><div class="line">.#{<span class="variable">$class-prefix</span>} {</div><div class="line">    &amp;-bar {</div><div class="line">        <span class="attribute">margin-bottom</span>: <span class="number">16px</span>;</div><div class="line">    }</div><div class="line">    &amp;-<span class="selector-tag">nav</span> {</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">14px</span>;</div><div class="line">        &amp;:after,</div><div class="line">        &amp;::before {</div><div class="line">            <span class="attribute">display</span>: table;</div><div class="line">            <span class="attribute">content</span>: <span class="string">&apos;&apos;</span>;</div><div class="line">        }</div><div class="line">        &amp;::after {</div><div class="line">            <span class="attribute">clear</span>: both;</div><div class="line">        }</div><div class="line">    }</div><div class="line">    &amp;-<span class="selector-tag">nav</span>&gt;&amp;-tab {</div><div class="line">        <span class="attribute">float</span>: left;</div><div class="line">        <span class="attribute">list-style</span>: none;</div><div class="line">        <span class="attribute">margin-right</span>: <span class="number">24px</span>;</div><div class="line">        <span class="attribute">padding</span>: <span class="number">8px</span> <span class="number">20px</span>;</div><div class="line">        <span class="attribute">text-decoration</span>: none;</div><div class="line">        <span class="attribute">color</span>: <span class="number">#666</span>;</div><div class="line">        <span class="attribute">cursor</span>: pointer;</div><div class="line">    }</div><div class="line">    &amp;-<span class="selector-tag">nav</span>&gt;&amp;-active {</div><div class="line">        <span class="attribute">border-bottom</span>: <span class="number">2px</span> solid <span class="number">#00c49f</span>;</div><div class="line">        <span class="attribute">color</span>: <span class="number">#00c49f</span>;</div><div class="line">        <span class="attribute">cursor</span>: pointer;</div><div class="line">    }</div><div class="line">    &amp;-<span class="selector-tag">nav</span>&gt;&amp;-disabled {</div><div class="line">        <span class="attribute">cursor</span>: no-drop;</div><div class="line">    }</div><div class="line">    &amp;-<span class="attribute">content</span> &amp;-panel {</div><div class="line">        <span class="attribute">display</span>: none;</div><div class="line">    }</div><div class="line">    &amp;-<span class="attribute">content</span> &amp;-active {</div><div class="line">        <span class="attribute">display</span>: block;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="webpack&#x914D;&#x7F6E;scss"><a href="#webpack&#x914D;&#x7F6E;scss" class="headerlink" title="webpack&#x914D;&#x7F6E;scss"></a>webpack&#x914D;&#x7F6E;scss</h2><ul>
+<li><p>&#x5B89;&#x88C5;&#x6240;&#x9700;&#x6A21;&#x5757;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add node-sass sass-loader --dev</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x914D;&#x7F6E;webpack.config.dev.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">	<span class="attr">exclude</span>: [<span class="regexp">/\.js$/</span>, /\.html$/, /\.json$/, /\.scss$/],</div><div class="line">	<span class="attr">loader</span>: <span class="built_in">require</span>.resolve(<span class="string">&apos;file-loader&apos;</span>),</div><div class="line">	<span class="attr">options</span>: {</div><div class="line">	  <span class="attr">name</span>: <span class="string">&apos;static/media/[name].[hash:8].[ext]&apos;</span>,</div><div class="line">	},</div><div class="line">},</div><div class="line"><span class="comment">// scss loader</span></div><div class="line">{</div><div class="line">	<span class="attr">test</span>: <span class="regexp">/\.scss$/</span>,</div><div class="line">	<span class="attr">use</span>: [<span class="string">&apos;style-loader&apos;</span>, <span class="string">&apos;css-loader&apos;</span>, <span class="string">&apos;sass-loader&apos;</span>]  </div><div class="line">}</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/React/">React</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/03/React-Router4/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Router 4</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/03/session/">
+        <span class="next-text nav-default">Session</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

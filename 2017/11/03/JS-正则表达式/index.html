@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="正则表达式"/>
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/03/JS-正则表达式/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> 正则表达式 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          正则表达式
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp对象"><span class="toc-text">RegExp对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修饰符"><span class="toc-text">修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式由两种基本字符类型组成"><span class="toc-text">正则表达式由两种基本字符类型组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符类"><span class="toc-text">字符类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#范围类"><span class="toc-text">范围类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预定义类"><span class="toc-text">预定义类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#量词"><span class="toc-text">量词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贪婪模式"><span class="toc-text">贪婪模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非贪婪模式"><span class="toc-text">非贪婪模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分组"><span class="toc-text">分组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#或"><span class="toc-text">或</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反向引用"><span class="toc-text">反向引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#忽略分组"><span class="toc-text">忽略分组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前瞻"><span class="toc-text">前瞻</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp属性-只读"><span class="toc-text">RegExp属性(只读)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RegExp方法"><span class="toc-text">RegExp方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#exec非全局调用"><span class="toc-text">exec非全局调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exec全局调用"><span class="toc-text">exec全局调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串对象方法"><span class="toc-text">字符串对象方法</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x5BF9;&#x6BCF;&#x4E2A;&#x4EBA;&#x800C;&#x8A00;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x804C;&#x8D23;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF1A;&#x627E;&#x5230;&#x81EA;&#x6211;&#x3002;&#x7136;&#x540E;&#x5728;&#x5FC3;&#x4E2D;&#x575A;&#x5B88;&#x5176;&#x4E00;&#x751F;&#xFF0C;&#x5168;&#x5FC3;&#x5168;&#x610F;&#xFF0C;&#x6C38;&#x4E0D;&#x505C;&#x606F;&#x3002;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x8DEF;&#x90FD;&#x662F;&#x4E0D;&#x5B8C;&#x6574;&#x7684;&#xFF0C;&#x662F;&#x4EBA;&#x7684;&#x9003;&#x907F;&#x65B9;&#x5F0F;&#xFF0C;&#x662F;&#x5BF9;&#x5927;&#x4F17;&#x7406;&#x60F3;&#x7684;&#x61E6;&#x5F31;&#x56DE;&#x5F52;&#xFF0C;&#x662F;&#x968F;&#x6CE2;&#x9010;&#x6D41;&#xFF0C;&#x662F;&#x5BF9;&#x5185;&#x5FC3;&#x7684;&#x6050;&#x60E7;&#x3002;<br><a id="more"></a><br><a href="https://regexper.com/" target="_blank" rel="external">&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</a></p>
+<h2 id="RegExp&#x5BF9;&#x8C61;"><a href="#RegExp&#x5BF9;&#x8C61;" class="headerlink" title="RegExp&#x5BF9;&#x8C61;"></a>RegExp&#x5BF9;&#x8C61;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&#x5B57;&#x9762;&#x91CF;</span></div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/\bis\b/g</span>;                </div><div class="line"><span class="comment">//&#x6784;&#x9020;&#x51FD;&#x6570;</span></div><div class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&apos;\\bis\\b&apos;</span>,<span class="string">&apos;g&apos;</span>);</div></pre></td></tr></table></figure>
+<h2 id="&#x4FEE;&#x9970;&#x7B26;"><a href="#&#x4FEE;&#x9970;&#x7B26;" class="headerlink" title="&#x4FEE;&#x9970;&#x7B26;"></a>&#x4FEE;&#x9970;&#x7B26;</h2><ul>
+<li>g: globle &#x5168;&#x6587;&#x641C;&#x7D22;</li>
+<li>i: ignore case &#x5FFD;&#x7565;&#x5927;&#x5C0F;&#x5199;</li>
+<li>m: multiple lines &#x591A;&#x884C;&#x641C;&#x7D22;</li>
+</ul>
+<h2 id="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7531;&#x4E24;&#x79CD;&#x57FA;&#x672C;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x7EC4;&#x6210;"><a href="#&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7531;&#x4E24;&#x79CD;&#x57FA;&#x672C;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x7EC4;&#x6210;" class="headerlink" title="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7531;&#x4E24;&#x79CD;&#x57FA;&#x672C;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x7EC4;&#x6210;"></a>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7531;&#x4E24;&#x79CD;&#x57FA;&#x672C;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x7EC4;&#x6210;</h2><ul>
+<li>&#x539F;&#x4E49;&#x5B57;&#x7B26;</li>
+<li>&#x5143;&#x5B57;&#x7B26;:&#x5728;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x6709;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#x7684;&#x975E;&#x5B57;&#x6BCD;&#x5B57;&#x7B26;</li>
+</ul>
+<h2 id="&#x5B57;&#x7B26;&#x7C7B;"><a href="#&#x5B57;&#x7B26;&#x7C7B;" class="headerlink" title="&#x5B57;&#x7B26;&#x7C7B;"></a>&#x5B57;&#x7B26;&#x7C7B;</h2><ul>
+<li>&#x5143;&#x5B57;&#x7B26;&#x7684;&#x5E94;&#x7528;(&#x6784;&#x5EFA;&#x7C7B;)<br>[abc] &#xFF1A;one of abc</li>
+<li>&#x53D6;&#x53CD;<br>[^abc] :none of abc</li>
+</ul>
+<h2 id="&#x8303;&#x56F4;&#x7C7B;"><a href="#&#x8303;&#x56F4;&#x7C7B;" class="headerlink" title="&#x8303;&#x56F4;&#x7C7B;"></a>&#x8303;&#x56F4;&#x7C7B;</h2><ul>
+<li>[a-z] [A-Z] [0-9]</li>
+<li>[a-zA-Z]</li>
+<li>[0-9-]  &#x5339;&#x914D;0-9&#x6216;&#x8005;-</li>
+</ul>
+<h2 id="&#x9884;&#x5B9A;&#x4E49;&#x7C7B;"><a href="#&#x9884;&#x5B9A;&#x4E49;&#x7C7B;" class="headerlink" title="&#x9884;&#x5B9A;&#x4E49;&#x7C7B;"></a>&#x9884;&#x5B9A;&#x4E49;&#x7C7B;</h2><p><img src="/2017/11/03/JS-&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;/&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;/&#x9884;&#x5B9A;&#x4E49;&#x7C7B;.png" alt="Alt text" title="&#x9884;&#x5B9A;&#x4E49;&#x7C7B;"><br><img src="/2017/11/03/JS-&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;/&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;/&#x8FB9;&#x754C;.png" alt="Alt text" title="&#x8FB9;&#x754C;"></p>
+<h2 id="&#x91CF;&#x8BCD;"><a href="#&#x91CF;&#x8BCD;" class="headerlink" title="&#x91CF;&#x8BCD;"></a>&#x91CF;&#x8BCD;</h2><p><img src="/2017/11/03/JS-&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;/&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;/&#x91CF;&#x8BCD;.png" alt="Alt text" title="&#x91CF;&#x8BCD;"></p>
+<h2 id="&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;"><a href="#&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;" class="headerlink" title="&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;"></a>&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">&apos;12345678&apos;</span>.replace(<span class="regexp">/\d{3,6}/g</span>,<span class="string">&apos;X&apos;</span>)  <span class="comment">//&quot;X78&quot;</span></div></pre></td></tr></table></figure>
+<h2 id="&#x975E;&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;"><a href="#&#x975E;&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;" class="headerlink" title="&#x975E;&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;"></a>&#x975E;&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">&apos;12345678&apos;</span>.replace(<span class="regexp">/\d{3,6}?/g</span>,<span class="string">&apos;X&apos;</span>)  <span class="comment">//&quot;XX78&quot;</span></div></pre></td></tr></table></figure>
+<h2 id="&#x5206;&#x7EC4;"><a href="#&#x5206;&#x7EC4;" class="headerlink" title="&#x5206;&#x7EC4;"></a>&#x5206;&#x7EC4;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Byron{<span class="number">3</span>}  <span class="comment">//Byronnn</span></div><div class="line">(Byron){<span class="number">3</span>} <span class="comment">//ByronByronByron</span></div></pre></td></tr></table></figure>
+<h2 id="&#x6216;"><a href="#&#x6216;" class="headerlink" title="&#x6216;"></a>&#x6216;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">&apos;ByronsperByrCasper&apos;</span>.replace(<span class="regexp">/Byr(on|Ca)sper/g</span>,<span class="string">&apos;X&apos;</span>) <span class="comment">//&quot;XX&quot;</span></div></pre></td></tr></table></figure>
+<h2 id="&#x53CD;&#x5411;&#x5F15;&#x7528;"><a href="#&#x53CD;&#x5411;&#x5F15;&#x7528;" class="headerlink" title="&#x53CD;&#x5411;&#x5F15;&#x7528;"></a>&#x53CD;&#x5411;&#x5F15;&#x7528;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">&apos;2016-12-20&apos;</span>.replace(<span class="regexp">/(\d{4})-(\d{2})-(\d{2})/g</span>,<span class="string">&apos;$2$3$1&apos;</span>) <span class="comment">//12-20-2016</span></div></pre></td></tr></table></figure>
+<h2 id="&#x5FFD;&#x7565;&#x5206;&#x7EC4;"><a href="#&#x5FFD;&#x7565;&#x5206;&#x7EC4;" class="headerlink" title="&#x5FFD;&#x7565;&#x5206;&#x7EC4;"></a>&#x5FFD;&#x7565;&#x5206;&#x7EC4;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&#x5206;&#x7EC4;&#x524D;&#x52A0;?:</span></div><div class="line">(?:Byron).(OK)</div></pre></td></tr></table></figure>
+<h2 id="&#x524D;&#x77BB;"><a href="#&#x524D;&#x77BB;" class="headerlink" title="&#x524D;&#x77BB;"></a>&#x524D;&#x77BB;</h2><p><img src="/2017/11/03/JS-&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;/../pic/&#x524D;&#x77BB;.png" alt="Alt text" title="&#x524D;&#x77BB;"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">&apos;a2*3&apos;</span>.replace(<span class="regexp">/\w(?=\d)/g</span>,<span class="string">&apos;X&apos;</span>)  <span class="comment">//X2*3</span></div></pre></td></tr></table></figure></p>
+<h2 id="RegExp&#x5C5E;&#x6027;-&#x53EA;&#x8BFB;"><a href="#RegExp&#x5C5E;&#x6027;-&#x53EA;&#x8BFB;" class="headerlink" title="RegExp&#x5C5E;&#x6027;(&#x53EA;&#x8BFB;)"></a>RegExp&#x5C5E;&#x6027;(&#x53EA;&#x8BFB;)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/\w/</span>;</div><div class="line">reg.goloble; <span class="comment">//false</span></div><div class="line">reg.ignoreCase;  <span class="comment">//false</span></div><div class="line">reg.multiline;  <span class="comment">//false</span></div><div class="line">reg.sourse;  <span class="comment">///\w/</span></div><div class="line">reg.lastIndex</div></pre></td></tr></table></figure>
+<h2 id="RegExp&#x65B9;&#x6CD5;"><a href="#RegExp&#x65B9;&#x6CD5;" class="headerlink" title="RegExp&#x65B9;&#x6CD5;"></a>RegExp&#x65B9;&#x6CD5;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/\w/</span>;</div><div class="line">reg.test(<span class="string">&apos;s&apos;</span>); <span class="comment">//true</span></div><div class="line">reg.exec(<span class="string">&apos;s&apos;</span>); <span class="comment">//s</span></div><div class="line">reg.lastIndex</div></pre></td></tr></table></figure>
+<h3 id="exec&#x975E;&#x5168;&#x5C40;&#x8C03;&#x7528;"><a href="#exec&#x975E;&#x5168;&#x5C40;&#x8C03;&#x7528;" class="headerlink" title="exec&#x975E;&#x5168;&#x5C40;&#x8C03;&#x7528;"></a>exec&#x975E;&#x5168;&#x5C40;&#x8C03;&#x7528;</h3><ul>
+<li>&#x8FD4;&#x56DE;&#x6570;&#x7EC4;</li>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E0E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x76F8;&#x5339;&#x914D;&#x7684;&#x6587;&#x672C;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E0E;RegExpObject&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x76F8;&#x5339;&#x914D;&#x7684;&#x6587;&#x672C;(&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;)&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/\d(\w)\d/</span>;</div><div class="line"><span class="keyword">var</span> ts = <span class="string">&apos;1a2b3c4d5e&apos;</span>;</div><div class="line"><span class="keyword">var</span> ret = reg.exec(ts);</div><div class="line"><span class="built_in">console</span>.log(reg.lastIndex + <span class="string">&apos;\t&apos;</span> + ret.index + <span class="string">&apos;\t&apos;</span> + ret.toString());</div><div class="line"><span class="comment">//0   0   1a2,a</span></div><div class="line"><span class="comment">//lastIndex&#x4E0D;&#x751F;&#x6548;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="exec&#x5168;&#x5C40;&#x8C03;&#x7528;"><a href="#exec&#x5168;&#x5C40;&#x8C03;&#x7528;" class="headerlink" title="exec&#x5168;&#x5C40;&#x8C03;&#x7528;"></a>exec&#x5168;&#x5C40;&#x8C03;&#x7528;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/\d(\w)\d/g</span>;</div><div class="line"><span class="keyword">var</span> ts = <span class="string">&apos;1a2b3c4d5e&apos;</span>;</div><div class="line"><span class="keyword">var</span> ret = reg.exec(ts);</div><div class="line"><span class="keyword">while</span>(ret = reg.exec(ts)){</div><div class="line"><span class="built_in">console</span>.log(reg.lastIndex + <span class="string">&apos;\t&apos;</span> + ret.index + <span class="string">&apos;\t&apos;</span> + ret.toString());</div><div class="line">}</div><div class="line"><span class="comment">//7 4   3c4,c</span></div></pre></td></tr></table></figure>
+<h2 id="&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;"><a href="#&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;" class="headerlink" title="&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;"></a>&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;</h2><ul>
+<li><p>String.prototype.search(reg)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&#x5C06;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x5C1D;&#x8BD5;&#x8F6C;&#x6362;&#x6210;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</span></div><div class="line"><span class="string">&apos;asddfasdfa&apos;</span>.search(<span class="string">&apos;s&apos;</span>) <span class="comment">//1</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>String.prototype.match(reg)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&#x5168;&#x5C40;&#x8C03;&#x7528;</span></div><div class="line"><span class="string">&apos;a21s1d1a1d1&apos;</span>.match(<span class="regexp">/\d(\w)\d/g</span>) <span class="comment">//[&quot;1s1&quot;, &quot;1a1&quot;]</span></div><div class="line"><span class="comment">//&#x975E;&#x5168;&#x5C40;&#x8C03;&#x7528;</span></div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/\d(\w)\d/</span>;</div><div class="line"><span class="keyword">var</span> ts = <span class="string">&apos;$1a2b3c4d5e&apos;</span>;</div><div class="line"><span class="keyword">var</span> ret = ts.match(reg);</div><div class="line"><span class="built_in">console</span>.log(ret);  <span class="comment">//[&quot;1a2&quot;, &quot;a&quot;, index: 0, input: &quot;1a2b3c4d5e&quot;]</span></div><div class="line"><span class="built_in">console</span>.log(ret.index + <span class="string">&apos;\t&apos;</span> + reg.lastIndex); <span class="comment">//1  0</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>String.prototype.split(reg)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&#x4F20;&#x5165;&#x5B57;&#x7B26;&#x4E32;</span></div><div class="line"><span class="string">&apos;1,a,2,b,3,c&apos;</span>.split(<span class="string">&apos;,&apos;</span>) <span class="comment">//[&quot;1&quot;, &quot;a&quot;, &quot;2&quot;, &quot;b&quot;, &quot;3&quot;, &quot;c&quot;]</span></div><div class="line"><span class="comment">//&#x4F20;&#x5165;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</span></div><div class="line"><span class="string">&apos;1a2b3c4d5e&apos;</span>.split(<span class="regexp">/\d/g</span>); <span class="comment">//[&quot;&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>String.prototype.replace(str,str)</p>
+</li>
+<li>String.prototype.replace(reg,str)</li>
+<li>String.prototype.replace(reg,function)<br>1.&#x5339;&#x914D;&#x5B57;&#x7B26;&#x4E32;<br>2.&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5206;&#x7EC4;&#x5185;&#x5BB9;&#xFF0C;&#x6CA1;&#x6709;&#x5206;&#x7EC4;&#x5219;&#x6CA1;&#x6709;&#x8BE5;&#x53C2;&#x6570;<br>3.&#x5339;&#x914D;&#x9879;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;index<br>4.&#x539F;&#x5B57;&#x7B26;&#x4E32;<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">&apos;1a2b3c4d5e&apos;</span>.replace(<span class="regexp">/\d/g</span>,<span class="function"><span class="keyword">function</span>(<span class="params">match,index,origin</span>)</span>{</div><div class="line">    <span class="built_in">console</span>.log(index);</div><div class="line">    <span class="keyword">return</span> <span class="built_in">parseInt</span>(match) + <span class="number">1</span>;</div><div class="line">    });  <span class="comment">//&quot;2a3b4c5d6e&quot;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">&apos;1a2b3c4d5e&apos;</span>.replace(<span class="regexp">/(\d)(\w)(\d)/g</span>,<span class="function"><span class="keyword">function</span>(<span class="params">match,group1,group2,group3,index,origin</span>)</span>{</div><div class="line">    <span class="built_in">console</span>.log(match);</div><div class="line">    <span class="keyword">return</span> group1 + group3;</div><div class="line">    });  <span class="comment">//&quot;12b34d5e&quot;</span></div></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/">JavaScript</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/03/JS-DOM事件/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">DOM事件</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/03/JS-浏览器宽高/">
+        <span class="next-text nav-default">浏览器宽高</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

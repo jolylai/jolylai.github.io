@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Dom"/>
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/03/JS-DOM/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Dom · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Dom
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#document"><span class="toc-text">document</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Element"><span class="toc-text">Element</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x751F;&#x547D;&#x662F;&#x5728;&#x4F4E;&#x8C37;&#x91CC;&#x5B55;&#x80B2;&#x51FA;&#x6765;&#x7684;&#x3002;&#x5B83;&#x968F;&#x7740;&#x53E4;&#x8001;&#x7684;&#x6050;&#x60E7;&#x3001;&#x53E4;&#x8001;&#x7684;&#x6B32;&#x5FF5;&#x3001;&#x53E4;&#x8001;&#x7684;&#x7EDD;&#x671B;&#x4E00;&#x76F4;&#x5439;&#x5230;&#x4E86;&#x5C71;&#x9876;&#x3002;&#x6211;&#x4EEC;&#x4E4B;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x4E00;&#x6B65;&#x6B65;&#x8D70;&#x4E0A;&#x5C71;&#xFF0C;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x53EF;&#x4EE5;&#x5750;&#x8F66;&#x4E0B;&#x5C71;&#x3002;<br><a id="more"></a><br>1.DOM<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> divNode = <span class="built_in">document</span>.getElementById(<span class="string">&quot;container&quot;</span>);</div><div class="line"><span class="comment">//&#x8282;&#x70B9;&#x7C7B;&#x578B;</span></div><div class="line">divNode.nodeType</div><div class="line"><span class="comment">//&#x83B7;&#x53D6;&#x5C5E;&#x6027;&#x540D;&#x79F0;</span></div><div class="line">divNode.nodeName</div><div class="line"><span class="comment">//&#x83B7;&#x53D6;&#x5C5E;&#x6027;&#x503C;</span></div><div class="line">divNode.nodeValue</div><div class="line"><span class="comment">//&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x5C5E;&#x6027;</span></div><div class="line">divNode.attributes[<span class="number">0</span>]</div><div class="line"><span class="comment">//&#x83B7;&#x53D6;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9;</span></div><div class="line">divNode.childNodes</div><div class="line"><span class="comment">//doctype&#x8282;&#x70B9;</span></div><div class="line"><span class="built_in">document</span>.doctype.nodeName</div><div class="line"><span class="built_in">document</span>.doctype.nodeValue</div></pre></td></tr></table></figure></p>
+<!-- more -->
+<p>2.domReady<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&#x9875;&#x9762;&#x5168;&#x90E8;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#x4E4B;&#x540E;</span></div><div class="line"><span class="built_in">window</span>.onload = fuction(){}</div><div class="line"><span class="comment">//jQuery</span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line"></div><div class="line">});</div></pre></td></tr></table></figure></p>
+<p>3.&#x5143;&#x7D20;&#x8282;&#x70B9;&#x7C7B;&#x578B;&#x7684;&#x5224;&#x65AD;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">isElement</div><div class="line">isHTML</div><div class="line">isXML</div><div class="line">contains</div></pre></td></tr></table></figure></p>
+<h3 id="document"><a href="#document" class="headerlink" title="document"></a>document</h3><p>&#x83B7;&#x53D6;&#x5B50;&#x8282;&#x70B9;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> parentNode = <span class="built_in">document</span>.getElementById(<span class="string">&apos;id&apos;</span>)</div><div class="line"><span class="comment">// &#x83B7;&#x53D6;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9;</span></div><div class="line"><span class="keyword">let</span> childNodeList = parentNode.childNodes</div><div class="line"><span class="comment">// &#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;</span></div><div class="line"><span class="keyword">let</span> firstChildNode = parentNode.firstChild</div><div class="line"><span class="comment">// &#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</span></div><div class="line"><span class="keyword">let</span> lastChildNode = parentNode.lastChild</div></pre></td></tr></table></figure></p>
+<p>&#x5B50;&#x8282;&#x70B9;&#x64CD;&#x4F5C;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> parentNode = <span class="built_in">document</span>.getElementById(<span class="string">&apos;id&apos;</span>)</div><div class="line"><span class="comment">// &#x5C06;&#x65B0;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x5230;&#x5B50;&#x8282;&#x70B9;&#x6700;&#x540E;&#x4E00;&#x4E2A;</span></div><div class="line">parentNode.appendChild(newNode)</div><div class="line"></div><div class="line"><span class="comment">// &#x5C06;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x5230;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;</span></div><div class="line"><span class="comment">// parmas: &#x8981;&#x63D2;&#x5165;&#x7684;&#x8282;&#x70B9; &amp; &#x53C2;&#x7167;&#x8282;&#x70B9;</span></div><div class="line"><span class="comment">// return: &#x63D2;&#x5165;&#x7684;&#x8282;&#x70B9;</span></div><div class="line">parentNode.insertBefore(newNode, positionNode)</div><div class="line"><span class="comment">// eg: &#x63D2;&#x5165;&#x81F3;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</span></div><div class="line">parentNode.insertBefore(newNode, parentNode.firstChild)</div><div class="line"><span class="comment">// eg: &#x63D2;&#x5165;&#x81F3;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</span></div><div class="line">parentNode.insertBefore(newNode, <span class="literal">null</span>)</div><div class="line"></div><div class="line"><span class="comment">// &#x66FF;&#x6362;&#x8282;&#x70B9;</span></div><div class="line"><span class="comment">// parmas: &#x8981;&#x63D2;&#x5165;&#x7684;&#x8282;&#x70B9; &amp; &#x8981;&#x66FF;&#x6362;&#x7684;&#x8282;&#x70B9;</span></div><div class="line"><span class="comment">// return: &#x8981;&#x88AB;&#x66FF;&#x6362;&#x7684;&#x8282;&#x70B9;</span></div><div class="line">parentNode.replaceChild(newNode,parentNode.firstNode)</div><div class="line"></div><div class="line"><span class="comment">// &#x5220;&#x9664;&#x5B50;&#x8282;&#x70B9;</span></div><div class="line"><span class="comment">// parmas: &#x8981;&#x5220;&#x9664;&#x7684;&#x8282;&#x70B9;</span></div><div class="line"><span class="comment">// return: &#x88AB;&#x5220;&#x9664;&#x7684;&#x8282;&#x70B9;</span></div><div class="line">parentNode.removeChild(parentNode.firstChild)</div></pre></td></tr></table></figure></p>
+<p>&#x6240;&#x6709;&#x7C7B;&#x578B;&#x90FD;&#x6709;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// parmas: boolean   true: &#x6DF1;&#x590D;&#x5236;-&gt; &#x590D;&#x5236;&#x8282;&#x70B9;&#x53CA;&#x5176;&#x5B50;&#x8282;&#x70B9;  false: &#x6D45;&#x590D;&#x5236; -&gt; &#x590D;&#x5236;&#x8282;&#x70B9;(default)</span></div><div class="line"><span class="comment">// ps: &#x5148;&#x79FB;&#x9664;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF08;IE&#x4F1A;&#x590D;&#x5236;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF09;</span></div><div class="line">parentNode.cloneNode(<span class="literal">true</span>)</div><div class="line"><span class="comment">// &#x5220;&#x9664;&#x7A7A;&#x6587;&#x672C;&#x6216;&#x8005;&#x5C06;&#x76F8;&#x90BB;&#x6587;&#x672C;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x6587;&#x672C;</span></div><div class="line">parentNode.mormalize()</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line">&#x6587;&#x6863;&#x4FE1;&#x606F;</div><div class="line">`<span class="string">``</span>js</div><div class="line"><span class="comment">// &#x6587;&#x6863;&#x6807;&#x9898;</span></div><div class="line"><span class="keyword">let</span> title = <span class="built_in">document</span>.title</div><div class="line"><span class="built_in">document</span>.title = <span class="string">&apos;newTitle&apos;</span></div><div class="line"><span class="comment">// &#x83B7;&#x53D6;&#x5B8C;&#x6574;URL</span></div><div class="line"><span class="keyword">let</span> url = <span class="built_in">document</span>.URL</div><div class="line"><span class="comment">// &#x83B7;&#x53D6;&#x57DF;&#x540D;</span></div><div class="line"><span class="keyword">let</span> domain = <span class="built_in">document</span>.domain</div><div class="line"><span class="comment">// &#x83B7;&#x53D6;&#x6765;&#x6E90;&#x9875;&#x9762;&#x7684;URL</span></div><div class="line"><span class="keyword">let</span> referrer =<span class="built_in">document</span>.referrer</div></pre></td></tr></table></figure></p>
+<p>&#x67E5;&#x627E;&#x5143;&#x7D20;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById()</div><div class="line"><span class="comment">// IE8&#x53CA;&#x8F83;&#x4F4E;&#x7684;&#x7248;&#x672C;&#x4E0D;&#x533A;&#x5206;ID&#x7684;&#x5927;&#x5C0F;&#x5199;</span></div><div class="line"><span class="comment">// name &#x7279;&#x6027;&#x4E0E;&#x7ED9;&#x5B9A;ID&#x5339;&#x914D;&#x7684;&#x8868;&#x5355;&#x5143;&#x7D20;(&lt;input/&gt;,&lt;textarea/&gt;,&lt;button/&gt;,&lt;select/&gt;&#x4F1A;&#x88AB;&#x6539;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;</span></div><div class="line">&lt;input type=<span class="string">&apos;text&apos;</span> name=<span class="string">&apos;myElement&apos;</span> /&gt;</div><div class="line">&lt;div id=&apos;myElement&apos; /&gt;</div><div class="line">docuement.getElementById(&apos;myElement&apos;)  //&lt;input type=&apos;text&apos; name=&apos;myElement&apos; /&gt;</div><div class="line"></div><div class="line">let images = document.getElementsByTagName(&apos;img&apos;)</div><div class="line">images.length</div><div class="line">// &#x7B2C;&#x4E00;&#x4E2A;&lt;img&gt;&#x7684;src&#x7279;&#x6027;</div><div class="line">images[0].src</div><div class="line">images.item(0).src</div><div class="line">// &#x901A;&#x8FC7;name&#x7279;&#x6027;&#x53D6;&#x5F97;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x9879; &lt;img name=&apos;myImage&apos; /&gt;</div><div class="line">images.namedItem(&apos;myImage&apos;)</div><div class="line"></div><div class="line">document.getElementsByName(&apos;name&apos;)</div></pre></td></tr></table></figure></p>
+<p>&#x7279;&#x6B8A;&#x96C6;&#x5408;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &#x6587;&#x6863;&#x4E2D;&#x6240;&#x6709;&#x5E26;&#x6709;name&#x7279;&#x6027;&#x7684;&lt;a&gt;&#x5143;&#x7D20;</span></div><div class="line"><span class="built_in">document</span>.anchors</div><div class="line"><span class="comment">// &#x6587;&#x6863;&#x4E2D;&#x6240;&#x6709;&#x5E26;href&#x7279;&#x6027;&#x7684;&lt;a&gt;&#x5143;&#x7D20;</span></div><div class="line"><span class="built_in">document</span>.links</div><div class="line"><span class="comment">// &#x6587;&#x6863;&#x4E2D;&#x6240;&#x6709;&#x7684;form&#x5143;&#x7D20;</span></div><div class="line"><span class="built_in">document</span>.forms</div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">&apos;form&apos;</span>)</div><div class="line"><span class="comment">// &#x6587;&#x6863;&#x4E2D;&#x6240;&#x6709;&#x7684;img&#x5143;&#x7D20;</span></div><div class="line"><span class="built_in">document</span>.images</div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">&apos;img&apos;</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> div = <span class="built_in">document</span>.getElementById(<span class="string">&apos;myDiv&apos;</span>)</div><div class="line">div.tagName === div.nodeName   <span class="comment">// true   -&gt;DIV</span></div><div class="line"><span class="comment">// HTML&#x4E2D;&#x7B7E;&#x540D;&#x5168;&#x90E8;&#x5927;&#x5199;&#x8868;&#x793A; XML(&#x6709;&#x65F6;&#x4E5F;&#x5305;&#x62EC;XHTML&#xFF09;&#x7B7E;&#x540D;&#x4E0E;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x4FDD;&#x5B58;&#x4E00;&#x81F4;</span></div><div class="line"><span class="keyword">if</span> (element.tagName.toLowerCase() === <span class="string">&apos;div&apos;</span>){  <span class="comment">//&#x9002;&#x7528;&#x4EFB;&#x4F55;&#x6587;&#x6863;</span></div><div class="line">  <span class="comment">// dosomething</span></div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x7279;&#x6027;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &#x7279;&#x6B8A;&#x7279;&#x6027; style onClick</span></div><div class="line"><span class="comment">// &#x53EA;&#x6709;&#x5728;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x7279;&#x5B9A;&#x65F6;&#x624D;&#x4F7F;&#x7528;</span></div><div class="line"><span class="comment">// &#x7279;&#x6027;&#x7684;&#x540D;&#x79F0;&#x4E0D;&#x5206;&#x5927;&#x5C0F;&#x5199;</span></div><div class="line">div.getAttribute(&#x2018;id&#x2019;) === div.getAttribute(<span class="string">&apos;ID&apos;</span>)</div><div class="line"></div><div class="line"><span class="comment">// parmas: &#x7279;&#x6027;&#x540D;&#x79F0; &amp; &#x503C;</span></div><div class="line">setAttribute(<span class="string">&apos;id&apos;</span>,<span class="string">&apos;mydiv&apos;</span>)</div><div class="line">div.id = <span class="string">&apos;mydiv&apos;</span></div><div class="line"></div><div class="line"><span class="comment">// parmas: &#x7279;&#x6027;&#x540D;&#x79F0;</span></div><div class="line"><span class="comment">// &#x5220;&#x9664;&#x7279;&#x6027;&#x4E0E;&#x7279;&#x6027;&#x503C;</span></div><div class="line">removeAttribute(<span class="string">&apos;id&apos;</span>)</div></pre></td></tr></table></figure></p>
+<p>attributes<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#x8865;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/">JavaScript</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/03/JS-Canvas/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">canvas</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/03/JS-DOM扩展/">
+        <span class="next-text nav-default">DOM扩展</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

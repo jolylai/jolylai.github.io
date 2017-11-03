@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Less"/>
+
+
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/03/CSS-Less/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Less · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Less
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#匹配模式"><span class="toc-text">匹配模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌套"><span class="toc-text">嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arguments"><span class="toc-text">@arguments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HtmlWebpackPlugin"><span class="toc-text">HtmlWebpackPlugin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cleaning-up-the-dist-folder"><span class="toc-text">Cleaning up the /dist folder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-source-maps"><span class="toc-text">Using source maps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-webpack-dev-server"><span class="toc-text">Using webpack-dev-server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hot-Module-Replacement（HMR）"><span class="toc-text">Hot Module Replacement（HMR）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译react"><span class="toc-text">编译react</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>less&#x5199;&#x6CD5;<br><a id="more"></a></p>
+<h2 id="&#x5339;&#x914D;&#x6A21;&#x5F0F;"><a href="#&#x5339;&#x914D;&#x6A21;&#x5F0F;" class="headerlink" title="&#x5339;&#x914D;&#x6A21;&#x5F0F;"></a>&#x5339;&#x914D;&#x6A21;&#x5F0F;</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.triggle</span>(<span class="variable">@_</span>,<span class="variable">@width</span>: <span class="number">30px</span>,<span class="variable">@color</span>: <span class="number">#ccc</span>){<span class="comment">//width&#x548C;color&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x5199;</span></div><div class="line">    <span class="comment">//&#x516C;&#x5171;&#x6837;&#x5F0F;diamante</span></div><div class="line">}</div><div class="line"><span class="selector-class">.triggle</span>(top,<span class="variable">@width</span>: <span class="number">50px</span>,<span class="variable">@color</span>: <span class="number">#ccc</span>){</div><div class="line">    <span class="comment">//&#x4F20;&#x5165;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;top&#x624D;&#x4F1A;&#x5339;&#x914D;&#x5230;</span></div><div class="line">}</div><div class="line"><span class="selector-class">.triggle</span>(bottom,<span class="variable">@width</span>,<span class="variable">@color</span>){</div><div class="line">    <span class="comment">//&#x4F20;&#x5165;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;bottom&#x624D;&#x4F1A;&#x5339;&#x914D;&#x5230;</span></div><div class="line">}</div><div class="line"><span class="selector-class">.sanjiao</span>{</div><div class="line">    <span class="selector-class">.triggle</span>(top,<span class="number">20px</span>,red)</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x5D4C;&#x5957;"><a href="#&#x5D4C;&#x5957;" class="headerlink" title="&#x5D4C;&#x5957;"></a>&#x5D4C;&#x5957;</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span>{</div><div class="line">    <span class="attribute">weith</span>: <span class="number">600</span>xp;</div><div class="line"></div><div class="line">    <span class="selector-tag">li</span>{</div><div class="line">        <span class="attribute">list-style</span>: none;</div><div class="line">        <span class="selector-tag">a</span>{<span class="comment">//&#x5339;&#x914D;&#x6DF1;&#xFF0C;&#x5F71;&#x54CD;&#x6027;&#x80FD;</span></div><div class="line"></div><div class="line">        }</div><div class="line">    }</div><div class="line">    <span class="selector-tag">a</span>{<span class="comment">//&#x4E0D;&#x653E;&#x5230;li&#x91CC;&#x9762;</span></div><div class="line">        <span class="comment">// &amp; &#x4EE3;&#x8868;&#x4E0A;&#x4E00;&#x5C42;&#x9009;&#x62E9;&#x5668;</span></div><div class="line">        <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span>{</div><div class="line">            <span class="attribute">coloor</span>:red;</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="arguments"><a href="#arguments" class="headerlink" title="@arguments"></a>@arguments</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.triggle</span>(<span class="variable">@width</span>: <span class="number">50px</span>,<span class="variable">@color</span>: <span class="number">#ccc</span>){</div><div class="line">    <span class="comment">//&#x4F20;&#x5165;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;top&#x624D;&#x4F1A;&#x5339;&#x914D;&#x5230;</span></div><div class="line">    <span class="attribute">border</span>: <span class="variable">@arguments</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="HtmlWebpackPlugin"><a href="#HtmlWebpackPlugin" class="headerlink" title="HtmlWebpackPlugin"></a><a href="https://github.com/jantimon/html-webpack-plugin" target="_blank" rel="external">HtmlWebpackPlugin</a></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev html-webpack-plugin</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&apos;html-webpack-plugin&apos;</span>);</div><div class="line">plugins: [</div><div class="line">  <span class="keyword">new</span> HtmlWebpackPlugin({</div><div class="line">    <span class="attr">title</span>: <span class="string">&apos;Output Management&apos;</span>, <span class="comment">//&#x9875;&#x9762;title</span></div><div class="line">    filename: <span class="string">&apos;admin.html&apos;</span>,     <span class="comment">//html&#x7684;&#x6587;&#x4EF6;&#x540D;</span></div><div class="line">    filename: <span class="string">&apos;html/admin.html&apos;</span>,<span class="comment">//&#x6253;&#x5305;&#x81F3;html&#x6587;&#x4EF6;&#x5939;&#x4E0B;</span></div><div class="line">    inject: <span class="literal">true</span> | <span class="string">&apos;head&apos;</span> | <span class="string">&apos;body&apos;</span> | <span class="literal">false</span> <span class="comment">//&lt;scrip&gt;&lt;/scrip&gt;&#x6807;&#x7B7E;&#x63D2;&#x5165;&#x7684;&#x4F4D;&#x7F6E;</span></div><div class="line">  })</div><div class="line">],</div></pre></td></tr></table></figure>
+<h2 id="Cleaning-up-the-dist-folder"><a href="#Cleaning-up-the-dist-folder" class="headerlink" title="Cleaning up the /dist folder"></a>Cleaning up the /dist folder</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install clean-webpack-plugin --save-dev</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> CleanWbpackPlugin = <span class="built_in">require</span>(<span class="string">&apos;clean-webpack-plugin&apos;</span>)</div><div class="line"></div><div class="line">plugins: [</div><div class="line">  <span class="keyword">new</span> CleanWbpackPlugin([<span class="string">&apos;dist&apos;</span>]), <span class="comment">//&#x6253;&#x5305;&#x65F6;&#x6E05;&#x7A7A;dist&#x76EE;&#x5F55;</span></div><div class="line">]</div></pre></td></tr></table></figure>
+<h2 id="Using-source-maps"><a href="#Using-source-maps" class="headerlink" title="Using source maps"></a>Using source maps</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = {</div><div class="line">    <span class="attr">devtool</span>: <span class="string">&apos;inline-source-map&apos;</span>,</div><div class="line">    <span class="comment">//&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x6B63;&#x786E;&#x6307;&#x51FA;&#x54EA;&#x884C;&#x51FA;&#x9519;</span></div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="Using-webpack-dev-server"><a href="#Using-webpack-dev-server" class="headerlink" title="Using webpack-dev-server"></a>Using webpack-dev-server</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev webpack-dev-server</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//  package.js</span></div><div class="line"><span class="string">&quot;start&quot;</span>: <span class="string">&quot;webpack-dev-server --open&quot;</span></div><div class="line"><span class="comment">// webpack.config.js</span></div><div class="line">devServer: {</div><div class="line">    <span class="attr">contentBase</span>: <span class="string">&apos;./dist&apos;</span></div><div class="line">},</div></pre></td></tr></table></figure>
+<h2 id="Hot-Module-Replacement&#xFF08;HMR&#xFF09;"><a href="#Hot-Module-Replacement&#xFF08;HMR&#xFF09;" class="headerlink" title="Hot Module Replacement&#xFF08;HMR&#xFF09;"></a>Hot Module Replacement&#xFF08;HMR&#xFF09;</h2><p>webpack.config.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">&apos;webpack&apos;</span>)</div><div class="line"><span class="built_in">module</span>.exports = {</div><div class="line">    <span class="attr">devServer</span>:{</div><div class="line">        <span class="attr">hot</span>: <span class="literal">true</span></div><div class="line">    },</div><div class="line">    <span class="attr">plugins</span>: [</div><div class="line">        <span class="keyword">new</span> webpack.HotModuleReplacementPlugin()</div><div class="line">    ]</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<p>CLI<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack-dev-server --hotOnly</div></pre></td></tr></table></figure></p>
+<h2 id="&#x7F16;&#x8BD1;react"><a href="#&#x7F16;&#x8BD1;react" class="headerlink" title="&#x7F16;&#x8BD1;react"></a>&#x7F16;&#x8BD1;react</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    Module build failed: <span class="built_in">SyntaxError</span>: react/hello.jsx: Unexpected token (<span class="number">5</span>:<span class="number">11</span>)</div><div class="line">  <span class="number">3</span> | <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>{</div><div class="line">  <span class="number">4</span> |   render() {</div><div class="line">&gt; <span class="number">5</span> |     <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</div><div class="line">    |            ^</div><div class="line">  <span class="number">6</span> |   }</div><div class="line">  <span class="number">7</span> | }</div></pre></td></tr></table></figure>
+<p>1&#x521B;&#x5EFA;.babelrc&#x6587;&#x4EF6;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install babel-preset-react babel-preset-es2015 babel-preset-stage<span class="number">-0</span> --save-dev</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line"><span class="string">&quot;presets&quot;</span>: [</div><div class="line">  <span class="string">&quot;es2015&quot;</span></div><div class="line">],</div><div class="line"><span class="string">&quot;plugins&quot;</span>: [</div><div class="line">    [<span class="string">&quot;transform-react-jsx&quot;</span>]</div><div class="line">  ]</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>2 &#x5B89;&#x88C5;react-dom(react15)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install react-dom --save-dev</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">&apos;react-dom&apos;</span>;</div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Hello</span> /&gt;</span>, document.getElementById(&apos;app&apos;));</span></div><div class="line">React.render(<span class="tag">&lt;<span class="name">Hello</span> /&gt;</span>, document.getElementById(&apos;app&apos;));//react15&#x540E;&#x4E0D;&#x80FD;&#x8FD9;&#x6837;&#x5199;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/">CSS</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/03/CSS-Flex/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Flex布局</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/03/CSS-背景和精灵图/">
+        <span class="next-text nav-default">CSS背景和精灵图</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

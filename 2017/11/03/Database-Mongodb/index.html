@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="MongoDB"/>
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/03/Database-Mongodb/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> MongoDB · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          MongoDB
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MongoDB安装"><span class="toc-text">MongoDB安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建数据库"><span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node-js链接MongoDB"><span class="toc-text">node.js链接MongoDB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引"><span class="toc-text">索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoose的使用"><span class="toc-text">mongoose的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块的使用"><span class="toc-text">模块的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#密码加密"><span class="toc-text">密码加密</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x8BB0;&#x5F55;&#x7528;Node.js&#x4F7F;&#x7528;Mongodb&#x4E2D;&#x8E29;&#x8FC7;&#x7684;&#x5751;&#x3002;<br><a id="more"></a></p>
+<h2 id="MongoDB&#x5B89;&#x88C5;"><a href="#MongoDB&#x5B89;&#x88C5;" class="headerlink" title="MongoDB&#x5B89;&#x88C5;"></a>MongoDB&#x5B89;&#x88C5;</h2><ul>
+<li>&#x4E0B;&#x8F7D;<a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a></li>
+<li>&#x5728;D&#x76D8;&#x4E2D;&#x521B;&#x5EFA; mongodb &#x6587;&#x4EF6;&#x5939;&#x7136;&#x540E;&#x628A;&#x4E0B;&#x8F7D;&#x7684;&#x5305;&#x89E3;&#x538B;&#x540E;&#x628A;&#x5176;&#x4E2D;&#x7684; bin &#x6587;&#x4EF6;&#x5939;&#x62F7;&#x8D1D;&#x5230;&#x521B;&#x5EFA;&#x7684; mongodb &#x6587;&#x4EF6;&#x5939;&#x4E2D;&#xFF0C;</li>
+<li>&#x7136;&#x540E;&#x5728;mongodb&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; data &#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x518D;&#x5728; data &#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x521B;&#x5EFA; db &#x6587;&#x4EF6;&#x5939;</li>
+<li>&#x6253;&#x5F00;CMD&#x547D;&#x4EE4;&#x884C;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">d:</div><div class="line">cd mongodb\bin</div><div class="line">mongod -dbpath D:\mongodb\data\db</div><div class="line">//&#x5728;&#x6253;&#x5F00;&#x4E00;&#x4E2A;CMD&#x547D;&#x4EE4;&#x884C;</div><div class="line">d:</div><div class="line">cd mongodb\bin</div><div class="line">mongo</div><div class="line">//&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x4E86;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;"><a href="#&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;"></a>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">use imooc  \&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EB;chihuo&#x7684;&#x6570;&#x636E;&#x5E93;</div><div class="line">db.createCollection(&#x201C;movies&#x201D;) \&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x96C6;&#x5408;</div><div class="line">db.movies.insert({&#x201C;name&#x201D;:&#x201C;admin&#x201D;,&#x201C;password&#x201D;:&#x201C;111&#x201D;}) \&#x7ED9;movies&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x3002;</div><div class="line">db.movies.find() \&#x67E5;&#x8BE2;&#x4F60;&#x6DFB;&#x52A0;&#x7684;&#x6587;&#x6863;</div></pre></td></tr></table></figure>
+<h2 id="node-js&#x94FE;&#x63A5;MongoDB"><a href="#node-js&#x94FE;&#x63A5;MongoDB" class="headerlink" title="node.js&#x94FE;&#x63A5;MongoDB"></a>node.js&#x94FE;&#x63A5;MongoDB</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">&apos;mongoose&apos;</span>)</div><div class="line">mongoose.connect(<span class="string">&apos;mongodb://localhost:27017/imooc&apos;</span>)</div></pre></td></tr></table></figure>
+<h2 id="&#x57FA;&#x672C;&#x64CD;&#x4F5C;"><a href="#&#x57FA;&#x672C;&#x64CD;&#x4F5C;" class="headerlink" title="&#x57FA;&#x672C;&#x64CD;&#x4F5C;"></a>&#x57FA;&#x672C;&#x64CD;&#x4F5C;</h2><ul>
+<li><p>&#x57FA;&#x672C;&#x547D;&#x4EE4;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//&#x67E5;&#x770B;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;</div><div class="line">show dbs</div><div class="line">//&#x67E5;&#x770B;&#x6240;&#x6709;&#x96C6;&#x5408;</div><div class="line">show tables</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x63D2;&#x5165;&#x6570;&#x636E;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//&#x9009;&#x62E9;imooc&#x6570;&#x636E;&#x5E93;</div><div class="line">use imooc</div><div class="line">//&#x5411;imooc&#x6570;&#x636E;&#x5E93;&#x63D2;&#x5165;&#x6570;&#x636E;</div><div class="line">db.movie.insert({x:1,y:1,z:1})</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x67E5;&#x627E;&#x6570;&#x636E;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bd.movie.find()</div><div class="line">bd.movie.find({x:1})</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x66F4;&#x65B0;&#x6570;&#x636E;,update&#x53EA;&#x4F1A;&#x66F4;&#x65B0;&#x4E00;&#x6761;&#x6570;&#x636E;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//&#x5C06;{x:1,y:1,z:1},&#x66F4;&#x65B0;&#x4E3A;{y:2}</div><div class="line">db.movie.update({x:1},{y:2})</div><div class="line">//&#x66F4;&#x6539;{x:1,y:1,z:1}&#x4E2D;y&#x7684;&#x6570;&#x636E;</div><div class="line">db.movie.update({x:1},{$set:{y:2}})</div><div class="line">//&#x66F4;&#x65B0;&#x4E00;&#x6761;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6570;&#x636E;</div><div class="line">db.movie.update({x:2},{y:2},true)</div><div class="line">//&#x66F4;&#x65B0;&#x591A;&#x6761;&#x6570;&#x636E;</div><div class="line">db.movie.update({x:1},{$set:{y:2}},false,true)</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x6570;&#x636E;&#x7684;&#x5220;&#x9664;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//&#x5220;&#x9664;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;</div><div class="line">db.movie.remove({x:1})</div><div class="line">//&#x5220;&#x9664;&#x8868;</div><div class="line">db.movie.drop()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x7D22;&#x5F15;"><a href="#&#x7D22;&#x5F15;" class="headerlink" title="&#x7D22;&#x5F15;"></a>&#x7D22;&#x5F15;</h2><ul>
+<li><p>_id&#x7D22;&#x5F15;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">db.movie.getIndexes()</div><div class="line">//&#x5220;&#x9664;&#x7D22;&#x5F15;</div><div class="line">db.movie.dropIndexes()</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x5355;&#x952E;&#x7D22;&#x5F15;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.movie.ensureIndex({x:1})</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x591A;&#x952E;&#x7D22;&#x5F15;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.movie.insert({x:[1,2,3,4,5]})</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x590D;&#x5408;&#x7D22;&#x5F15;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.movie.ensureIndex({x:1,y:2})</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x8FC7;&#x671F;&#x7D22;&#x5F15;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.movie.ensureIndex({x:1},{expireAfterSeconds:10})</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x5FC5;&#x987B;&#x662F;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x7C7B;&#x578B;(ISODate,ISODate&#x6570;&#x7EC4;&#xFF0C;&#x4E0D;&#x80FD;&#x662F;&#x65F6;&#x95F4;&#x6233;&#x5426;&#x5219;&#x4E0D;&#x80FD;&#x88AB;&#x81EA;&#x52A8;&#x5220;&#x9664;)</li>
+<li>&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E86;ISODate&#x6570;&#x7EC4;&#xFF0C;&#x5219;&#x6309;&#x6700;&#x5C0F;&#x7684;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x5220;&#x9664; </li>
+<li>&#x8FC7;&#x671F;&#x7D22;&#x5F15;&#x4E0D;&#x80FD;&#x662F;&#x590D;&#x5408;&#x7D22;&#x5F15;</li>
+<li>&#x5220;&#x9664;&#x65F6;&#x95F4;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;(&#x540E;&#x53F0;&#x6BCF;60s&#x8DD1;&#x4E00;&#x6B21;&#xFF0C;&#x4E14;&#x5220;&#x9664;&#x9700;&#x8981;&#x65F6;&#x95F4;)</li>
+</ul>
+</li>
+<li><p>&#x5168;&#x6587;&#x7D22;&#x5F15;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">db.article.ensureIndex({key:&quot;text&quot;})</div><div class="line">db.article.ensureIndex({key_1:&quot;text&quot;,key_2:&quot;text&quot;})</div><div class="line">db.article.ensureIndex({&quot;$**&quot;:&quot;text&quot;})</div><div class="line"></div><div class="line">db.article.find({$text:{$search:&quot;coffee&quot;}})</div><div class="line">//&#x6216;&#x67E5;&#x8BE2;</div><div class="line">db.article.find({$text:{$search:&quot;aa bb cc&quot;}})</div><div class="line">//&#x4E0D;&#x5305;&#x542B;cc</div><div class="line">db.article.find({$text:{$search:&quot;aa bb -cc&quot;}})</div><div class="line">//&#x5305;&#x542B;aa bb cc</div><div class="line">db.article.find({$text:{$search:&quot;\&quot;aa\&quot; \&quot;bb&quot;\ \&quot;cc\&quot;}})</div><div class="line">//&#x76F8;&#x4F3C;&#x5EA6;&#x5EA6;&#x67E5;&#x8BE2;</div><div class="line">db.article.find({$text:{$search:&quot;aa bb&quot;}},{score:{$meta:&quot;textScore&quot;}})</div><div class="line">db.article.find({$text:{$search:&quot;aa bb&quot;}},{score:{$meta:&quot;textScore&quot;}}).sort({score:{$meta:&quot;textScore&quot;}})</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x6BCF;&#x6B21;&#x67E5;&#x8BE2;&#x53EA;&#x80FD;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;$text&#x67E5;&#x8BE2;</li>
+<li>$text&#x67E5;&#x8BE2;&#x4E0D;&#x80FD;&#x51FA;&#x73B0;&#x5728;$nor&#x67E5;&#x8BE2;&#x4E2D;</li>
+<li>&#x67E5;&#x8BE2;&#x4E2D;&#x5982;&#x679C;&#x5305;&#x542B;&#x4E86;$text,hint&#x4E0D;&#x518D;&#x8D77;&#x4F5C;&#x7528;</li>
+<li>&#x8FD8;&#x4E0D;&#x652F;&#x6301;&#x4E2D;&#x6587;</li>
+</ul>
+</li>
+<li><p>&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;</p>
+<ul>
+<li>2D&#x7D22;&#x5F15;:&#x5E73;&#x9762;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">db.collection.ensureIndex({<span class="string">&quot;w&quot;</span>:<span class="string">&quot;2d&quot;</span>})</div><div class="line"><span class="comment">//&#x63D2;&#x5165;&#xFF1A;&#x7ECF;&#x5EA6;&#xFF1A;[-180,180] &#x7EAC;&#x5EA6;&#xFF1A;[-90,90]</span></div><div class="line">db.location.insert({[<span class="number">2</span>,<span class="number">3</span>]})</div><div class="line"><span class="comment">//&#x8FD4;&#x56DE;100&#x4E2A;&#x8DDD;&#x79BB;&#x6700;&#x8FD1;&#x7684;&#x70B9;</span></div><div class="line">db.location.find({<span class="attr">w</span>:{<span class="attr">near</span>:[<span class="number">1</span>,<span class="number">1</span>]}})</div><div class="line">db.location.find({<span class="attr">w</span>:{<span class="attr">near</span>:[<span class="number">1</span>,<span class="number">1</span>]},<span class="attr">$maxDistance</span>:<span class="number">10</span>})</div><div class="line"><span class="comment">//&#x77E9;&#x5F62;</span></div><div class="line">db.location.find({<span class="attr">w</span>:{<span class="attr">geoWithin</span>:{<span class="attr">$box</span>:[[<span class="number">1</span>,<span class="number">1</span>],[<span class="number">2</span>,<span class="number">2</span>]]}}})</div><div class="line"><span class="comment">//&#x5706;</span></div><div class="line">db.location.find({<span class="attr">w</span>:{<span class="attr">geoWithin</span>:{<span class="attr">$center</span>:[[<span class="number">0</span>,<span class="number">0</span>],<span class="number">5</span>]}}})</div><div class="line"><span class="comment">//&#x591A;&#x8FB9;&#x5F62;</span></div><div class="line">db.location.find({<span class="attr">w</span>:{<span class="attr">geoWithin</span>:{<span class="attr">$polygon</span>:[[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">1</span>],[<span class="number">2</span>,<span class="number">1</span>],[<span class="number">3</span>,<span class="number">1</span>]]}}})</div><div class="line"><span class="comment">//geoNear</span></div><div class="line">db.runCommand(</div><div class="line">    {</div><div class="line">        <span class="attr">geoNear</span>:<span class="xml"><span class="tag">&lt;<span class="name">collecton</span>&gt;</span>,</span></div><div class="line">        near:[x,y],</div><div class="line">        minDistance:(&#x5BF9;2d&#x7D22;&#x5F15;&#x65E0;&#x6548;)</div><div class="line">        maxDistance:</div><div class="line">        num:&#x9650;&#x5236;&#x8FD4;&#x56DE;&#x6570;&#x76EE;</div><div class="line">    })</div><div class="line">db.runCommand({geoNear:&quot;location&quot;,near:[1,2],maxDistance:10,num:1})</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>&#x7D22;&#x5F15;&#x5C5E;&#x6027;</p>
+<ul>
+<li>name:db.collection.ensureIndex({},{name:&#x201D; &#x201C;})</li>
+<li>unique:db.collection.ensureIndex({},{unique:true/false})</li>
+<li>sparse:db.collection.ensureIndex({},{sparse:true/false})</li>
+<li>expireAfterSecond</li>
+</ul>
+</li>
+</ul>
+<h2 id="mongoose&#x7684;&#x4F7F;&#x7528;"><a href="#mongoose&#x7684;&#x4F7F;&#x7528;" class="headerlink" title="mongoose&#x7684;&#x4F7F;&#x7528;"></a>mongoose&#x7684;&#x4F7F;&#x7528;</h2><ul>
+<li><p>schema</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">&apos;mongoose&apos;</span>)</div><div class="line"><span class="keyword">var</span> MovieSchema = <span class="keyword">new</span> mongoose.Schema({</div><div class="line">    <span class="attr">doctor</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">title</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">language</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">country</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">summary</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">flash</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">poster</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">year</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">meta</span>:{</div><div class="line">        <span class="attr">creatAt</span>:{</div><div class="line">            <span class="attr">tyep</span>:<span class="built_in">Date</span>,</div><div class="line">            <span class="attr">default</span>:<span class="keyword">new</span> <span class="built_in">Date</span>.now()</div><div class="line">        },</div><div class="line">        <span class="attr">updateAt</span>:{</div><div class="line">            <span class="attr">type</span>:<span class="built_in">Date</span>,</div><div class="line">            <span class="attr">default</span>:<span class="keyword">new</span> <span class="built_in">Date</span>.now()</div><div class="line">        }</div><div class="line">    }</div><div class="line">})</div><div class="line"></div><div class="line">MovieSchema.pre(<span class="string">&apos;save&apos;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">next</span>)</span>{</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.isNew){</div><div class="line">        <span class="keyword">this</span>.meta.createAt = <span class="keyword">this</span>.mata.updateAt = <span class="built_in">Date</span>.now())</div><div class="line">    }<span class="keyword">else</span>{</div><div class="line">        <span class="keyword">this</span>.meta.createAt =<span class="built_in">Date</span>.now()</div><div class="line">    }</div><div class="line">    next()</div><div class="line">})</div><div class="line"></div><div class="line">MovieSchema.statics = {</div><div class="line">    <span class="attr">fetch</span>: <span class="function"><span class="keyword">function</span>(<span class="params">cb</span>)</span>{</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">            .find({})</div><div class="line">            .sort(<span class="string">&apos;meta.updateAt&apos;</span>)</div><div class="line">            .exec(cb)</div><div class="line">    },</div><div class="line">    <span class="attr">findById</span>: <span class="function"><span class="keyword">function</span>(<span class="params">id,cb</span>)</span>{</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">            .findOne({<span class="attr">_id</span>: id})</div><div class="line">            .exec(cb)</div><div class="line">    }</div><div class="line">}</div><div class="line"><span class="built_in">module</span>.exports = MovieSchma</div></pre></td></tr></table></figure>
+</li>
+<li><p>model</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">&apos;mongoose&apos;</span>)</div><div class="line"><span class="keyword">var</span> MovieSchema = <span class="built_in">require</span>(<span class="string">&apos;../schemas/movies&apos;</span>)</div><div class="line"><span class="keyword">var</span> Movie = mongoose.model(<span class="string">&apos;Movie&apos;</span>,MovieSchema)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = Movie</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x4F7F;&#x7528;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Movie = <span class="built_in">require</span>(<span class="string">&apos;./models/movie&apos;</span>)</div><div class="line">Movie.findById(id,<span class="function"><span class="keyword">function</span> (<span class="params">err,movie</span>) </span>{</div><div class="line">    res.render(<span class="string">&apos;admin&apos;</span>,{</div><div class="line">        <span class="attr">title</span>: <span class="string">&apos;&#x7535;&#x5F71;&#x540E;&#x53F0;&#x66F4;&#x65B0;&#x9875;&apos;</span>,</div><div class="line">        <span class="attr">movie</span>:movie</div><div class="line">    })</div><div class="line">})</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x6A21;&#x5757;&#x7684;&#x4F7F;&#x7528;"><a href="#&#x6A21;&#x5757;&#x7684;&#x4F7F;&#x7528;" class="headerlink" title="&#x6A21;&#x5757;&#x7684;&#x4F7F;&#x7528;"></a>&#x6A21;&#x5757;&#x7684;&#x4F7F;&#x7528;</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var _ = require(&apos;underscore&apos;)</div><div class="line">// underscore&#x7528;&#x65B0;&#x5BF9;&#x8C61;&#x66FF;&#x6362;&#x65E7;&#x5BF9;&#x8C61;</div><div class="line">_movie = _.extend(movie,movieObj)</div><div class="line">var bodyParser = require(&apos;body-parser&apos;)</div><div class="line">// &#x683C;&#x5F0F;&#x5316;&#x65F6;&#x95F4;</div><div class="line">app.locals.moment =require(&apos;moment&apos;)</div><div class="line">//jade&#x4E2D;&#x4F7F;&#x7528;</div><div class="line">#{moment(item.meta.createdAt).format(&apos;YYYY/MM/DD&apos;)}</div><div class="line">// &#x63D0;&#x4EA4;&#x8868;&#x5355; &#x6570;&#x636E;&#x683C;&#x5F0F;&#x5316;</div><div class="line">app.use(bodyParser.urlencoded({ extended: true }))</div><div class="line">// &#x9759;&#x6001;&#x8D44;&#x6E90;&#x76EE;&#x5F55;  /&#x8868;&#x793A;public&#x76EE;&#x5F55;&#x4E0B;</div><div class="line">app.use(express.static(path.join(__dirname,&apos;public&apos;)))</div></pre></td></tr></table></figure>
+<h2 id="&#x5BC6;&#x7801;&#x52A0;&#x5BC6;"><a href="#&#x5BC6;&#x7801;&#x52A0;&#x5BC6;" class="headerlink" title="&#x5BC6;&#x7801;&#x52A0;&#x5BC6;"></a>&#x5BC6;&#x7801;&#x52A0;&#x5BC6;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bcrypt = <span class="built_in">require</span>(<span class="string">&apos;bcryptjs&apos;</span>)</div><div class="line">bcrypt.genSalt(SALT_WORK_FACTOR, <span class="function"><span class="keyword">function</span>(<span class="params">err, salt</span>) </span>{</div><div class="line">  <span class="keyword">if</span> (err) <span class="keyword">return</span> next(err)</div><div class="line"></div><div class="line">  bcrypt.hash(user.password, salt, <span class="function"><span class="keyword">function</span>(<span class="params">err, hash</span>) </span>{</div><div class="line">    <span class="keyword">if</span> (err) <span class="keyword">return</span> next(err)</div><div class="line"></div><div class="line">    user.password = hash</div><div class="line">    next()</div><div class="line">  })</div><div class="line">})</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>
