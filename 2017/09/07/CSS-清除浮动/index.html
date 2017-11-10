@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="清除浮动"/>
+
+
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/09/07/CSS-清除浮动/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> 清除浮动 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          清除浮动
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 7, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#笔记"><span class="toc-text">笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮动元素高度问题"><span class="toc-text">浮动元素高度问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清除浮动方式一"><span class="toc-text">清除浮动方式一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清除浮动方式二"><span class="toc-text">清除浮动方式二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清除浮动方式三"><span class="toc-text">清除浮动方式三</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#伪元素选择器"><span class="toc-text">伪元素选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清除浮动方式四"><span class="toc-text">清除浮动方式四</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清除浮动方式五"><span class="toc-text">清除浮动方式五</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x6E05;&#x9664;&#x8BBE;&#x7F6E;&#x6D6E;&#x52A8;&#x540E;&#x4EA7;&#x751F;&#x7684;&#x6392;&#x7248;&#x95EE;&#x9898;<br><a id="more"></a></p>
+<h2 id="&#x7B14;&#x8BB0;"><a href="#&#x7B14;&#x8BB0;" class="headerlink" title="&#x7B14;&#x8BB0;"></a>&#x7B14;&#x8BB0;</h2><p>1.&#x4F01;&#x4E1A;&#x5F00;&#x53D1;&#x4E2D;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x6D41;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x6D6E;&#x52A8;&#x6D41;?</p>
+<ul>
+<li>&#x5782;&#x76F4;&#x65B9;&#x5411;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x6D41;, &#x6C34;&#x5E73;&#x65B9;&#x5411;&#x4F7F;&#x7528;&#x6D6E;&#x52A8;&#x6D41;</li>
+</ul>
+<p>2.&#x62FF;&#x5230;&#x4E00;&#x4E2A;&#x5F88;&#x590D;&#x6742;&#x7684;&#x754C;&#x9762;&#x5982;&#x4F55;&#x5165;&#x624B;?</p>
+<ul>
+<li>&#x4ECE;&#x4E0A;&#x81F3;&#x4E0B;&#x5E03;&#x5C40;</li>
+<li>&#x4ECE;&#x5916;&#x5411;&#x5185;&#x5E03;&#x5C40;</li>
+<li>&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x53EF;&#x4EE5;&#x5148;&#x5212;&#x5206;&#x4E3A;&#x4E00;&#x5DE6;&#x4E00;&#x53F3;&#x518D;&#x5BF9;&#x5DE6;&#x8FB9;&#x6216;&#x8005;&#x53F3;&#x8FB9;&#x8FDB;&#x884C;&#x8FDB;&#x4E00;&#x6B65;&#x5E03;&#x5C40;</li>
+</ul>
+<h2 id="&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x9AD8;&#x5EA6;&#x95EE;&#x9898;"><a href="#&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x9AD8;&#x5EA6;&#x95EE;&#x9898;" class="headerlink" title="&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x9AD8;&#x5EA6;&#x95EE;&#x9898;"></a>&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x9AD8;&#x5EA6;&#x95EE;&#x9898;</h2><ul>
+<li>&#x5728;&#x6807;&#x51C6;&#x6D41;&#x4E2D;&#x5185;&#x5BB9;&#x7684;&#x9AD8;&#x5EA6;&#x53EF;&#x4EE5;&#x6491;&#x8D77;&#x7236;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;</li>
+<li>&#x5728;&#x6D6E;&#x52A8;&#x6D41;&#x4E2D;&#x6D6E;&#x52A8;&#x7684;&#x5143;&#x7D20;&#x662F;&#x4E0D;&#x53EF;&#x4EE5;&#x6491;&#x8D77;&#x7236;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#x7684;</li>
+</ul>
+<h2 id="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E00;"><a href="#&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E00;" class="headerlink" title="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E00;"></a>&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E00;</h2><p>1.&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x7684;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;</p>
+<ul>
+<li>&#x7ED9;&#x524D;&#x9762;&#x4E00;&#x4E2A;&#x7236;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x9AD8;&#x5EA6;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>&#x5728;&#x4F01;&#x4E1A;&#x5F00;&#x53D1;&#x4E2D;, &#x6211;&#x4EEC;&#x80FD;&#x4E0D;&#x5199;&#x9AD8;&#x5EA6;&#x5C31;&#x4E0D;&#x5199;&#x9AD8;&#x5EA6;, &#x6240;&#x4EE5;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x7528;&#x5F97;&#x5F88;&#x5C11;</li>
+</ul>
+<h2 id="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E8C;"><a href="#&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E8C;" class="headerlink" title="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E8C;"></a>&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E8C;</h2><p>1.&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x7684;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;</p>
+<ul>
+<li>&#x7ED9;&#x540E;&#x9762;&#x7684;&#x76D2;&#x5B50;&#x6DFB;&#x52A0;clear&#x5C5E;&#x6027;</li>
+</ul>
+<p>2.clear&#x5C5E;&#x6027;&#x53D6;&#x503C;</p>
+<ul>
+<li>none: &#x9ED8;&#x8BA4;&#x53D6;&#x503C;, &#x6309;&#x7167;&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x7684;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#x6765;&#x6392;&#x5E8F;(&#x5DE6;&#x6D6E;&#x52A8;&#x627E;&#x5DE6;&#x6D6E;&#x52A8;, &#x53F3;&#x6D6E;&#x52A8;&#x627E;&#x53F3;&#x6D6E;&#x52A8;)</li>
+<li>left: &#x4E0D;&#x8981;&#x627E;&#x524D;&#x9762;&#x7684;&#x5DE6;&#x6D6E;&#x52A8;&#x5143;&#x7D20;</li>
+<li>right: &#x4E0D;&#x8981;&#x627E;&#x524D;&#x9762;&#x7684;&#x53F3;&#x6D6E;&#x52A8;&#x5143;&#x7D20;</li>
+<li>both: &#x4E0D;&#x8981;&#x627E;&#x524D;&#x9762;&#x7684;&#x5DE6;&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x548C;&#x53F3;&#x6D6E;&#x52A8;&#x5143;&#x7D20;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>&#x5F53;&#x6211;&#x4EEC;&#x7ED9;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#x6DFB;&#x52A0;clear&#x5C5E;&#x6027;&#x4E4B;&#x540E;, &#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x7684;margin&#x5C5E;&#x6027;&#x5C31;&#x4F1A;&#x5931;&#x6548;</li>
+</ul>
+<h2 id="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E09;"><a href="#&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E09;" class="headerlink" title="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E09;"></a>&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E09;</h2><p>1.&#x9694;&#x5899;&#x6CD5;</p>
+<ul>
+<li>&#x5916;&#x5899;&#x6CD5;</li>
+<li>&#x5185;&#x5899;&#x6CD5;</li>
+</ul>
+<p>2.&#x5916;&#x5899;&#x6CD5;</p>
+<ul>
+<li>&#x5728;&#x4E24;&#x4E2A;&#x76D2;&#x5B50;&#x4E2D;&#x95F4;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x5757;&#x7EA7;&#x5143;&#x7D20;</li>
+<li>&#x7ED9;&#x8FD9;&#x4E2A;&#x989D;&#x5916;&#x6DFB;&#x52A0;&#x7684;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;clear: both;&#x5C5E;&#x6027;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>&#x5916;&#x5899;&#x6CD5;&#x5B83;&#x53EF;&#x4EE5;&#x8BA9;&#x7B2C;&#x4E8C;&#x4E2A;&#x76D2;&#x5B50;&#x4F7F;&#x7528;margin-top&#x5C5E;&#x6027;</li>
+<li>&#x5916;&#x5899;&#x6CD5;&#x4E0D;&#x53EF;&#x4EE5;&#x8BA9;&#x7B2C;&#x4E00;&#x4E2A;&#x76D2;&#x5B50;&#x4F7F;&#x7528;margin-bottom&#x5C5E;&#x6027;</li>
+</ul>
+<p>3.&#x5185;&#x5899;&#x6CD5;</p>
+<ul>
+<li>&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x76D2;&#x5B50;&#x4E2D;&#x6240;&#x6709;&#x5B50;&#x5143;&#x7D20;&#x6700;&#x540E;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x5757;&#x7EA7;&#x5143;&#x7D20;</li>
+<li>&#x7ED9;&#x8FD9;&#x4E2A;&#x989D;&#x5916;&#x6DFB;&#x52A0;&#x7684;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;clear: both;&#x5C5E;&#x6027;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>&#x5185;&#x5899;&#x6CD5;&#x5B83;&#x53EF;&#x4EE5;&#x8BA9;&#x7B2C;&#x4E8C;&#x4E2A;&#x76D2;&#x5B50;&#x4F7F;&#x7528;margin-top&#x5C5E;&#x6027;</li>
+<li>&#x5185;&#x5899;&#x6CD5;&#x5B83;&#x53EF;&#x4EE5;&#x8BA9;&#x7B2C;&#x4E00;&#x4E2A;&#x76D2;&#x5B50;&#x4F7F;&#x7528;margin-bottom&#x5C5E;&#x6027;</li>
+</ul>
+<p>4.&#x5916;&#x5899;&#x6CD5;&#x548C;&#x5185;&#x5899;&#x6CD5;&#x533A;&#x522B;?</p>
+<ul>
+<li>&#x5916;&#x5899;&#x6CD5;&#x4E0D;&#x80FD;&#x6491;&#x8D77;&#x7B2C;&#x4E00;&#x4E2A;&#x76D2;&#x5B50;&#x7684;&#x9AD8;&#x5EA6;, &#x800C;&#x5185;&#x5899;&#x6CD5;&#x53EF;&#x4EE5;&#x6491;&#x8D77;&#x7B2C;&#x4E00;&#x4E2A;&#x76D2;&#x5B50;&#x7684;&#x9AD8;&#x5EA6;</li>
+</ul>
+<p>5.&#x5728;&#x4F01;&#x4E1A;&#x5F00;&#x53D1;&#x4E2D;&#x4E0D;&#x5E38;&#x7528;&#x9694;&#x5899;&#x6CD5;&#x6765;&#x6E05;&#x9664;&#x6D6E;&#x52A8;</p>
+<h2 id="&#x4F2A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;"><a href="#&#x4F2A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;" class="headerlink" title="&#x4F2A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;"></a>&#x4F2A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;</h2><p>1.&#x4EC0;&#x4E48;&#x662F;&#x4F2A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;?</p>
+<ul>
+<li>&#x4F2A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x7ED9;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x7684;&#x5185;&#x5BB9;&#x524D;&#x9762;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x6216;&#x8005;&#x7ED9;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x7684;&#x5185;&#x5BB9;&#x540E;&#x9762;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;</li>
+</ul>
+<p>2.&#x683C;&#x5F0F;:</p>
+<ul>
+<li><p>&#x7ED9;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x7684;&#x5185;&#x5BB9;&#x524D;&#x9762;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#x6807;&#x7B7E;&#x540D;&#x79F0;::before{</div><div class="line">    &#x5C5E;&#x6027;&#x540D;&#x79F0;:&#x503C;;</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x7ED9;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x7684;&#x5185;&#x5BB9;&#x540E;&#x9762;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#x6807;&#x7B7E;&#x540D;&#x79F0;::after{</div><div class="line">    &#x5C5E;&#x6027;&#x540D;&#x79F0;:&#x503C;;</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x56DB;"><a href="#&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x56DB;" class="headerlink" title="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x56DB;"></a>&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x56DB;</h2><p>1.&#x5229;&#x7528;&#x4F2A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#x6E05;&#x9664;&#x6D6E;&#x52A8;* </p>
+<ul>
+<li>&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x5185;&#x5899;&#x6CD5;, &#x53EA;&#x4E0D;&#x8FC7;&#x662F;&#x76F4;&#x63A5;&#x901A;&#x8FC7;CSS&#x4EE3;&#x7801;&#x6DFB;&#x52A0;&#x4E86;&#x5185;&#x5899;, &#x5176;&#x5B83;&#x7279;&#x6027;&#x548C;&#x5185;&#x5899;&#x6CD5;&#x90FD;&#x4E00;&#x6837;<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.box1::after{</div><div class="line">    /*&#x8BBE;&#x7F6E;&#x6DFB;&#x52A0;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x5185;&#x5BB9;&#x4E3A;&#x7A7A;*/</div><div class="line">    content: &quot;&quot;;</div><div class="line">    /*&#x8BBE;&#x7F6E;&#x6DFB;&#x52A0;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x4E3A;&#x5757;&#x7EA7;&#x5143;&#x7D20;*/</div><div class="line">    display: block;</div><div class="line">    /*&#x8BBE;&#x7F6E;&#x6DFB;&#x52A0;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x5EA6;&#x4E3A;0*/</div><div class="line">    height: 0;</div><div class="line">    /*&#x8BBE;&#x7F6E;&#x6DFB;&#x52A0;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x770B;&#x4E0D;&#x89C1;*/</div><div class="line">    visibility: hidden;</div><div class="line">    /*&#x7ED9;&#x6DFB;&#x52A0;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;clear: both;*/</div><div class="line">    clear: both;</div><div class="line">}</div><div class="line">.box1{</div><div class="line">    /*&#x517C;&#x5BB9;IE6*/</div><div class="line">    *zoom:1;</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>IE6&#x4E2D;&#x4E0D;&#x652F;&#x6301;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;, &#x4E3A;&#x4E86;&#x517C;&#x5BB9;IE6&#x5FC5;&#x987B;&#x7ED9;&#x524D;&#x9762;&#x7684;&#x76D2;&#x5B50;&#x6DFB;&#x52A0;*zoom:1;&#x5C5E;&#x6027;</li>
+</ul>
+<h2 id="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E94;"><a href="#&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E94;" class="headerlink" title="&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E94;"></a>&#x6E05;&#x9664;&#x6D6E;&#x52A8;&#x65B9;&#x5F0F;&#x4E94;</h2><p>1.overflow: hidden;&#x4F5C;&#x7528;</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x5C06;&#x8D85;&#x51FA;&#x6807;&#x7B7E;&#x8303;&#x56F4;&#x7684;&#x5185;&#x5BB9;&#x88C1;&#x526A;&#x6389;</li>
+<li>&#x6E05;&#x9664;&#x6D6E;&#x52A8;</li>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;overflow: hidden;&#x8BA9;&#x91CC;&#x9762;&#x7684;&#x76D2;&#x5B50;&#x8BBE;&#x7F6E;margin-top&#x4E4B;&#x540E;, &#x5916;&#x9762;&#x7684;&#x76D2;&#x5B50;&#x4E0D;&#x88AB;&#x9876;&#x4E0B;&#x6765;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>IE6&#x4E2D;&#x4E0D;&#x652F;&#x6301;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;, &#x4E3A;&#x4E86;&#x517C;&#x5BB9;IE6&#x5FC5;&#x987B;&#x7ED9;&#x524D;&#x9762;&#x7684;&#x76D2;&#x5B50;&#x6DFB;&#x52A0;*zoom:1;&#x5C5E;&#x6027;</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/">CSS</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/09/07/CSS-盒子模型/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">盒子模型</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/09/07/CSS-浮动/">
+        <span class="next-text nav-default">浮动</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

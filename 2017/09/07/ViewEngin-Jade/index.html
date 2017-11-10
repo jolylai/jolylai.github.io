@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Jade"/>
+
+
+
+
+  <meta name="keywords" content="View Engin," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/09/07/ViewEngin-Jade/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Jade · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Jade
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 7, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量的声明和数值的传递"><span class="toc-text">变量的声明和数值的传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安全转译和非转译"><span class="toc-text">安全转译和非转译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程"><span class="toc-text">流程</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>Jade&#x6A21;&#x677F;&#x5F15;&#x64CE;<br><a id="more"></a></p>
+<h2 id="&#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;&#x548C;&#x6570;&#x503C;&#x7684;&#x4F20;&#x9012;"><a href="#&#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;&#x548C;&#x6570;&#x503C;&#x7684;&#x4F20;&#x9012;" class="headerlink" title="&#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;&#x548C;&#x6570;&#x503C;&#x7684;&#x4F20;&#x9012;"></a>&#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;&#x548C;&#x6570;&#x503C;&#x7684;&#x4F20;&#x9012;</h2><ul>
+<li>jade index.jade -P -w &#x2013;obj &#x2018;{title:&#x201D;name&#x201D;}&#x2019;<ul>
+<li>-P:&#x7F16;&#x8BD1;&#x540E;&#x4E3A;&#x672A;&#x538B;&#x7F29;&#x7684;&#x6587;&#x4EF6;</li>
+<li>-w:&#x5B9E;&#x65F6;&#x67E5;&#x770B;&#x7F16;&#x8BD1;&#x7684;&#x7ED3;&#x679C;</li>
+<li>&#x2013;obj:&#x4F20;&#x5165;&#x5BF9;&#x8C61;</li>
+<li>&#x5982;&#x679C;&#x53D8;&#x91CF;&#x540C;&#x540D;&#x6587;&#x6863;&#x5185;&#x7684;&#x503C;&#x4F18;&#x5148;</li>
+</ul>
+</li>
+<li>jade index.jade -P -w -O jade.json<ul>
+<li>-O jade.json:&#x4F20;&#x5165;json&#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x5B89;&#x5168;&#x8F6C;&#x8BD1;&#x548C;&#x975E;&#x8F6C;&#x8BD1;"><a href="#&#x5B89;&#x5168;&#x8F6C;&#x8BD1;&#x548C;&#x975E;&#x8F6C;&#x8BD1;" class="headerlink" title="&#x5B89;&#x5168;&#x8F6C;&#x8BD1;&#x548C;&#x975E;&#x8F6C;&#x8BD1;"></a>&#x5B89;&#x5168;&#x8F6C;&#x8BD1;&#x548C;&#x975E;&#x8F6C;&#x8BD1;</h2><ul>
+<li><p>&#x8F6C;&#x8BD1;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- var htmlData=&quot;&lt;script&gt;alert(1)&lt;/script&gt;&quot;</div><div class="line">p #{htmlData}</div><div class="line">p \#{htmlData}</div><div class="line">p= htmlData</div><div class="line">&lt;p&gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x975E;&#x8F6C;&#x8BD1;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- var htmlData=&quot;&lt;script&gt;alert(1)&lt;/script&gt;&quot;</div><div class="line">p !{htmlData} </div><div class="line">p \!{htmlData} </div><div class="line">p!= htmlData</div><div class="line">//&lt;p&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x53D8;&#x91CF;&#x6709;&#x503C;&#x65F6;&#x8D4B;&#x53D8;&#x91CF;&#x503C;&#x65E0;&#x503C;&#x65F6;&#x53D8;&#x91CF;&#x4E3A;&#x7A7A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">input(value=&apos;#{newData}&apos;)</div><div class="line">//&lt;input value=&quot;undefined&quot;&gt;</div><div class="line">input(value=newData)</div><div class="line">//&lt;input&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x6D41;&#x7A0B;"><a href="#&#x6D41;&#x7A0B;" class="headerlink" title="&#x6D41;&#x7A0B;"></a>&#x6D41;&#x7A0B;</h2><ul>
+<li><p>for</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- var imooc = {course:&apos;jade&apos;,leavel:&apos;high&apos;}</div><div class="line">- for ( var k in imooc)</div><div class="line">  p= imooc[k]</div><div class="line">//&lt;p&gt;jade&lt;/p&gt;</div><div class="line">//&lt;p&gt;high&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>each&#x904D;&#x5386;&#x6570;&#x7EC4;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- var imooc = {course:&apos;jade&apos;,leavel:&apos;high&apos;}</div><div class="line">- each value,key in imooc</div><div class="line">  p #{value}:#{key} </div><div class="line">//&lt;p&gt;jade:course&lt;/p&gt;</div><div class="line">//&lt;p&gt;high:leavel&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x5D4C;&#x5957;&#x5FAA;&#x73AF;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">-var sections= [{id:1,items:[&apos;a&apos;,&apos;b&apos;]},{id:2,items:[&apos;a&apos;,&apos;b&apos;]}]</div><div class="line">dl</div><div class="line">  each section in sections</div><div class="line">    dt= section.id</div><div class="line">    each item in section.items</div><div class="line">      dd= item</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/View-Engin/">View Engin</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/09/07/Note-JS/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Java Script</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/09/07/CSS-Flex/">
+        <span class="next-text nav-default">Flex布局</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

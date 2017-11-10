@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="SQL"/>
+
+
+
+
+  <meta name="keywords" content="Database," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/09/07/Database-SQL/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> SQL · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          SQL
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 7, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL命令语句"><span class="toc-text">SQL命令语句</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;integer varchar float double char text<br><a id="more"></a></p>
+<h2 id="SQL&#x547D;&#x4EE4;&#x8BED;&#x53E5;"><a href="#SQL&#x547D;&#x4EE4;&#x8BED;&#x53E5;" class="headerlink" title="SQL&#x547D;&#x4EE4;&#x8BED;&#x53E5;"></a>SQL&#x547D;&#x4EE4;&#x8BED;&#x53E5;</h2><p>1.&#x521B;&#x5EFA;&#x8868;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> &#x8868;&#x540D; (&#x5B57;&#x6BB5;&#x540D;&#x79F0; &#x6570;&#x636E;&#x7C7B;&#x578B; &#x7EA6;&#x675F;&#xFF0C;&#x5B57;&#x6BB5;&#x540D;&#x79F0; &#x6570;&#x636E;&#x7C7B;&#x578B; &#x7EA6;&#x675F;.....)</div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> person(<span class="keyword">id</span> <span class="built_in">integer</span> primary <span class="keyword">key</span>,<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>),age <span class="built_in">integer</span> <span class="keyword">not</span> <span class="literal">null</span>)</div></pre></td></tr></table></figure></p>
+<p>2.&#x5220;&#x9664;&#x8868;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">drop</span> <span class="keyword">table</span> &#x8868;&#x540D;</div><div class="line"><span class="keyword">drop</span> <span class="keyword">table</span> person&lt;/pre&gt;</div></pre></td></tr></table></figure></p>
+<p>3.&#x63D2;&#x5165;&#x6570;&#x636E;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> &#x8868;&#x540D;[&#x5B57;&#x6BB5;,&#x5B57;&#x6BB5;...] <span class="keyword">values</span>(&#x503C;<span class="number">1</span>,&#x503C;<span class="number">2.</span>..)</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> person(<span class="keyword">id</span>,age) <span class="keyword">values</span>(<span class="number">2</span>,<span class="number">20</span>)</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> person <span class="keyword">values</span>(<span class="number">2</span>,<span class="string">&quot;jane&quot;</span>,<span class="number">20</span>)</div></pre></td></tr></table></figure></p>
+<p>4.&#x4FEE;&#x6539;&#x6570;&#x636E;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">update</span> &#x8868;&#x540D; <span class="keyword">set</span> &#x5B57;&#x6BB5; = &#x65B0;&#x503C; <span class="keyword">where</span> &#x6761;&#x4EF6;&#x8BED;&#x53E5;</div><div class="line"><span class="keyword">update</span> person <span class="keyword">set</span> <span class="keyword">name</span> = <span class="string">&quot;jim&quot;</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>5.&#x5220;&#x9664;&#x6570;&#x636E;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">delete</span> <span class="keyword">from</span> &#x8868;&#x540D; <span class="keyword">where</span> &#x6761;&#x4EF6;&#x8BED;&#x53E5;</div><div class="line">delate <span class="keyword">from</span> person <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">2</span>&lt;/pre&gt;</div></pre></td></tr></table></figure></p>
+<p>6.&#x67E5;&#x8BE2;&#x8BED;&#x53E5;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> &#x5B57;&#x6BB5;&#x540D; <span class="keyword">from</span> &#x8868;&#x540D; <span class="keyword">where</span> &#x67E5;&#x8BE2;&#x8BED;&#x53E5; <span class="keyword">group</span> <span class="keyword">by</span> &#x5206;&#x7EC4;&#x7684;&#x5B57;&#x6BB5; <span class="keyword">having</span> &#x7B5B;&#x9009;&#x6761;&#x4EF6; <span class="keyword">order</span> <span class="keyword">by</span> &#x6392;&#x5E8F;&#x5B57;&#x6BB5;</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person</div><div class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">from</span> person</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person <span class="keyword">where</span> <span class="keyword">id</span> &lt; &gt; <span class="number">1</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span> <span class="keyword">and</span> age &gt; <span class="number">18</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">&quot;%&#x5C0F;%&quot;</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">&quot;_&#x5C0F;%&quot;</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">is</span> <span class="literal">null</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person <span class="keyword">where</span> age <span class="keyword">between</span> <span class="number">10</span> <span class="keyword">and</span> <span class="number">20</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person <span class="keyword">where</span> age &gt;<span class="number">18</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">id</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> person <span class="keyword">where</span> age &gt;<span class="number">18</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">desc</span>&lt;/pre&gt;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>group by&#x5206;&#x7EC4;&#x4E0E;&#x7EDF;&#x8BA1;&#x51FD;&#x6570;<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> people;</div><div class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(age) <span class="keyword">from</span> people;</div><div class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(age) <span class="keyword">from</span> people;</div><div class="line"><span class="keyword">select</span> <span class="keyword">max</span>(age) <span class="keyword">from</span> people;</div><div class="line"><span class="keyword">select</span> <span class="keyword">min</span>(age) <span class="keyword">from</span> people;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>8.limit<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//&#x53D6;&#x524D;&#x4E09;&#x6761;</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> people <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">3</span>;</div><div class="line">//&#x4ECE;&#x7B2C;&#x4E09;&#x6761;&#x53D6;&#x5230;&#x7B2C;&#x4E94;&#x6761;</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> people <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">2</span>,<span class="number">3</span>;</div></pre></td></tr></table></figure></p>
+<p>9.&#x5B50;&#x67E5;&#x8BE2;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> categery <span class="keyword">where</span> <span class="keyword">exists</span> (<span class="keyword">select</span> * <span class="keyword">from</span> goods.cat_id = categery.cat_id);</div></pre></td></tr></table></figure></p>
+<p>10.&#x5185;&#x8FDE;&#x67E5;&#x8BE2;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> boy.hid.boy.name.girl.hid.girl.name <span class="keyword">from</span> boy <span class="keyword">inner</span> <span class="keyword">join</span> girl <span class="keyword">on</span> boy.hid=girl.hid;</div></pre></td></tr></table></figure></p>
+<p>11.&#x5DE6;&#x8FDE;&#x63A5;&#x53F3;&#x8FDE;&#x63A5;<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> boy.hid.boy.name.girl.hid.girl.name <span class="keyword">from</span> boy <span class="keyword">left</span> <span class="keyword">join</span> girl <span class="keyword">on</span> boy.hid= girl.hid;</div><div class="line"><span class="keyword">select</span> boy.hid.boy.name.girl.hid.girl.name <span class="keyword">from</span> boy <span class="keyword">right</span> <span class="keyword">join</span> girl <span class="keyword">on</span> boy.hid= girl.hid;</div></pre></td></tr></table></figure></p>
+<p>12.union&#x67E5;&#x8BE2;</p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Database/">Database</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/09/07/SublimeText/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Sublime Text</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/09/07/session/">
+        <span class="next-text nav-default">Session</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

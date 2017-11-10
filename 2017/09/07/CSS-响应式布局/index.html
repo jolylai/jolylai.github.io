@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="响应式布局"/>
+
+
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/09/07/CSS-响应式布局/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> 响应式布局 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          响应式布局
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 7, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#宏观思路"><span class="toc-text">宏观思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#媒介查询"><span class="toc-text">媒介查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#零界点的选择"><span class="toc-text">零界点的选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#响应式图片"><span class="toc-text">响应式图片</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x901A;&#x8FC7;&#x54CD;&#x5E94;&#x5F0F;&#x5E03;&#x5C40;&#x8BA9;&#x7F51;&#x7AD9;&#x5728;&#x4E0D;&#x540C;&#x5C4F;&#x5E55;&#x5927;&#x5C0F;&#x7684;&#x8BBE;&#x5907;&#x4E2D;&#x80FD;&#x591F;&#x5F97;&#x5B8C;&#x7F8E;&#x7684;&#x5C55;&#x793A;<br><a id="more"></a></p>
+<h2 id="&#x5B8F;&#x89C2;&#x601D;&#x8DEF;"><a href="#&#x5B8F;&#x89C2;&#x601D;&#x8DEF;" class="headerlink" title="&#x5B8F;&#x89C2;&#x601D;&#x8DEF;"></a>&#x5B8F;&#x89C2;&#x601D;&#x8DEF;</h2><ul>
+<li>&#x4ECE;&#x9700;&#x8981;&#x9002;&#x5E94;&#x7684;&#x6700;&#x5C0F;&#x8BBE;&#x5907;&#x5F00;&#x59CB;&#x8BBE;&#x8BA1;&#x7136;&#x540E;&#x9010;&#x6B65;&#x9002;&#x5E94;&#x8F83;&#x5927;&#x7684;&#x8BBE;&#x5907;</li>
+</ul>
+<h2 id="&#x5A92;&#x4ECB;&#x67E5;&#x8BE2;"><a href="#&#x5A92;&#x4ECB;&#x67E5;&#x8BE2;" class="headerlink" title="&#x5A92;&#x4ECB;&#x67E5;&#x8BE2;"></a>&#x5A92;&#x4ECB;&#x67E5;&#x8BE2;</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> (min-width=<span class="string">&apos;500xp&apos;</span>){</div><div class="line"></div><div class="line">}</div><div class="line">@<span class="keyword">media</span>(<span class="keyword">max</span>-<span class="keyword">width</span>=&apos;<span class="keyword">500px</span>&apos;){</div><div class="line"></div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x96F6;&#x754C;&#x70B9;&#x7684;&#x9009;&#x62E9;"><a href="#&#x96F6;&#x754C;&#x70B9;&#x7684;&#x9009;&#x62E9;" class="headerlink" title="&#x96F6;&#x754C;&#x70B9;&#x7684;&#x9009;&#x62E9;"></a>&#x96F6;&#x754C;&#x70B9;&#x7684;&#x9009;&#x62E9;</h2><ul>
+<li>&#x6839;&#x636E;&#x8BBE;&#x8BA1;&#x7684;&#x7F51;&#x7AD9;&#x5185;&#x5BB9;&#x9009;&#x62E9;&#x4E34;&#x754C;&#x70B9;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x4F7F;&#x7F51;&#x7AD9;&#x80FD;&#x591F;&#x66F4;&#x597D;&#x7684;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x5C3A;&#x5BF8;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#x5C55;&#x73B0;&#x66F4;&#x597D;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x6CA1;&#x6709;&#x6807;&#x51C6;&#x7684;&#x4E34;&#x754C;&#x70B9;&#xFF0C;&#x53EA;&#x6709;&#x80FD;&#x8BA9;&#x4F60;&#x7684;&#x7F51;&#x7AD9;&#x66F4;&#x597D;&#x7684;&#x5C55;&#x793A;&#x7684;&#x4E34;&#x754C;&#x70B9;</li>
+</ul>
+<h2 id="&#x54CD;&#x5E94;&#x5F0F;&#x56FE;&#x7247;"><a href="#&#x54CD;&#x5E94;&#x5F0F;&#x56FE;&#x7247;" class="headerlink" title="&#x54CD;&#x5E94;&#x5F0F;&#x56FE;&#x7247;"></a>&#x54CD;&#x5E94;&#x5F0F;&#x56FE;&#x7247;</h2><p>&#x4E3A;&#x80FD;&#x591F;&#x5728;&#x4E0D;&#x540C;&#x5C4F;&#x5E55;&#x5927;&#x5C0F;&#x7684;&#x8BBE;&#x5907;&#x4E2D;&#x8BA9;&#x56FE;&#x7247;&#x4E0D;&#x5931;&#x771F;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x4E0D;&#x540C;&#x5206;&#x8FA8;&#x7387;&#x7684;&#x5C4F;&#x5E55;&#x4E2D;&#x663E;&#x793A;&#x4E0D;&#x540C;&#x5206;&#x8FA8;&#x7387;&#x7684;&#x56FE;&#x7247;</p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/">CSS</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/09/07/CSS-定位/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">定位</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/09/07/Libary-underscore/">
+        <span class="next-text nav-default">underscore</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

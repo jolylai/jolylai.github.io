@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Flex布局"/>
+
+
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/09/07/CSS-Flex/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Flex布局 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Flex布局
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 7, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#容器属性"><span class="toc-text">容器属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-direction"><span class="toc-text">flex-direction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-wrap"><span class="toc-text">flex-wrap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-flow"><span class="toc-text">flex-flow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#justify-content"><span class="toc-text">justify-content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align-items"><span class="toc-text">align-items</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#align-content"><span class="toc-text">align-content</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x7F51;&#x9875;&#x5E03;&#x5C40;&#xFF08;layout&#xFF09;&#x662F;CSS&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x70B9;&#x5E94;&#x7528;&#x3002;&#x5E03;&#x5C40;&#x7684;&#x4F20;&#x7EDF;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x57FA;&#x4E8E;&#x76D2;&#x72B6;&#x6A21;&#x578B;&#xFF0C;&#x4F9D;&#x8D56; display&#x5C5E;&#x6027; + position&#x5C5E;&#x6027; + float&#x5C5E;&#x6027;&#x3002;&#x5B83;&#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x7279;&#x6B8A;&#x5E03;&#x5C40;&#x975E;&#x5E38;&#x4E0D;&#x65B9;&#x4FBF;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x5C31;&#x4E0D;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#x3002;Flex&#x5E03;&#x5C40;&#x5C06;&#x6210;&#x4E3A;&#x672A;&#x6765;&#x5E03;&#x5C40;&#x7684;&#x9996;&#x9009;&#x65B9;&#x6848;&#x3002;<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">Flex&#x5E03;&#x5C40;</a><br><a id="more"></a></p>
+<h2 id="&#x5BB9;&#x5668;&#x5C5E;&#x6027;"><a href="#&#x5BB9;&#x5668;&#x5C5E;&#x6027;" class="headerlink" title="&#x5BB9;&#x5668;&#x5C5E;&#x6027;"></a>&#x5BB9;&#x5668;&#x5C5E;&#x6027;</h2><ul>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ul>
+<h2 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>{</div><div class="line">    <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</div><div class="line">}</div></pre></td></tr></table></figure>
+<ul>
+<li>row&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF1A;&#x4E3B;&#x8F74;&#x4E3A;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#xFF0C;&#x8D77;&#x70B9;&#x5728;&#x5DE6;&#x7AEF;&#x3002;</li>
+<li>row-reverse&#xFF1A;&#x4E3B;&#x8F74;&#x4E3A;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#xFF0C;&#x8D77;&#x70B9;&#x5728;&#x53F3;&#x7AEF;&#x3002;</li>
+<li>column&#xFF1A;&#x4E3B;&#x8F74;&#x4E3A;&#x5782;&#x76F4;&#x65B9;&#x5411;&#xFF0C;&#x8D77;&#x70B9;&#x5728;&#x4E0A;&#x6CBF;&#x3002;</li>
+<li>column-reverse&#xFF1A;&#x4E3B;&#x8F74;&#x4E3A;&#x5782;&#x76F4;&#x65B9;&#x5411;&#xFF0C;&#x8D77;&#x70B9;&#x5728;&#x4E0B;&#x6CBF;&#x3002;</li>
+</ul>
+<h2 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>{</div><div class="line">    <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box{</div><div class="line">    flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h2><p>justify-content&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x4E86;&#x9879;&#x76EE;&#x5728;&#x4E3B;&#x8F74;&#x4E0A;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#x3002;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>{</div><div class="line">    <span class="attribute">justify-content</span>: flex-start | center | flex-end | space-between | space-around;</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<ul>
+<li>flex-start&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF1A;&#x5DE6;&#x5BF9;&#x9F50;</li>
+<li>flex-end&#xFF1A;&#x53F3;&#x5BF9;&#x9F50;</li>
+<li>center&#xFF1A; &#x5C45;&#x4E2D;</li>
+<li>space-between&#xFF1A;&#x4E24;&#x7AEF;&#x5BF9;&#x9F50;&#xFF0C;&#x9879;&#x76EE;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x9694;&#x90FD;&#x76F8;&#x7B49;&#x3002;</li>
+<li>space-around&#xFF1A;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x4E24;&#x4FA7;&#x7684;&#x95F4;&#x9694;&#x76F8;&#x7B49;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x9879;&#x76EE;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x9694;&#x6BD4;&#x9879;&#x76EE;&#x4E0E;&#x8FB9;&#x6846;&#x7684;&#x95F4;&#x9694;&#x5927;&#x4E00;&#x500D;&#x3002;</li>
+</ul>
+<h2 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h2><p>align-items&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x9879;&#x76EE;&#x5728;&#x4EA4;&#x53C9;&#x8F74;&#x4E0A;&#x5982;&#x4F55;&#x5BF9;&#x9F50;&#x3002;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>{</div><div class="line">    <span class="attribute">align-items</span>: flex-start | center | flex-end |baseline | stretch;</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<ul>
+<li>flex-start&#xFF1A;&#x4EA4;&#x53C9;&#x8F74;&#x7684;&#x8D77;&#x70B9;&#x5BF9;&#x9F50;&#x3002;</li>
+<li>flex-end&#xFF1A;&#x4EA4;&#x53C9;&#x8F74;&#x7684;&#x7EC8;&#x70B9;&#x5BF9;&#x9F50;&#x3002;</li>
+<li>center&#xFF1A;&#x4EA4;&#x53C9;&#x8F74;&#x7684;&#x4E2D;&#x70B9;&#x5BF9;&#x9F50;&#x3002;</li>
+<li>baseline: &#x9879;&#x76EE;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x6587;&#x5B57;&#x7684;&#x57FA;&#x7EBF;&#x5BF9;&#x9F50;&#x3002;</li>
+<li>stretch&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF1A;&#x5982;&#x679C;&#x9879;&#x76EE;&#x672A;&#x8BBE;&#x7F6E;&#x9AD8;&#x5EA6;&#x6216;&#x8BBE;&#x4E3A;auto&#xFF0C;&#x5C06;&#x5360;&#x6EE1;&#x6574;&#x4E2A;&#x5BB9;&#x5668;&#x7684;&#x9AD8;&#x5EA6;&#x3002;</li>
+</ul>
+<h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2><p>align-content&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x4E86;&#x591A;&#x6839;&#x8F74;&#x7EBF;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#x3002;&#x5982;&#x679C;&#x9879;&#x76EE;&#x53EA;&#x6709;&#x4E00;&#x6839;&#x8F74;&#x7EBF;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x3002;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> {</div><div class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<ul>
+<li>flex-start&#xFF1A;&#x4E0E;&#x4EA4;&#x53C9;&#x8F74;&#x7684;&#x8D77;&#x70B9;&#x5BF9;&#x9F50;&#x3002;</li>
+<li>flex-end&#xFF1A;&#x4E0E;&#x4EA4;&#x53C9;&#x8F74;&#x7684;&#x7EC8;&#x70B9;&#x5BF9;&#x9F50;&#x3002;</li>
+<li>center&#xFF1A;&#x4E0E;&#x4EA4;&#x53C9;&#x8F74;&#x7684;&#x4E2D;&#x70B9;&#x5BF9;&#x9F50;&#x3002;</li>
+<li>space-between&#xFF1A;&#x4E0E;&#x4EA4;&#x53C9;&#x8F74;&#x4E24;&#x7AEF;&#x5BF9;&#x9F50;&#xFF0C;&#x8F74;&#x7EBF;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x9694;&#x5E73;&#x5747;&#x5206;&#x5E03;&#x3002;</li>
+<li>space-around&#xFF1A;&#x6BCF;&#x6839;&#x8F74;&#x7EBF;&#x4E24;&#x4FA7;&#x7684;&#x95F4;&#x9694;&#x90FD;&#x76F8;&#x7B49;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x8F74;&#x7EBF;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x9694;&#x6BD4;&#x8F74;&#x7EBF;&#x4E0E;&#x8FB9;&#x6846;&#x7684;&#x95F4;&#x9694;&#x5927;&#x4E00;&#x500D;&#x3002;</li>
+<li>stretch&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF1A;&#x8F74;&#x7EBF;&#x5360;&#x6EE1;&#x6574;&#x4E2A;&#x4EA4;&#x53C9;&#x8F74;&#x3002;</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/">CSS</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/09/07/ViewEngin-Jade/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Jade</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/09/07/JS-DOM事件/">
+        <span class="next-text nav-default">DOM事件</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

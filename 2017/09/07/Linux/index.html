@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Linux"/>
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/09/07/Linux/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Linux · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Linux
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 7, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#root-localhost"><span class="toc-text">[root@localhost ~]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#超级用户提示符"><span class="toc-text">超级用户提示符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rw-r–r-1"><span class="toc-text">-rw-r–r-##  1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件处理命令"><span class="toc-text">文件处理命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换目录"><span class="toc-text">切换目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除文件或目录"><span class="toc-text">删除文件或目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制"><span class="toc-text">复制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#剪切或改名"><span class="toc-text">剪切或改名</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>Linux&#x64CD;&#x4F5C;&#x547D;&#x4EE4;<br><a id="more"></a></p>
+<h2 id="root-localhost"><a href="#root-localhost" class="headerlink" title="[root@localhost ~]"></a>[root@localhost ~]</h2><ul>
+<li>root        &#x5F53;&#x524D;&#x767B;&#x5F55;&#x7528;&#x6237;</li>
+<li>localhost   &#x4E3B;&#x673A;&#x540D;</li>
+<li>~           &#x5F53;&#x524D;&#x6240;&#x5728;&#x76EE;&#x5F55;(&#x5BB6;&#x76EE;&#x5F55;)</li>
+<li><h1 id="&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x63D0;&#x793A;&#x7B26;"><a href="#&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x63D0;&#x793A;&#x7B26;" class="headerlink" title="&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x63D0;&#x793A;&#x7B26;"></a>&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x63D0;&#x793A;&#x7B26;</h1></li>
+<li>$           &#x666E;&#x901A;&#x7528;&#x6237;&#x63D0;&#x793A;&#x540D;</li>
+</ul>
+<h2 id="&#x547D;&#x4EE4;&#x683C;&#x5F0F;"><a href="#&#x547D;&#x4EE4;&#x683C;&#x5F0F;" class="headerlink" title="&#x547D;&#x4EE4;&#x683C;&#x5F0F;"></a>&#x547D;&#x4EE4;&#x683C;&#x5F0F;</h2><ul>
+<li><p>&#x547D;&#x4EE4; [&#x9009;&#x9879;] [&#x53C2;&#x6570;]</p>
+</li>
+<li><p>ls [&#x9009;&#x9879;] [&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;]</p>
+</li>
+<li>&#x9009;&#x9879;<br>-a  &#x663E;&#x793A;&#x6240;&#x6709;&#x6587;&#x4EF6;,&#x5305;&#x62EC;&#x9690;&#x85CF;&#x6587;&#x4EF6;<br>-l  &#x663E;&#x793A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;<br>-d  &#x67E5;&#x770B;&#x76EE;&#x5F55;&#x5C5E;&#x6027;<br>-h  &#x4EBA;&#x6027;&#x5316;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x5927;&#x5C0F;<br>-i  &#x663E;&#x793A;inode</li>
+</ul>
+<h2 id="rw-r&#x2013;r-1"><a href="#rw-r&#x2013;r-1" class="headerlink" title="-rw-r&#x2013;r-##  1"></a>-rw-r&#x2013;r-##  1</h2><ul>
+<li><ul>
+<li>&#x6587;&#x4EF6;&#x7C7B;&#x578B;</li>
+</ul>
+</li>
+<li>rw-   u&#x6240;&#x6709;&#x8005;</li>
+<li>r&#x2013;   g&#x6240;&#x5C5E;&#x7EC4;</li>
+<li><p>r&#x2013;   o&#x5176;&#x4ED6;&#x4EBA;</p>
+</li>
+<li><p>r &#x8BFB;&#x6743;&#x9650;</p>
+</li>
+<li>w &#x5199;&#x6743;&#x9650;</li>
+<li>x &#x6267;&#x884C;</li>
+</ul>
+<h2 id="&#x6587;&#x4EF6;&#x5904;&#x7406;&#x547D;&#x4EE4;"><a href="#&#x6587;&#x4EF6;&#x5904;&#x7406;&#x547D;&#x4EE4;" class="headerlink" title="&#x6587;&#x4EF6;&#x5904;&#x7406;&#x547D;&#x4EE4;"></a>&#x6587;&#x4EF6;&#x5904;&#x7406;&#x547D;&#x4EE4;</h2><ul>
+<li>&#x9012;&#x5F52;&#x521B;&#x5EFA;<br>mkdir:make directories<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p greade/class</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x5207;&#x6362;&#x76EE;&#x5F55;"><a href="#&#x5207;&#x6362;&#x76EE;&#x5F55;" class="headerlink" title="&#x5207;&#x6362;&#x76EE;&#x5F55;"></a>&#x5207;&#x6362;&#x76EE;&#x5F55;</h2><ul>
+<li>cd [&#x76EE;&#x5F55;]</li>
+<li>change directory</li>
+<li>&#x7B80;&#x5316;&#x64CD;&#x4F5C;<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~    &#x8FDB;&#x5165;&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;&#x5BB6;&#x76EE;&#x5F55;</div><div class="line"><span class="built_in">cd</span></div><div class="line"><span class="built_in">cd</span> -    &#x8FDB;&#x5165;&#x4E0A;&#x6B21;&#x76EE;&#x5F55;</div><div class="line"><span class="built_in">cd</span> ..   &#x8FDB;&#x5165;&#x4E0A;&#x4E00;&#x7EA7;&#x76EE;&#x5F55;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="&#x5220;&#x9664;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;"><a href="#&#x5220;&#x9664;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;" class="headerlink" title="&#x5220;&#x9664;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;"></a>&#x5220;&#x9664;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;</h2><ul>
+<li><p>rm -rf[&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;]<br>rm:remove directory<br>-r &#x5220;&#x9664;&#x76EE;&#x5F55;<br>-f &#x5F3A;&#x5236;</p>
+</li>
+<li><p>rmdir:&#x5220;&#x9664;&#x7A7A;&#x6587;&#x4EF6;<br>rmdir japan</p>
+</li>
+</ul>
+<p>rm:remove directory<br>rm -rf [&#x6587;&#x4EF6;]<br>rm -rf japan/</p>
+<h2 id="&#x590D;&#x5236;"><a href="#&#x590D;&#x5236;" class="headerlink" title="&#x590D;&#x5236;"></a>&#x590D;&#x5236;</h2><ul>
+<li>cp [&#x9009;&#x9879;] [&#x539F;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;] [&#x76EE;&#x6807;&#x76EE;&#x5F55;]<br>&#x9009;&#x9879;<br>-r  &#x590D;&#x5236;&#x76EE;&#x5F55;<br>-p  &#x8FDE;&#x5E26;&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#x590D;&#x5236;<br>-d  &#x82E5;&#x539F;&#x6587;&#x4EF6;&#x662F;&#x8FDE;&#x63A5;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x590D;&#x5236;&#x8FDE;&#x63A5;&#x5C5E;&#x6027;<br>-a  &#x76F8;&#x5F53;&#x4E8E; -pdr<br>cp -r japan/ /temp/</li>
+</ul>
+<h2 id="&#x526A;&#x5207;&#x6216;&#x6539;&#x540D;"><a href="#&#x526A;&#x5207;&#x6216;&#x6539;&#x540D;" class="headerlink" title="&#x526A;&#x5207;&#x6216;&#x6539;&#x540D;"></a>&#x526A;&#x5207;&#x6216;&#x6539;&#x540D;</h2><ul>
+<li>mv [&#x539F;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;] [&#x76EE;&#x6807;&#x76EE;&#x5F55;]</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/">Linux</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/09/07/Database-Mongodb/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">MongoDB</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/09/07/Letter-To My Future/">
+        <span class="next-text nav-default">A Letter TO My Future</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

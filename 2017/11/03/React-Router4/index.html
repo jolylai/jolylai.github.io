@@ -161,7 +161,7 @@
 <li>dva/dynamic: &#x89E3;&#x51B3;&#x7EC4;&#x4EF6;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x95EE;&#x9898;&#x7684; util &#x65B9;&#x6CD5;&#xFF0C;&#x57FA;&#x4E8E; react-async-component &#x5B9E;&#x73B0;&#x3002;</li>
 <li>&#x53C2;&#x8003;<a href="https://segmentfault.com/a/1190000010174260" target="_blank" rel="external">&#x6587;&#x7AE0;</a></li>
 </ul>
-<h2 id="src-routes-app-js"><a href="#src-routes-app-js" class="headerlink" title="src/routes/app.js"></a>src/routes/app.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { connect } <span class="keyword">from</span> <span class="string">&apos;dva&apos;</span></div><div class="line"><span class="keyword">import</span> { withRouter } <span class="keyword">from</span> <span class="string">&apos;dva/router&apos;</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> App = ({</div><div class="line">  child</div><div class="line">}) =&gt; {</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">      <span class="tag">&lt;<span class="name">Header</span>&gt;</span></div><div class="line">      {child}</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  )</div><div class="line">}</div><div class="line"></div><div class="line">export default withRouter(connect(({ app, loading }) =&gt; ({ app, loading }))(App))</div></pre></td></tr></table></figure>
+<h2 id="src-routes-app-js"><a href="#src-routes-app-js" class="headerlink" title="src/routes/app.js"></a>src/routes/app.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { connect } <span class="keyword">from</span> <span class="string">&apos;dva&apos;</span></div><div class="line"><span class="keyword">import</span> { withRouter } <span class="keyword">from</span> <span class="string">&apos;dva/router&apos;</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> App = ({</div><div class="line">  child</div><div class="line">}) =&gt; {</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;Header&gt;</div><div class="line">      {child}</div><div class="line">    &lt;/div&gt;</div><div class="line">  )</div><div class="line">}</div><div class="line"></div><div class="line">export default withRouter(connect(({ app, loading }) =&gt; ({ app, loading }))(App))</div></pre></td></tr></table></figure>
 <ul>
 <li>&#x7EC4;&#x4EF6;&#x4F20;&#x5165;withRouter()&#x4E2D;&#xFF0C;&#x4F7F;&#x7EC4;&#x4EF6;&#x5E26;&#x6709;child&#x5C5E;&#x6027;</li>
 <li>child&#x4E3A;&#x8DEF;&#x7531;&#x5339;&#x914D;&#x5230;&#x7684;&#x7EC4;&#x4EF6;</li>
@@ -181,14 +181,14 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2017/11/03/React-Redux/">
+      <a class="prev" href="/2017/11/03/Antd-modal/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">react-redux</span>
+        <span class="prev-text nav-default">Modal</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
-      <a class="next" href="/2017/11/03/React-Tabs/">
+      <a class="next" href="/2017/10/27/React-Tabs/">
         <span class="next-text nav-default">Tabs组件封装</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>

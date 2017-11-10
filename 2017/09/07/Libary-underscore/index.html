@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="underscore"/>
+
+
+
+
+  <meta name="keywords" content="Libary," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/09/07/Libary-underscore/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> underscore · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          underscore
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 7, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Collections"><span class="toc-text">Collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#groupBy"><span class="toc-text">groupBy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shuffle-sample"><span class="toc-text">shuffle/sample</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>Array&#x6709;map()&#x548C;filter()&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x662F;Object&#x6CA1;&#x6709;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x4F4E;&#x7248;&#x672C;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4F8B;&#x5982;IE6&#xFF5E;8&#x4E5F;&#x6CA1;&#x6709;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#xFF0C;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x6B63;&#x5982;jQuery&#x7EDF;&#x4E00;&#x4E86;&#x4E0D;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x4E4B;&#x95F4;&#x7684;DOM&#x64CD;&#x4F5C;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x5BF9;DOM&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;underscore&#x5219;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x5B8C;&#x5584;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x66F4;&#x65B9;&#x4FBF;&#x5730;&#x5728;JavaScript&#x4E2D;&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x3002;jQuery&#x5728;&#x52A0;&#x8F7D;&#x65F6;&#xFF0C;&#x4F1A;&#x628A;&#x81EA;&#x8EAB;&#x7ED1;&#x5B9A;&#x5230;&#x552F;&#x4E00;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;$&#x4E0A;&#xFF0C;underscore&#x4E0E;&#x5176;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F1A;&#x628A;&#x81EA;&#x8EAB;&#x7ED1;&#x5B9A;&#x5230;&#x552F;&#x4E00;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;_&#x4E0A;&#x3002;<br><a id="more"></a></p>
+<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><ul>
+<li><p>map/filter</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = {</div><div class="line">    <span class="attr">name</span>: <span class="string">&apos;bob&apos;</span>,</div><div class="line">    <span class="attr">school</span>: <span class="string">&apos;No.1 middle school&apos;</span>,</div><div class="line">    <span class="attr">address</span>: <span class="string">&apos;xueyuan road&apos;</span></div><div class="line">};</div><div class="line"><span class="comment">//&#x8FD4;&#x56DE;&#x6570;&#x7EC4;</span></div><div class="line"><span class="keyword">var</span> upper = _.map(obj, <span class="function"><span class="keyword">function</span> (<span class="params">value,key</span>) </span>{</div><div class="line">    <span class="keyword">return</span> key+<span class="string">&apos;=&apos;</span>+value;</div><div class="line">});</div><div class="line"><span class="comment">//&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;</span></div><div class="line"><span class="keyword">var</span> upper = _.mapObject(obj, <span class="function"><span class="keyword">function</span> (<span class="params">value,key</span>) </span>{</div><div class="line">    <span class="keyword">return</span> key+<span class="string">&apos;=&apos;</span>+value;</div><div class="line">});</div></pre></td></tr></table></figure>
+</li>
+<li><p>every/some</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x5927;&#x4E8E;0&#xFF1F;</span></div><div class="line">_.every([<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">-3</span>, <span class="number">-9</span>], (x) =&gt; x &gt; <span class="number">0</span>); <span class="comment">// false</span></div><div class="line"><span class="comment">// &#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5927;&#x4E8E;0&#xFF1F;</span></div><div class="line">_.some([<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">-3</span>, <span class="number">-9</span>], (x) =&gt; x &gt; <span class="number">0</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>max/min</p>
+<ul>
+<li><p>&#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x6700;&#x5927;&#x548C;&#x6700;&#x5C0F;&#x7684;&#x6570;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>];</div><div class="line">_.max(arr); <span class="comment">// 9</span></div><div class="line">_.min(arr); <span class="comment">// 3</span></div><div class="line"></div><div class="line"><span class="comment">// &#x7A7A;&#x96C6;&#x5408;&#x4F1A;&#x8FD4;&#x56DE;-Infinity&#x548C;Infinity&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5148;&#x5224;&#x65AD;&#x96C6;&#x5408;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF1A;</span></div><div class="line">_.max([])</div><div class="line">-<span class="literal">Infinity</span></div><div class="line">_.min([])</div><div class="line"><span class="literal">Infinity</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x5982;&#x679C;&#x96C6;&#x5408;&#x662F;Object&#xFF0C;max()&#x548C;min()&#x53EA;&#x4F5C;&#x7528;&#x4E8E;value&#xFF0C;&#x5FFD;&#x7565;&#x6389;key</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_.max({ <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span> }); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="groupBy"><a href="#groupBy" class="headerlink" title="groupBy"></a>groupBy</h2><p>&#x96C6;&#x5408;&#x7684;&#x5143;&#x7D20;&#x6309;&#x7167;key&#x5F52;&#x7C7B;&#xFF0C;key&#x7531;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x8FD4;&#x56DE;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> scores = [<span class="number">20</span>, <span class="number">81</span>, <span class="number">75</span>, <span class="number">40</span>, <span class="number">91</span>, <span class="number">59</span>, <span class="number">77</span>, <span class="number">66</span>, <span class="number">72</span>, <span class="number">88</span>, <span class="number">99</span>];</div><div class="line"><span class="keyword">var</span> groups = _.groupBy(scores, <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>{</div><div class="line">    <span class="keyword">if</span> (x &lt; <span class="number">60</span>) {</div><div class="line">        <span class="keyword">return</span> <span class="string">&apos;C&apos;</span>;</div><div class="line">    } <span class="keyword">else</span> <span class="keyword">if</span> (x &lt; <span class="number">80</span>) {</div><div class="line">        <span class="keyword">return</span> <span class="string">&apos;B&apos;</span>;</div><div class="line">    } <span class="keyword">else</span> {</div><div class="line">        <span class="keyword">return</span> <span class="string">&apos;A&apos;</span>;</div><div class="line">    }</div><div class="line">});</div><div class="line"><span class="comment">// &#x7ED3;&#x679C;:</span></div><div class="line"><span class="comment">// {</span></div><div class="line"><span class="comment">//   A: [81, 91, 88, 99],</span></div><div class="line"><span class="comment">//   B: [75, 77, 66, 72],</span></div><div class="line"><span class="comment">//   C: [20, 40, 59]</span></div><div class="line"><span class="comment">// }</span></div></pre></td></tr></table></figure></p>
+<h2 id="shuffle-sample"><a href="#shuffle-sample" class="headerlink" title="shuffle/sample"></a>shuffle/sample</h2><ul>
+<li><p>shuffle()&#x7528;&#x6D17;&#x724C;&#x7B97;&#x6CD5;&#x968F;&#x673A;&#x6253;&#x4E71;&#x4E00;&#x4E2A;&#x96C6;&#x5408;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &#x6CE8;&#x610F;&#x6BCF;&#x6B21;&#x7ED3;&#x679C;&#x90FD;&#x4E0D;&#x4E00;&#x6837;&#xFF1A;</span></div><div class="line">_.shuffle([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]); <span class="comment">// [3, 5, 4, 6, 2, 1]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>sample()&#x5219;&#x662F;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5143;&#x7D20;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &#x6CE8;&#x610F;&#x6BCF;&#x6B21;&#x7ED3;&#x679C;&#x90FD;&#x4E0D;&#x4E00;&#x6837;&#xFF1A;</span></div><div class="line"><span class="comment">// &#x968F;&#x673A;&#x9009;1&#x4E2A;&#xFF1A;</span></div><div class="line">_.sample([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]); <span class="comment">// 2</span></div><div class="line"><span class="comment">// &#x968F;&#x673A;&#x9009;3&#x4E2A;&#xFF1A;</span></div><div class="line">_.sample([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], <span class="number">3</span>); <span class="comment">// [6, 1, 4]</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Libary/">Libary</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/09/07/CSS-响应式布局/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">响应式布局</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/09/07/SublimeText/">
+        <span class="next-text nav-default">Sublime Text</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

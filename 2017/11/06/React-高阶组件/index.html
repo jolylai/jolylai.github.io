@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="高阶组件"/>
+
+
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/06/React-高阶组件/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> 高阶组件 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          高阶组件
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 6, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#属性代理"><span class="toc-text">属性代理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#控制props"><span class="toc-text">控制props</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过refs使用引用-思考使用方法"><span class="toc-text">通过refs使用引用(思考使用方法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象state"><span class="toc-text">抽象state</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用其他元素包裹WrappedComponent"><span class="toc-text">使用其他元素包裹WrappedComponent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反向继承"><span class="toc-text">反向继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#渲染劫持"><span class="toc-text">渲染劫持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制state"><span class="toc-text">控制state</span></a></li></ol></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x9AD8;&#x9636;&#x51FD;&#x6570;(higher-order function): &#x63A5;&#x53D7;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x6216;&#x662F;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x65B9;&#x6CD5; map&#x3001;reduce &#x548C; sort &#x7B49;&#x90FD;&#x662F;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x3002;<br>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;(higher-order component): &#x7C7B;&#x4F3C;&#x4E8E;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x63A5;&#x53D7; React &#x7EC4;&#x4EF6;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; React &#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x5B9E;&#x73B0;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x5982;&#x4E0B;&#x4E24;&#x79CD;:</p>
+<ul>
+<li>&#x5C5E;&#x6027;&#x4EE3;&#x7406;&#xFF08;props proxy&#xFF09;&#x3002;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;&#x88AB;&#x5305;&#x88F9;&#x7684; React &#x7EC4;&#x4EF6;&#x6765;&#x64CD;&#x4F5C; props&#x3002;</li>
+<li>&#x53CD;&#x5411;&#x7EE7;&#x627F;&#xFF08;inheritance inversion&#xFF09;&#x3002;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x7EE7;&#x627F;&#x4E8E;&#x88AB;&#x5305;&#x88F9;&#x7684; React &#x7EC4;&#x4EF6;&#x3002;</li>
+</ul>
+<a id="more"></a>
+<h2 id="&#x5C5E;&#x6027;&#x4EE3;&#x7406;"><a href="#&#x5C5E;&#x6027;&#x4EE3;&#x7406;" class="headerlink" title="&#x5C5E;&#x6027;&#x4EE3;&#x7406;"></a>&#x5C5E;&#x6027;&#x4EE3;&#x7406;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, { Component } <span class="keyword">from</span> <span class="string">&apos;react&apos;</span></div><div class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span> </div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</div><div class="line">    render() {</div><div class="line">      <span class="keyword">return</span> &lt;WrappedComponent {...this.props}&gt;</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+<h3 id="&#x63A7;&#x5236;props"><a href="#&#x63A7;&#x5236;props" class="headerlink" title="&#x63A7;&#x5236;props"></a>&#x63A7;&#x5236;props</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, { Component } <span class="keyword">from</span> <span class="string">&apos;react&apos;</span></div><div class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span> </div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</div><div class="line">    render() {</div><div class="line">      <span class="keyword">const</span> newProps = {</div><div class="line">        <span class="attr">text</span>: newText,</div><div class="line">      }</div><div class="line">      <span class="keyword">return</span> &lt;WrappedComponent {...this.props} {...newProps} /&gt;</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x5BF9;&#x4E8E;&#x539F;&#x7EC4;&#x4EF6;&#x6765;&#x8BF4;&#xFF0C;&#x53EA;&#x8981;&#x5957;&#x7528;&#x8FD9;&#x4E2A;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x65B0;&#x7EC4;&#x4EF6;&#x4E2D;&#x5C31;&#x4F1A;&#x591A;&#x4E00;&#x4E2A; text &#x7684; prop&#x3002;</li>
+</ul>
+<h3 id="&#x901A;&#x8FC7;refs&#x4F7F;&#x7528;&#x5F15;&#x7528;-&#x601D;&#x8003;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;"><a href="#&#x901A;&#x8FC7;refs&#x4F7F;&#x7528;&#x5F15;&#x7528;-&#x601D;&#x8003;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;" class="headerlink" title="&#x901A;&#x8FC7;refs&#x4F7F;&#x7528;&#x5F15;&#x7528;(&#x601D;&#x8003;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;)"></a>&#x901A;&#x8FC7;refs&#x4F7F;&#x7528;&#x5F15;&#x7528;(&#x601D;&#x8003;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, { Component } <span class="keyword">from</span> <span class="string">&apos;React&apos;</span>;</div><div class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</div><div class="line">    proc(wrappedComponentInstance) {</div><div class="line">      wrappedComponentInstance.method();</div><div class="line">    }</div><div class="line">    render() {</div><div class="line">      <span class="keyword">const</span> props = <span class="built_in">Object</span>.assign({}, <span class="keyword">this</span>.props, {</div><div class="line">        <span class="attr">ref</span>: <span class="keyword">this</span>.proc.bind(<span class="keyword">this</span>),</div><div class="line">      });</div><div class="line">      <span class="keyword">return</span> &lt;WrappedComponent {...props} /&gt;;</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x5F53; WrappedComponent &#x88AB;&#x6E32;&#x67D3;&#x65F6;&#xFF0C;refs &#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5C31;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x62FF;&#x5230;&#x4E00;&#x4EFD;Wrapped-<br>Component &#x5B9E;&#x4F8B;&#x7684;&#x5F15;&#x7528;&#x3002;&#x8FD9;&#x5C31;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x7528;&#x4E8E;&#x8BFB;&#x53D6;&#x6216;&#x589E;&#x52A0;&#x5B9E;&#x4F8B;&#x7684; props&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x5B9E;&#x4F8B;&#x7684;&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<h3 id="&#x62BD;&#x8C61;state"><a href="#&#x62BD;&#x8C61;state" class="headerlink" title="&#x62BD;&#x8C61;state"></a>&#x62BD;&#x8C61;state</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, { Component } <span class="keyword">from</span> <span class="string">&apos;React&apos;</span>;</div><div class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</div><div class="line">    <span class="keyword">constructor</span>(props) {</div><div class="line">      <span class="keyword">super</span>(props);</div><div class="line">      <span class="keyword">this</span>.state = {</div><div class="line">        <span class="attr">name</span>: <span class="string">&apos;&apos;</span>,</div><div class="line">      };</div><div class="line">      <span class="keyword">this</span>.onNameChange = <span class="keyword">this</span>.onNameChange.bind(<span class="keyword">this</span>);</div><div class="line">    }</div><div class="line">    onNameChange(event) {</div><div class="line">      <span class="keyword">this</span>.setState({</div><div class="line">        <span class="attr">name</span>: event.target.value,</div><div class="line">      })</div><div class="line">    }</div><div class="line">    render() {</div><div class="line">      <span class="keyword">const</span> newProps = {</div><div class="line">        <span class="attr">name</span>: {</div><div class="line">          <span class="attr">value</span>: <span class="keyword">this</span>.state.name,</div><div class="line">          <span class="attr">onChange</span>: <span class="keyword">this</span>.onNameChange,</div><div class="line">        },</div><div class="line">      }</div><div class="line">      <span class="keyword">return</span> &lt;WrappedComponent {...this.props} {...newProps} /&gt;;</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x5C06;&#x539F;&#x7EC4;&#x4EF6;&#x62BD;&#x8C61;&#x4E3A;&#x5C55;&#x793A;&#x578B;&#x7EC4;&#x4EF6;&#xFF0C;&#x5206;&#x79BB;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x3002;</li>
+</ul>
+<h3 id="&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x5305;&#x88F9;WrappedComponent"><a href="#&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x5305;&#x88F9;WrappedComponent" class="headerlink" title="&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x5305;&#x88F9;WrappedComponent"></a>&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x5305;&#x88F9;WrappedComponent</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, { Component } <span class="keyword">from</span> <span class="string">&apos;React&apos;</span>;</div><div class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</div><div class="line">    render() {</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">        &lt;div style={{display: &apos;block&apos;}}&gt;</div><div class="line">          &lt;WrappedComponent {...this.props} /&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">      )</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x4E3A;&#x4E86;&#x52A0;&#x6837;&#x5F0F;&#x6216;&#x8005;&#x4E3A;&#x4E86;&#x5E03;&#x5C40;</li>
+</ul>
+<h2 id="&#x53CD;&#x5411;&#x7EE7;&#x627F;"><a href="#&#x53CD;&#x5411;&#x7EE7;&#x627F;" class="headerlink" title="&#x53CD;&#x5411;&#x7EE7;&#x627F;"></a>&#x53CD;&#x5411;&#x7EE7;&#x627F;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">WrappedComponent</span> </span>{</div><div class="line">    render() {</div><div class="line">      <span class="keyword">return</span> <span class="keyword">super</span>.render();</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x8FD4;&#x56DE;&#x7684;&#x7EC4;&#x4EF6;&#x7EE7;&#x627F;&#x4E8E; WrappedComponent&#x3002;</li>
+<li>&#x56E0;&#x4E3A;&#x88AB;&#x52A8;&#x5730;&#x7EE7;&#x627F;&#x4E86; WrappedComponent&#xFF0C;&#x6240;&#x6709;&#x7684;&#x8C03;&#x7528;&#x90FD;&#x4F1A;&#x53CD;&#x5411;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x7684;&#x7531;&#x6765;&#x3002;</li>
+<li>&#x5728;&#x53CD;&#x5411;&#x7EE7;&#x627F;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; WrappedComponent &#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5B83;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;WrappedComponent &#x7684; state&#x3001;props &#x3001;&#x751F;&#x547D;&#x5468;&#x671F;&#x548C; render &#x65B9;&#x6CD5;&#x3002;&#x4F46;&#x5B83;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x5B8C;&#x6574;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x6811;&#x88AB;&#x89E3;&#x6790;&#x3002;</li>
+</ul>
+<h3 id="&#x6E32;&#x67D3;&#x52AB;&#x6301;"><a href="#&#x6E32;&#x67D3;&#x52AB;&#x6301;" class="headerlink" title="&#x6E32;&#x67D3;&#x52AB;&#x6301;"></a>&#x6E32;&#x67D3;&#x52AB;&#x6301;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">WrappedComponent</span> </span>{</div><div class="line">    render() {</div><div class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.props.loggedIn) {</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.render()</div><div class="line">      } <span class="keyword">else</span> {</div><div class="line">        <span class="keyword">return</span> <span class="literal">null</span></div><div class="line">      }</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+<ul>
+<li>this.props.loggedIn</li>
+<li>super.render()&#x83B7;&#x53D6;WrappedComponent&#x7684;elementsTree</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">WrappedComponent</span> </span>{</div><div class="line">    render() {</div><div class="line">      <span class="keyword">const</span> elementsTree = <span class="keyword">super</span>.render()</div><div class="line">      <span class="keyword">let</span> newProps = {}</div><div class="line">      <span class="keyword">if</span> (elementsTree &amp;&amp; elementsTree.type === <span class="string">&apos;input&apos;</span>) {</div><div class="line">        newProps = { <span class="attr">value</span>: <span class="string">&apos;may the force be with you&apos;</span> }</div><div class="line">      }</div><div class="line">      <span class="keyword">const</span> props = <span class="built_in">Object</span>.assign({}, elementsTree.props, newProps);</div><div class="line">      <span class="keyword">const</span> newElementsTree = React.cloneElement(elementsTree, props, elementsTree.props.children);</div><div class="line">      <span class="keyword">return</span> newElementsTree;</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+<ul>
+<li>React.cloneElement(element, props, children)</li>
+<li>&#x53CD;&#x8F6C;&#x5143;&#x7D20;&#x6811;&#xFF0C;&#x6539;&#x53D8;&#x5143;&#x7D20;&#x6811;&#x4E2D;&#x7684;props</li>
+</ul>
+<h3 id="&#x63A7;&#x5236;state"><a href="#&#x63A7;&#x5236;state" class="headerlink" title="&#x63A7;&#x5236;state"></a>&#x63A7;&#x5236;state</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">WrappedComponent</span> </span>{</div><div class="line">    render() {</div><div class="line">      <span class="keyword">return</span> (</div><div class="line">        &lt;div&gt;</div><div class="line">          &lt;h2&gt;HOC Debugger Component&lt;/h2&gt;</div><div class="line">          &lt;p&gt;Props&lt;/p&gt; &lt;pre&gt;{JSON.stringify(this.props, null, 2)}&lt;/pre&gt;</div><div class="line">          &lt;p&gt;State&lt;/p&gt;&lt;pre&gt;{JSON.stringify(this.state, null, 2)}&lt;/pre&gt;</div><div class="line">          {super.render()}</div><div class="line">        &lt;/div&gt;</div><div class="line">      );</div><div class="line">    }</div><div class="line">  }</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x3001;&#x4FEE;&#x6539;&#x6216;&#x5220;&#x9664; WrappedComponent &#x5B9E;&#x4F8B;&#x4E2D;&#x7684; state</li>
+<li>&#x5927;&#x90E8;&#x5206;&#x7684;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x90FD;&#x5E94;&#x8BE5;&#x9650;&#x5236;&#x8BFB;&#x53D6;&#x6216;&#x589E;&#x52A0; state&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x540E;&#x8005;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x91CD;&#x65B0;&#x547D;&#x540D; state&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x6DF7;&#x6DC6;&#x3002;</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/React/">React</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/07/React-组合式组件开发/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">组合式组件开发实践</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/03/Antd-modal/">
+        <span class="next-text nav-default">Modal</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>
