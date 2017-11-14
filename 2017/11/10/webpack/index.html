@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="webpack"/>
+
+
+
+
+  <meta name="keywords" content="webpack," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/10/webpack/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> webpack · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          webpack
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 10, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-config-js"><span class="toc-text">webpack.config.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-Options"><span class="toc-text">webpack Options</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-source-maps"><span class="toc-text">Using source maps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#module"><span class="toc-text">module</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS文件打包"><span class="toc-text">CSS文件打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS分离"><span class="toc-text">CSS分离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片写入CSS"><span class="toc-text">图片写入CSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML中的图片"><span class="toc-text">HTML中的图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#plugins"><span class="toc-text">plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩js代码"><span class="toc-text">压缩js代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包HTML文件"><span class="toc-text">打包HTML文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态资源集中输出"><span class="toc-text">静态资源集中输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cleaning-up-the-dist-folder"><span class="toc-text">Cleaning up the /dist folder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#devServer（热更新）"><span class="toc-text">devServer（热更新）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动处理CSS属性前缀"><span class="toc-text">自动处理CSS属性前缀</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#postcss-config-js"><span class="toc-text">postcss.config.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写loader"><span class="toc-text">编写loader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提取CSS"><span class="toc-text">提取CSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#给webpack增加babel支持"><span class="toc-text">给webpack增加babel支持</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-1"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack配置"><span class="toc-text">webpack配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#babelrc配置"><span class="toc-text">.babelrc配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#babel-preset-env"><span class="toc-text">babel-preset-env</span></a></li></ol></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x672C;&#x7B14;&#x8BB0;&#x662F;&#x57FA;&#x4E8E;jspang&#x7684;webpack<a href="http://jspang.com/2017/09/16/webpack3-2/" target="_blank" rel="external">&#x6559;&#x7A0B;</a><br><a id="more"></a></p>
+<h2 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports= {</div><div class="line">  <span class="comment">//&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x9879;</span></div><div class="line">  entry: {},</div><div class="line">  <span class="comment">//&#x51FA;&#x53E3;&#x6587;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x9879;</span></div><div class="line">  output: {},</div><div class="line">  <span class="comment">//&#x6A21;&#x5757;&#xFF1A;&#x4F8B;&#x5982;&#x89E3;&#x8BFB;CSS,&#x56FE;&#x7247;&#x5982;&#x4F55;&#x8F6C;&#x6362;&#xFF0C;&#x538B;&#x7F29;</span></div><div class="line">  <span class="built_in">module</span>: {},</div><div class="line">  <span class="comment">//&#x63D2;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x751F;&#x4EA7;&#x6A21;&#x7248;&#x548C;&#x5404;&#x9879;&#x529F;&#x80FD;</span></div><div class="line">  plugins: [],</div><div class="line">  <span class="comment">//&#x914D;&#x7F6E;webpack&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x529F;&#x80FD;</span></div><div class="line">  devServer: {}</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="webpack-Options"><a href="#webpack-Options" class="headerlink" title="webpack Options"></a>webpack Options</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">--config filename   <span class="comment">//webpack&#x6267;&#x884C;&#x67D0;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span></div><div class="line">--colors            <span class="comment">//&#x5F69;&#x8272;&#x5B57;</span></div><div class="line">--progress          <span class="comment">//&#x8FDB;&#x5EA6;</span></div><div class="line">--display-modules   <span class="comment">//&#x6253;&#x5305;&#x7684;&#x6A21;&#x5757;</span></div><div class="line">--display-reasons   <span class="comment">//&#x6253;&#x5305;&#x7684;&#x539F;&#x56E0;</span></div><div class="line">--watch             <span class="comment">//webpack&#x76D1;&#x542C;&#x6587;&#x4EF6;&#x6709;&#x4FEE;&#x6539;&#x540E;&#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x6253;&#x5305;</span></div><div class="line">--port <span class="number">8888</span>         <span class="comment">//&#x8BBE;&#x7F6E;&#x542F;&#x52A8;&#x7AEF;&#x53E3;</span></div><div class="line">--open              <span class="comment">//&#x542F;&#x52A8;&#x540E;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;</span></div></pre></td></tr></table></figure>
+<h2 id="Using-source-maps"><a href="#Using-source-maps" class="headerlink" title="Using source maps"></a>Using source maps</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = {</div><div class="line">    <span class="attr">devtool</span>: <span class="string">&apos;inline-source-map&apos;</span>,</div><div class="line">    <span class="comment">//&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x6B63;&#x786E;&#x6307;&#x51FA;&#x54EA;&#x884C;&#x51FA;&#x9519;</span></div><div class="line">}</div></pre></td></tr></table></figure>
+<ul>
+<li>source-map:&#x5728;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x6587;&#x4EF6;&#x4E2D;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x4E14;&#x529F;&#x80FD;&#x5B8C;&#x5168;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5177;&#x6709;&#x6700;&#x597D;&#x7684;source map,&#x4F46;&#x662F;&#x5B83;&#x4F1A;&#x51CF;&#x6162;&#x6253;&#x5305;&#x901F;&#x5EA6;&#xFF1B;</li>
+<li>cheap-module-source-map:&#x5728;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x4E0D;&#x5E26;&#x5217;&#x6620;&#x5C04;&#x7684;map&#xFF0C;&#x4E0D;&#x5E26;&#x5217;&#x6620;&#x5C04;&#x63D0;&#x9AD8;&#x4E86;&#x6253;&#x5305;&#x901F;&#x5EA6;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x4F7F;&#x5F97;&#x6D4F;&#x89C8;&#x5668;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x53EA;&#x80FD;&#x5BF9;&#x5E94;&#x5230;&#x5177;&#x4F53;&#x7684;&#x884C;&#xFF0C;&#x4E0D;&#x80FD;&#x5BF9;&#x5E94;&#x5230;&#x5177;&#x4F53;&#x7684;&#x5217;&#xFF08;&#x7B26;&#x53F7;&#xFF09;,&#x4F1A;&#x5BF9;&#x8C03;&#x8BD5;&#x9020;&#x6210;&#x4E0D;&#x4FBF;&#x3002;</li>
+<li>eval-source-map:&#x4F7F;&#x7528;eval&#x6253;&#x5305;&#x6E90;&#x6587;&#x4EF6;&#x6A21;&#x5757;&#xFF0C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x751F;&#x4EA7;&#x5E72;&#x51C0;&#x7684;&#x5B8C;&#x6574;&#x7248;&#x7684;sourcemap&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x6253;&#x5305;&#x540E;&#x8F93;&#x51FA;&#x7684;JS&#x6587;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x5177;&#x6709;&#x6027;&#x80FD;&#x548C;&#x5B89;&#x5168;&#x7684;&#x9690;&#x60A3;&#x3002;&#x5728;&#x5F00;&#x53D1;&#x9636;&#x6BB5;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x597D;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x5728;&#x751F;&#x4EA7;&#x9636;&#x6BB5;&#x5219;&#x4E00;&#x5B9A;&#x8981;&#x4E0D;&#x5F00;&#x542F;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x3002;</li>
+<li>cheap-module-eval-source-map:&#x8FD9;&#x662F;&#x5728;&#x6253;&#x5305;&#x6587;&#x4EF6;&#x65F6;&#x6700;&#x5FEB;&#x7684;&#x751F;&#x4EA7;source map&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x751F;&#x4EA7;&#x7684; Source map &#x4F1A;&#x548C;&#x6253;&#x5305;&#x540E;&#x7684;JavaScript&#x6587;&#x4EF6;&#x540C;&#x884C;&#x663E;&#x793A;&#xFF0C;&#x6CA1;&#x6709;&#x5F71;&#x5C04;&#x5217;&#xFF0C;&#x548C;eval-source-map&#x9009;&#x9879;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7684;&#x7F3A;&#x70B9;&#x3002;</li>
+</ul>
+<p>&#x56DB;&#x79CD;&#x6253;&#x5305;&#x6A21;&#x5F0F;&#xFF0C;&#x6709;&#x4E0A;&#x5230;&#x4E0B;&#x6253;&#x5305;&#x901F;&#x5EA6;&#x8D8A;&#x6765;&#x8D8A;&#x5FEB;&#xFF0C;&#x4E0D;&#x8FC7;&#x540C;&#x65F6;&#x4E5F;&#x5177;&#x6709;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;&#x8D1F;&#x9762;&#x4F5C;&#x7528;&#xFF0C;&#x8F83;&#x5FEB;&#x7684;&#x6253;&#x5305;&#x901F;&#x5EA6;&#x7684;&#x540E;&#x679C;&#x5C31;&#x662F;&#x5BF9;&#x6267;&#x884C;&#x548C;&#x8C03;&#x8BD5;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x4E2A;&#x4EBA;&#x610F;&#x89C1;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5927;&#x578B;&#x9879;&#x76EE;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;source-map&#xFF0C;&#x5982;&#x679C;&#x662F;&#x4E2D;&#x5C0F;&#x578B;&#x9879;&#x76EE;&#x4F7F;&#x7528;eval-source-map&#x5C31;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x5E94;&#x5BF9;&#xFF0C;&#x9700;&#x8981;&#x5F3A;&#x8C03;&#x8BF4;&#x660E;&#x7684;&#x662F;&#xFF0C;source map&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5F00;&#x53D1;&#x9636;&#x6BB5;&#xFF0C;&#x4E0A;&#x7EBF;&#x524D;&#x8BB0;&#x5F97;&#x4FEE;&#x6539;&#x8FD9;&#x4E9B;&#x8C03;&#x8BD5;&#x8BBE;&#x7F6E;&#x3002;</p>
+<h2 id="module"><a href="#module" class="headerlink" title="module"></a>module</h2><p>Loader</p>
+<ul>
+<li>test&#xFF1A;&#x7528;&#x4E8E;&#x5339;&#x914D;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x7684;&#x6269;&#x5C55;&#x540D;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x662F;&#x5FC5;&#x987B;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x7684;&#xFF1B;</li>
+<li>use&#xFF1A;loader&#x540D;&#x79F0;&#xFF0C;&#x5C31;&#x662F;&#x4F60;&#x8981;&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x4E5F;&#x5FC5;&#x987B;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x5426;&#x5219;&#x62A5;&#x9519;&#xFF1B;</li>
+<li>include/exclude:&#x624B;&#x52A8;&#x6DFB;&#x52A0;&#x5FC5;&#x987B;&#x5904;&#x7406;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x6587;&#x4EF6;&#x5939;&#xFF09;&#x6216;&#x5C4F;&#x853D;&#x4E0D;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x6587;&#x4EF6;&#x5939;&#xFF09;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#xFF1B;</li>
+<li>query&#xFF1A;&#x4E3A;loaders&#x63D0;&#x4F9B;&#x989D;&#x5916;&#x7684;&#x8BBE;&#x7F6E;&#x9009;&#x9879;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x3002;</li>
+</ul>
+<p>Loader &#x7684;&#x4E09;&#x79CD;&#x5199;&#x6CD5;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">      <span class="attr">use</span>: [<span class="string">&apos;style-loader&apos;</span>, <span class="string">&apos;css-loader&apos;</span>]</div><div class="line">    }</div><div class="line">  ]</div><div class="line">}</div><div class="line"></div><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">      <span class="attr">loader</span>: [<span class="string">&apos;style-loader&apos;</span>, <span class="string">&apos;css-loader&apos;</span>]</div><div class="line">    }</div><div class="line">  ]</div><div class="line">}</div><div class="line"></div><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">      <span class="attr">use</span>: [{</div><div class="line">          <span class="attr">loader</span>: <span class="string">&apos;style-loader&apos;</span></div><div class="line">        }, {</div><div class="line">          <span class="attr">loader</span>: <span class="string">&apos;css-loader&apos;</span></div><div class="line">        }]</div><div class="line">    }</div><div class="line">  ]</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<h3 id="CSS&#x6587;&#x4EF6;&#x6253;&#x5305;"><a href="#CSS&#x6587;&#x4EF6;&#x6253;&#x5305;" class="headerlink" title="CSS&#x6587;&#x4EF6;&#x6253;&#x5305;"></a>CSS&#x6587;&#x4EF6;&#x6253;&#x5305;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">yarn add css-loader --dev</div><div class="line">yarn add style-loader --dev</div><div class="line"></div><div class="line"><span class="comment">// Less</span></div><div class="line">yarn add less --dev</div><div class="line">yarn add less-loader --dev</div><div class="line"></div><div class="line"><span class="comment">// Sass</span></div><div class="line">yarn add node-sass --dev</div><div class="line">yarn add sass-loader --dev</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">      <span class="attr">use</span>: [<span class="string">&apos;style-loader&apos;</span>, <span class="string">&apos;css-loader&apos;</span>]</div><div class="line">    }, {  <span class="comment">// less&#x6587;&#x4EF6;&#x914D;&#x7F6E;</span></div><div class="line">      test: <span class="regexp">/\.less$/</span>,</div><div class="line">      <span class="attr">use</span>: [{</div><div class="line">        <span class="attr">loader</span>: <span class="string">&quot;style-loader&quot;</span> <span class="comment">// creates style nodes from JS strings</span></div><div class="line">      }, {</div><div class="line">        <span class="attr">loader</span>: <span class="string">&quot;css-loader&quot;</span> <span class="comment">// translates CSS into CommonJS</span></div><div class="line">      , {</div><div class="line">        <span class="attr">loader</span>: <span class="string">&quot;less-loader&quot;</span> <span class="comment">// compiles Less to CSS</span></div><div class="line">      }]</div><div class="line">    }, {  <span class="comment">// scss&#x6587;&#x4EF6;&#x914D;&#x7F6E;</span></div><div class="line">      test: <span class="regexp">/\.scss$/</span>,</div><div class="line">      <span class="attr">use</span>: [{</div><div class="line">          <span class="attr">loader</span>: <span class="string">&quot;style-loader&quot;</span> <span class="comment">// creates style nodes from JS strings</span></div><div class="line">      }, {</div><div class="line">          <span class="attr">loader</span>: <span class="string">&quot;css-loader&quot;</span> <span class="comment">// translates CSS into CommonJS</span></div><div class="line">      }, {</div><div class="line">          <span class="attr">loader</span>: <span class="string">&quot;sass-loader&quot;</span> <span class="comment">// compiles Sass to CSS</span></div><div class="line">      }]</div><div class="line">    }</div><div class="line">  ]</div><div class="line">}</div></pre></td></tr></table></figure>
+<h3 id="CSS&#x5206;&#x79BB;"><a href="#CSS&#x5206;&#x79BB;" class="headerlink" title="CSS&#x5206;&#x79BB;"></a>CSS&#x5206;&#x79BB;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add extract-text-webpack-plugin --dev</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> extractTextPlugin = <span class="built_in">require</span>(<span class="string">&quot;extract-text-webpack-plugin&quot;</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">      <span class="attr">use</span>: extractTextPlugin.extract({</div><div class="line">        <span class="attr">fallback</span>: <span class="string">&quot;style-loader&quot;</span>,</div><div class="line">        <span class="attr">use</span>: <span class="string">&quot;css-loader&quot;</span></div><div class="line">      })</div><div class="line">    }, {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.less$/</span>,</div><div class="line">      <span class="attr">use</span>: extractTextPlugin.extract({</div><div class="line">        <span class="attr">use</span>: [{</div><div class="line">            <span class="attr">loader</span>: <span class="string">&quot;css-loader&quot;</span></div><div class="line">        }, {</div><div class="line">            <span class="attr">loader</span>: <span class="string">&quot;less-loader&quot;</span></div><div class="line">        }],</div><div class="line">        <span class="comment">// use style-loader in development</span></div><div class="line">        fallback: <span class="string">&quot;style-loader&quot;</span></div><div class="line">      })</div><div class="line">    }, {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.scss$/</span>,</div><div class="line">      <span class="attr">use</span>: extractTextPlugin.extract({</div><div class="line">        <span class="attr">use</span>: [{</div><div class="line">            <span class="attr">loader</span>: <span class="string">&quot;css-loader&quot;</span></div><div class="line">        }, {</div><div class="line">            <span class="attr">loader</span>: <span class="string">&quot;sass-loader&quot;</span></div><div class="line">        }],</div><div class="line">        <span class="comment">// use style-loader in development</span></div><div class="line">        fallback: <span class="string">&quot;style-loader&quot;</span></div><div class="line">      })</div><div class="line">    }</div><div class="line">  ]</div><div class="line">},</div><div class="line"><span class="attr">plugins</span>: [</div><div class="line">  <span class="comment">// &#x53C2;&#x6570;&#x4E3A;&#x6253;&#x5305;&#x540E;&#x7684;&#x8DEF;&#x5F84;</span></div><div class="line">  <span class="keyword">new</span> extractTextPlugin(<span class="string">&apos;/css/index.css&apos;</span>)</div><div class="line">]</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x6709;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x4EA4;&#x4E92;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x4F60;&#x7684;JavasScript&#x9875;&#x9762;&#x4EE3;&#x7801;&#x4F1A;&#x975E;&#x5E38;&#x5C11;&#xFF0C;&#x800C;&#x5927;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x90FD;&#x5728;CSS&#x4E2D;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x9879;&#x76EE;&#x7EC4;&#x957F;&#x4F1A;&#x8981;&#x6C42;&#x628A;CSS&#x5355;&#x72EC;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#xFF0C;&#x65B9;&#x4FBF;&#x4EE5;&#x540E;&#x66F4;&#x6539;&#x3002;</li>
+<li>webpack&#x5B98;&#x65B9;&#x5176;&#x5B9E;&#x5E76;&#x4E0D;&#x5EFA;&#x8BAE;&#x8FD9;&#x6837;&#x4F5C;&#xFF0C;&#x4ED6;&#x4EEC;&#x8BA4;&#x4E3A;CSS&#x5C31;&#x5E94;&#x8BE5;&#x6253;&#x5305;&#x5230;JavasScript&#x5F53;&#x4E2D;&#x4EE5;&#x51CF;&#x5C11;http&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x3002;</li>
+</ul>
+<h3 id="&#x56FE;&#x7247;&#x5199;&#x5165;CSS"><a href="#&#x56FE;&#x7247;&#x5199;&#x5165;CSS" class="headerlink" title="&#x56FE;&#x7247;&#x5199;&#x5165;CSS"></a>&#x56FE;&#x7247;&#x5199;&#x5165;CSS</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yarn add url-loader --dev</div><div class="line">yarn add file-loader --dev</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">modul: [</div><div class="line">  {</div><div class="line">    test: /\.(png|jpg|gif)$/,</div><div class="line">    use: [{</div><div class="line">      loader: &apos;url-loader&apos;,</div><div class="line">      options: {</div><div class="line">        limit: 50000,</div><div class="line">        outputPath: &apos;images/&apos;</div><div class="line">      }</div><div class="line">    }</div><div class="line">  }</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>params</p>
+<ul>
+<li>test:/.(png|jpg|gif)/&#x662F;&#x5339;&#x914D;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x540D;&#x79F0;&#x3002;</li>
+<li>use&#xFF1A;&#x662F;&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7684;loader&#x548C;loader&#x7684;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x3002;</li>
+<li>limit&#xFF1A;&#x662F;&#x628A;&#x5C0F;&#x4E8E;500000B&#x7684;&#x6587;&#x4EF6;&#x6253;&#x6210;Base64&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x5199;&#x5165;JS&#x3002;</li>
+<li>outputPath: &#x5C06;&#x6253;&#x5305;&#x540E;&#x7684;&#x56FE;&#x7247;&#x653E;&#x5230;images&#x76EE;&#x5F55;&#x4E0B;</li>
+</ul>
+<p>limit&#x53C2;&#x6570;&#x8BE6;&#x89E3;&#xFF1A;</p>
+<ul>
+<li><p>&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x5C0F;&#x4E8E;limit&#x53C2;&#x6570;&#xFF0C;url-loader&#x5C06;&#x4F1A;&#x628A;&#x6587;&#x4EF6;&#x8F6C;&#x4E3A;DataURL&#xFF08;Base64&#x683C;&#x5F0F;&#xFF09;&#xFF1B;</p>
+</li>
+<li><p>&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x5927;&#x4E8E;limit&#xFF0C;url-loader&#x4F1A;&#x8C03;&#x7528;file-loader&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x53C2;&#x6570;&#x4E5F;&#x4F1A;&#x76F4;&#x63A5;&#x4F20;&#x7ED9;file-loader&#x3002;</p>
+</li>
+</ul>
+<p>file-loader&#x4E0E;url-loader&#x4F5C;&#x7528;</p>
+<ul>
+<li><p>file-loader&#xFF1A;&#x89E3;&#x51B3;&#x5F15;&#x7528;&#x8DEF;&#x5F84;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x62FF;background&#x6837;&#x5F0F;&#x7528;url&#x5F15;&#x5165;&#x80CC;&#x666F;&#x56FE;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x77E5;&#x9053;&#xFF0C;webpack&#x6700;&#x7EC8;&#x4F1A;&#x5C06;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x6253;&#x5305;&#x6210;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x6837;&#x5F0F;&#x4E2D;&#x7684;url&#x8DEF;&#x5F84;&#x662F;&#x76F8;&#x5BF9;&#x5165;&#x53E3;html&#x9875;&#x9762;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x539F;&#x59CB;css&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#x7684;&#x3002;&#x8FD9;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x56FE;&#x7247;&#x5F15;&#x5165;&#x5931;&#x8D25;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#x7528;file-loader&#x89E3;&#x51B3;&#x7684;&#xFF0C;file-loader&#x53EF;&#x4EE5;&#x89E3;&#x6790;&#x9879;&#x76EE;&#x4E2D;&#x7684;url&#x5F15;&#x5165;&#xFF08;&#x4E0D;&#x4EC5;&#x9650;&#x4E8E;css&#xFF09;&#xFF0C;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5C06;&#x56FE;&#x7247;&#x62F7;&#x8D1D;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x518D;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x4FEE;&#x6539;&#x6253;&#x5305;&#x540E;&#x6587;&#x4EF6;&#x5F15;&#x7528;&#x8DEF;&#x5F84;&#xFF0C;&#x4F7F;&#x4E4B;&#x6307;&#x5411;&#x6B63;&#x786E;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>url-loader&#xFF1A;&#x5982;&#x679C;&#x56FE;&#x7247;&#x8F83;&#x591A;&#xFF0C;&#x4F1A;&#x53D1;&#x5F88;&#x591A;http&#x8BF7;&#x6C42;&#xFF0C;&#x4F1A;&#x964D;&#x4F4E;&#x9875;&#x9762;&#x6027;&#x80FD;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;url-loader&#x89E3;&#x51B3;&#x3002;url-loader&#x4F1A;&#x5C06;&#x5F15;&#x5165;&#x7684;&#x56FE;&#x7247;&#x7F16;&#x7801;&#xFF0C;&#x751F;&#x6210;dataURl&#x3002;&#x76F8;&#x5F53;&#x4E8E;&#x628A;&#x56FE;&#x7247;&#x6570;&#x636E;&#x7FFB;&#x8BD1;&#x6210;&#x4E00;&#x4E32;&#x5B57;&#x7B26;&#x3002;&#x518D;&#x628A;&#x8FD9;&#x4E32;&#x5B57;&#x7B26;&#x6253;&#x5305;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6700;&#x7EC8;&#x53EA;&#x9700;&#x8981;&#x5F15;&#x5165;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5C31;&#x80FD;&#x8BBF;&#x95EE;&#x56FE;&#x7247;&#x4E86;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x56FE;&#x7247;&#x8F83;&#x5927;&#xFF0C;&#x7F16;&#x7801;&#x4F1A;&#x6D88;&#x8017;&#x6027;&#x80FD;&#x3002;&#x56E0;&#x6B64;url-loader&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;limit&#x53C2;&#x6570;&#xFF0C;&#x5C0F;&#x4E8E;limit&#x5B57;&#x8282;&#x7684;&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x8F6C;&#x4E3A;DataURl&#xFF0C;&#x5927;&#x4E8E;limit&#x7684;&#x8FD8;&#x4F1A;&#x4F7F;&#x7528;file-loader&#x8FDB;&#x884C;copy&#x3002;</p>
+</li>
+</ul>
+<h3 id="HTML&#x4E2D;&#x7684;&#x56FE;&#x7247;"><a href="#HTML&#x4E2D;&#x7684;&#x56FE;&#x7247;" class="headerlink" title="HTML&#x4E2D;&#x7684;&#x56FE;&#x7247;"></a>HTML&#x4E2D;&#x7684;&#x56FE;&#x7247;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add html-withimg-loader --dev</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.(htm|html)$/i</span>,</div><div class="line">      <span class="attr">use</span>:[<span class="string">&apos;html-withimg-loader&apos;</span>] </div><div class="line">    }</div><div class="line">  ]</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x5904;&#x7406;HTML&#x4E2D;img&#x6807;&#x7B7E;src&#x7684;&#x8DEF;&#x5F84;</p>
+<h2 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h2><h3 id="&#x538B;&#x7F29;js&#x4EE3;&#x7801;"><a href="#&#x538B;&#x7F29;js&#x4EE3;&#x7801;" class="headerlink" title="&#x538B;&#x7F29;js&#x4EE3;&#x7801;"></a>&#x538B;&#x7F29;js&#x4EE3;&#x7801;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const uglify = require(&apos;uglifyjs-webpack-plugin&apos;)</div><div class="line"></div><div class="line">plugins: [</div><div class="line">  new uglyfy()</div><div class="line">]</div></pre></td></tr></table></figure>
+<h3 id="&#x6253;&#x5305;HTML&#x6587;&#x4EF6;"><a href="#&#x6253;&#x5305;HTML&#x6587;&#x4EF6;" class="headerlink" title="&#x6253;&#x5305;HTML&#x6587;&#x4EF6;"></a>&#x6253;&#x5305;HTML&#x6587;&#x4EF6;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add html-webpack-plugin</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&apos;html-webpack-plugin&apos;</span>)</div><div class="line"></div><div class="line">plugins: [</div><div class="line">  <span class="keyword">new</span> HtmlWebpackPlugin({</div><div class="line">    <span class="attr">hash</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">minify</span>: {</div><div class="line">      <span class="attr">removeAttributeQuotes</span>: <span class="literal">true</span></div><div class="line">    },</div><div class="line">    <span class="attr">template</span>: <span class="string">&apos;./src/index.html&apos;</span>,</div><div class="line">    <span class="attr">title</span>: <span class="string">&apos;Output Management&apos;</span>, <span class="comment">//&#x9875;&#x9762;title</span></div><div class="line">    filename: <span class="string">&apos;admin.html&apos;</span>,     <span class="comment">//html&#x7684;&#x6587;&#x4EF6;&#x540D;</span></div><div class="line">    filename: <span class="string">&apos;html/admin.html&apos;</span>,<span class="comment">//&#x6253;&#x5305;&#x81F3;html&#x6587;&#x4EF6;&#x5939;&#x4E0B;</span></div><div class="line">    inject: <span class="literal">true</span> | <span class="string">&apos;head&apos;</span> | <span class="string">&apos;body&apos;</span> | <span class="literal">false</span> <span class="comment">//&lt;scrip&gt;&lt;/scrip&gt;&#x6807;&#x7B7E;&#x63D2;&#x5165;&#x7684;&#x4F4D;&#x7F6E;</span></div><div class="line">  })</div><div class="line">]</div></pre></td></tr></table></figure>
+<ul>
+<li>minify&#xFF1A;&#x662F;&#x5BF9;html&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#xFF0C;removeAttrubuteQuotes&#x662F;&#x5374;&#x6389;&#x5C5E;&#x6027;&#x7684;&#x53CC;&#x5F15;&#x53F7;&#x3002;</li>
+<li>hash&#xFF1A;&#x4E3A;&#x4E86;&#x5F00;&#x53D1;&#x4E2D;js&#x6709;&#x7F13;&#x5B58;&#x6548;&#x679C;&#xFF0C;&#x6240;&#x4EE5;&#x52A0;&#x5165;hash&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x907F;&#x514D;&#x7F13;&#x5B58;JS&#x3002;</li>
+<li>template&#xFF1A;&#x662F;&#x8981;&#x6253;&#x5305;&#x7684;html&#x6A21;&#x7248;&#x8DEF;&#x5F84;&#x548C;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x3002;</li>
+</ul>
+<h3 id="&#x9759;&#x6001;&#x8D44;&#x6E90;&#x96C6;&#x4E2D;&#x8F93;&#x51FA;"><a href="#&#x9759;&#x6001;&#x8D44;&#x6E90;&#x96C6;&#x4E2D;&#x8F93;&#x51FA;" class="headerlink" title="&#x9759;&#x6001;&#x8D44;&#x6E90;&#x96C6;&#x4E2D;&#x8F93;&#x51FA;"></a>&#x9759;&#x6001;&#x8D44;&#x6E90;&#x96C6;&#x4E2D;&#x8F93;&#x51FA;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add copy-webpack-plugin --dev</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> CopyWebpackPlugin = <span class="built_in">require</span>(<span class="string">&apos;copy-webpack-plugin&apos;</span>)</div><div class="line"></div><div class="line">plugins: [</div><div class="line">  <span class="keyword">new</span> CopyWebpackPlugin([</div><div class="line">    {</div><div class="line">      <span class="attr">from</span>: __dirname + <span class="string">&apos;/src/images&apos;</span>,</div><div class="line">      <span class="attr">to</span>: <span class="string">&apos;./public&apos;</span></div><div class="line">    }</div><div class="line">  ])</div><div class="line">]</div></pre></td></tr></table></figure>
+<ul>
+<li>from:&#x8981;&#x6253;&#x5305;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x76EE;&#x5F55;&#x5730;&#x5740;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;__dirname&#x662F;&#x6307;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x662F;node&#x7684;&#x4E00;&#x79CD;&#x8BED;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5B9A;&#x4F4D;&#x5230;&#x672C;&#x673A;&#x7684;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E2D;&#x3002;</li>
+<li>to:&#x8981;&#x6253;&#x5305;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;&#xFF0C;&#x8DDF;&#x968F;output&#x914D;&#x7F6E;&#x4E2D;&#x7684;&#x76EE;&#x5F55;&#x3002;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x81EA;&#x5DF1;&#x52A0;__dirname&#x3002;</li>
+<li>&#x5C06;&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x76F4;&#x63A5;&#x6253;&#x5305;&#x5230;dist&#x76EE;&#x5F55;&#x4E2D;&#x3002;</li>
+</ul>
+<h2 id="Cleaning-up-the-dist-folder"><a href="#Cleaning-up-the-dist-folder" class="headerlink" title="Cleaning up the /dist folder"></a>Cleaning up the /dist folder</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn clean-webpack-plugin --dev</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> CleanWbpackPlugin = <span class="built_in">require</span>(<span class="string">&apos;clean-webpack-plugin&apos;</span>)</div><div class="line"></div><div class="line">plugins: [</div><div class="line">  <span class="keyword">new</span> CleanWbpackPlugin([<span class="string">&apos;dist&apos;</span>]), <span class="comment">//&#x6253;&#x5305;&#x65F6;&#x6E05;&#x7A7A;dist&#x76EE;&#x5F55;</span></div><div class="line">]</div></pre></td></tr></table></figure>
+<h2 id="devServer&#xFF08;&#x70ED;&#x66F4;&#x65B0;&#xFF09;"><a href="#devServer&#xFF08;&#x70ED;&#x66F4;&#x65B0;&#xFF09;" class="headerlink" title="devServer&#xFF08;&#x70ED;&#x66F4;&#x65B0;&#xFF09;"></a>devServer&#xFF08;&#x70ED;&#x66F4;&#x65B0;&#xFF09;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add webpack-dev-server --dev</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">devServer:{</div><div class="line">    <span class="comment">//&#x8BBE;&#x7F6E;&#x57FA;&#x672C;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</span></div><div class="line">    contentBase:path.resolve(__dirname,<span class="string">&apos;dist&apos;</span>),</div><div class="line">    <span class="comment">//&#x670D;&#x52A1;&#x5668;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;IP&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;localhost</span></div><div class="line">    host:<span class="string">&apos;localhost&apos;</span>,</div><div class="line">    <span class="comment">//&#x670D;&#x52A1;&#x7AEF;&#x538B;&#x7F29;&#x662F;&#x5426;&#x5F00;&#x542F;</span></div><div class="line">    compress:<span class="literal">true</span>,</div><div class="line">    <span class="comment">//&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x7AEF;&#x53E3;&#x53F7;</span></div><div class="line">    port:<span class="number">1717</span></div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x81EA;&#x52A8;&#x5904;&#x7406;CSS&#x5C5E;&#x6027;&#x524D;&#x7F00;"><a href="#&#x81EA;&#x52A8;&#x5904;&#x7406;CSS&#x5C5E;&#x6027;&#x524D;&#x7F00;" class="headerlink" title="&#x81EA;&#x52A8;&#x5904;&#x7406;CSS&#x5C5E;&#x6027;&#x524D;&#x7F00;"></a>&#x81EA;&#x52A8;&#x5904;&#x7406;CSS&#x5C5E;&#x6027;&#x524D;&#x7F00;</h2><h3 id="&#x5B89;&#x88C5;"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add postcss-loader autoprefixer --dev</div></pre></td></tr></table></figure>
+<h3 id="postcss-config-js"><a href="#postcss-config-js" class="headerlink" title="postcss.config.js"></a>postcss.config.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = {</div><div class="line">    <span class="attr">plugins</span>: [</div><div class="line">        <span class="built_in">require</span>(<span class="string">&apos;autoprefixer&apos;</span>)</div><div class="line">    ]</div><div class="line">}</div></pre></td></tr></table></figure>
+<ul>
+<li>postCSS&#x63A8;&#x8350;&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#xFF08;&#x548C;webpack.config.js&#x540C;&#x7EA7;&#xFF09;&#xFF0C;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;postcss.config.js&#x6587;&#x4EF6;&#x3002;</li>
+</ul>
+<h3 id="&#x7F16;&#x5199;loader"><a href="#&#x7F16;&#x5199;loader" class="headerlink" title="&#x7F16;&#x5199;loader"></a>&#x7F16;&#x5199;loader</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">      <span class="attr">use</span>: [</div><div class="line">        {</div><div class="line">          <span class="attr">loader</span>: <span class="string">&apos;style-loader&apos;</span></div><div class="line">        }, {</div><div class="line">          <span class="attr">loader</span>: <span class="string">&apos;css-loader&apos;</span>,</div><div class="line">          <span class="attr">options</span>: {</div><div class="line">            <span class="attr">modules</span>: <span class="literal">true</span></div><div class="line">          }</div><div class="line">        }, {</div><div class="line">          <span class="attr">loader</span>: <span class="string">&apos;postcss-loader&apos;</span></div><div class="line">        }</div><div class="line">      ]</div><div class="line">    }</div><div class="line">  ]</div><div class="line">}</div></pre></td></tr></table></figure>
+<h3 id="&#x63D0;&#x53D6;CSS"><a href="#&#x63D0;&#x53D6;CSS" class="headerlink" title="&#x63D0;&#x53D6;CSS"></a>&#x63D0;&#x53D6;CSS</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">      <span class="attr">use</span>: extractTextPlugin.extract({</div><div class="line">        <span class="attr">fallback</span>: <span class="string">&apos;style-loader&apos;</span>,</div><div class="line">        <span class="attr">use</span>: [</div><div class="line">          { <span class="attr">loader</span>: <span class="string">&apos;css-loader&apos;</span>, <span class="attr">options</span>: { <span class="attr">importLoaders</span>: <span class="number">1</span> }},</div><div class="line">          <span class="string">&apos;posstcss-loader&apos;</span></div><div class="line">        ]</div><div class="line">      })</div><div class="line">    }</div><div class="line">  ]</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x7ED9;webpack&#x589E;&#x52A0;babel&#x652F;&#x6301;"><a href="#&#x7ED9;webpack&#x589E;&#x52A0;babel&#x652F;&#x6301;" class="headerlink" title="&#x7ED9;webpack&#x589E;&#x52A0;babel&#x652F;&#x6301;"></a>&#x7ED9;webpack&#x589E;&#x52A0;babel&#x652F;&#x6301;</h2><h3 id="&#x5B89;&#x88C5;-1"><a href="#&#x5B89;&#x88C5;-1" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add babel-core babel-loader babel-preset-es2015 babel-preset-react --dev</div></pre></td></tr></table></figure>
+<h3 id="webpack&#x914D;&#x7F6E;"><a href="#webpack&#x914D;&#x7F6E;" class="headerlink" title="webpack&#x914D;&#x7F6E;"></a>webpack&#x914D;&#x7F6E;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">      <span class="attr">use</span>: {</div><div class="line">        <span class="attr">loader</span>: <span class="string">&apos;babel-loader&apos;</span>,</div><div class="line">        <span class="attr">options</span>: {</div><div class="line">          <span class="attr">presets</span>: [</div><div class="line">            <span class="string">&apos;es2015&apos;</span>, <span class="string">&apos;react&apos;</span></div><div class="line">          ]</div><div class="line">        }</div><div class="line">      },</div><div class="line">      <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span></div><div class="line">    }</div><div class="line">  ]</div><div class="line">}</div></pre></td></tr></table></figure>
+<h3 id="babelrc&#x914D;&#x7F6E;"><a href="#babelrc&#x914D;&#x7F6E;" class="headerlink" title=".babelrc&#x914D;&#x7F6E;"></a>.babelrc&#x914D;&#x7F6E;</h3><p>.babelrc<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  <span class="string">&quot;presets&quot;</span>: [<span class="string">&quot;react&quot;</span>, <span class="string">&quot;es2015&quot;</span>]</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<ul>
+<li>&#x867D;&#x7136;babel&#x53EF;&#x4EE5;&#x5728;webpack.config.js&#x4E2D;&#x914D;&#x7F6E;&#xFF0C;&#x4F46;babel&#x5177;&#x6709;&#x975E;&#x5E38;&#x591A;&#x7684;&#x914D;&#x7F6E;&#x9009;&#x9879;&#xFF0C;&#x5982;&#x679C;&#x5199;&#x5728;webpack.config.js&#x4E2D;&#x4F1A;&#x975E;&#x5E38;&#x96CD;&#x957F;&#x4E0D;&#x53EF;&#x9605;&#x8BFB;</li>
+</ul>
+<p>webpack.config.js&#x91CC;&#x7684;loader&#x914D;&#x7F6E;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: {</div><div class="line">  <span class="attr">rules</span>: [</div><div class="line">    {</div><div class="line">      <span class="attr">test</span>: <span class="regexp">/\.(js|jsx)/</span>,</div><div class="line">      <span class="attr">use</span>: {</div><div class="line">        <span class="attr">loader</span>: <span class="string">&apos;babel-loader&apos;</span></div><div class="line">      },</div><div class="line">      <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span></div><div class="line">    }</div><div class="line">  ]</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<h3 id="babel-preset-env"><a href="#babel-preset-env" class="headerlink" title="babel-preset-env"></a>babel-preset-env</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add babel-preset-env</div></pre></td></tr></table></figure>
+<p>.babelrc<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">  <span class="string">&quot;presets&quot;</span>: [<span class="string">&quot;react&quot;</span>, <span class="string">&quot;env&quot;</span>]</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<ul>
+<li>&#x73B0;&#x5728;&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x4F7F;&#x7528;babel-preset-env</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/webpack/">webpack</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/14/React-Redux/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">React-Redux</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/10/CSS-过度模块/">
+        <span class="next-text nav-default">过度模块</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>
