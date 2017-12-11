@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="按版本打包"/>
+
+
+
+
+  <meta name="keywords" content="webpack," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/12/11/webpack-按版本打包/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> 按版本打包 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          按版本打包
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Dec 11, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#roadhogrc-js"><span class="toc-text">.roadhogrc.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-entry-ejs"><span class="toc-text">/src/entry.ejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-config-js"><span class="toc-text">webpack.config.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Note"><span class="toc-text">Note</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x6839;&#x636E;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x6309;&#x7248;&#x672C;&#x6253;&#x5305;&#xFF0C;&#x53C2;&#x8003;<a href="https://github.com/zuiidea/antd-admin" target="_blank" rel="external">antd-admin</a>&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x8FDB;&#x884C;webpack&#x914D;&#x7F6E;<br><a id="more"></a></p>
+<h2 id="roadhogrc-js"><a href="#roadhogrc-js" class="headerlink" title=".roadhogrc.js"></a>.roadhogrc.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&apos;path&apos;</span>)</div><div class="line"><span class="keyword">const</span> { version } = <span class="built_in">require</span>(<span class="string">&apos;./package.json&apos;</span>)</div><div class="line"></div><div class="line"><span class="keyword">const</span> svgSpriteDirs = [</div><div class="line">  path.resolve(__dirname, <span class="string">&apos;src/svg/&apos;</span>),</div><div class="line">  <span class="built_in">require</span>.resolve(<span class="string">&apos;antd&apos;</span>).replace(<span class="regexp">/index\.js$/</span>, <span class="string">&apos;&apos;</span>)</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> {</div><div class="line">  <span class="attr">entry</span>: <span class="string">&apos;src/index.js&apos;</span>,</div><div class="line">  <span class="attr">svgSpriteLoaderDirs</span>: svgSpriteDirs,</div><div class="line">  <span class="attr">theme</span>: <span class="string">&quot;./theme.config.js&quot;</span>,</div><div class="line">  <span class="comment">// &#x5E03;&#x7F6E;&#x5230;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x9879;&#x76EE;&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;</span></div><div class="line">  publicPath: <span class="string">`/<span class="subst">${version}</span>/`</span>,</div><div class="line">  <span class="comment">// &#x6253;&#x5305;&#x6587;&#x4EF6;&#x7684;&#x5B58;&#x653E;&#x5730;&#x5740;</span></div><div class="line">  outputPath: <span class="string">`./dist/<span class="subst">${version}</span>`</span>,</div><div class="line">  <span class="comment">// &#x63A5;&#x53E3;&#x4EE3;&#x7406;&#x793A;&#x4F8B;</span></div><div class="line">  proxy: {</div><div class="line">    <span class="string">&quot;/api/v1/weather&quot;</span>: {</div><div class="line">      <span class="string">&quot;target&quot;</span>: <span class="string">&quot;https://api.seniverse.com/&quot;</span>,</div><div class="line">      <span class="string">&quot;changeOrigin&quot;</span>: <span class="literal">true</span>,</div><div class="line">      <span class="string">&quot;pathRewrite&quot;</span>: { <span class="string">&quot;^/api/v1/weather&quot;</span>: <span class="string">&quot;/v3/weather&quot;</span> }</div><div class="line">    }</div><div class="line">  },</div><div class="line">  <span class="attr">env</span>: {</div><div class="line">    <span class="attr">development</span>: {</div><div class="line">      <span class="attr">extraBabelPlugins</span>: [</div><div class="line">        <span class="string">&quot;dva-hmr&quot;</span>,</div><div class="line">        <span class="string">&quot;transform-runtime&quot;</span>,</div><div class="line">        [</div><div class="line">          <span class="string">&quot;import&quot;</span>, {</div><div class="line">            <span class="string">&quot;libraryName&quot;</span>: <span class="string">&quot;antd&quot;</span>,</div><div class="line">            <span class="string">&quot;style&quot;</span>: <span class="literal">true</span></div><div class="line">          }</div><div class="line">        ]</div><div class="line">      ]</div><div class="line">    },</div><div class="line">    <span class="attr">production</span>: {</div><div class="line">      <span class="attr">extraBabelPlugins</span>: [</div><div class="line">        <span class="string">&quot;transform-runtime&quot;</span>,</div><div class="line">        [</div><div class="line">          <span class="string">&quot;import&quot;</span>, {</div><div class="line">            <span class="string">&quot;libraryName&quot;</span>: <span class="string">&quot;antd&quot;</span>,</div><div class="line">            <span class="string">&quot;style&quot;</span>: <span class="literal">true</span></div><div class="line">          }</div><div class="line">        ]</div><div class="line">      ]</div><div class="line">    }</div><div class="line">  },</div><div class="line">  <span class="attr">dllPlugin</span>: {</div><div class="line">    <span class="attr">exclude</span>: [<span class="string">&quot;babel-runtime&quot;</span>, <span class="string">&quot;roadhog&quot;</span>, <span class="string">&quot;cross-env&quot;</span>],</div><div class="line">    <span class="attr">include</span>: [<span class="string">&quot;dva/router&quot;</span>, <span class="string">&quot;dva/saga&quot;</span>, <span class="string">&quot;dva/fetch&quot;</span>]</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="src-entry-ejs"><a href="#src-entry-ejs" class="headerlink" title="/src/entry.ejs"></a>/src/entry.ejs</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add ejs-loader</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">htmlWebpackPlugin.options.headScripts</span> = <span class="string">htmlWebpackPlugin.options.headScripts</span> || [] %&gt;</span></div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;A admin dashboard application demo built upon Ant Design and Dva.js&quot;</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>antd admin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--[if lte IE 10]&gt;</span></div><div class="line">      &lt;script</div><div class="line">        src=&quot;https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;![endif]--&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span> (<span class="attr">item</span> <span class="attr">of</span> <span class="attr">htmlWebpackPlugin.options.headScripts</span>) { %&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&lt;%= item %&gt;&quot;</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%</span> } %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yarn add html-webpack-plugin --dev</div><div class="line">yarn add copy-webpack-plugin --dev</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&apos;html-webpack-plugin&apos;</span>)</div><div class="line"><span class="keyword">const</span> CopyWebpackPlugin = <span class="built_in">require</span>(<span class="string">&apos;copy-webpack-plugin&apos;</span>)</div><div class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">&apos;webpack&apos;</span>)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">webpackConfig, env</span>) =&gt;</span> {</div><div class="line">  <span class="keyword">const</span> production = env === <span class="string">&apos;production&apos;</span></div><div class="line">  <span class="comment">// FilenameHash</span></div><div class="line">  webpackConfig.output.chunkFilename = <span class="string">&apos;[name].[chunkhash].js&apos;</span></div><div class="line"></div><div class="line">  <span class="keyword">if</span> (production) {</div><div class="line">    <span class="keyword">if</span> (webpackConfig.module) {</div><div class="line">    <span class="comment">// ClassnameHash</span></div><div class="line">      webpackConfig.module.rules.map(<span class="function">(<span class="params">item</span>) =&gt;</span> {</div><div class="line">        <span class="keyword">if</span> (<span class="built_in">String</span>(item.test) === <span class="string">&apos;/\\.less$/&apos;</span> || <span class="built_in">String</span>(item.test) === <span class="string">&apos;/\\.css/&apos;</span>) {</div><div class="line">          <span class="comment">// **???** </span></div><div class="line">          item.use.filter(<span class="function"><span class="params">iitem</span> =&gt;</span> iitem.loader === <span class="string">&apos;css&apos;</span>)[<span class="number">0</span>].options.localIdentName = <span class="string">&apos;[hash:base64:5]&apos;</span></div><div class="line">        }</div><div class="line">        <span class="keyword">return</span> item</div><div class="line">      })</div><div class="line">    }</div><div class="line">    webpackConfig.plugins.push(</div><div class="line">      <span class="keyword">new</span> webpack.LoaderOptionsPlugin({</div><div class="line">        <span class="attr">minimize</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">debug</span>: <span class="literal">false</span>,</div><div class="line">      })</div><div class="line">    )</div><div class="line">  }</div><div class="line"></div><div class="line">  webpackConfig.plugins = webpackConfig.plugins.concat([</div><div class="line">    <span class="keyword">new</span> CopyWebpackPlugin([</div><div class="line">      {</div><div class="line">        <span class="attr">from</span>: <span class="string">&apos;src/public&apos;</span>,</div><div class="line">        <span class="attr">to</span>: production ? <span class="string">&apos;../&apos;</span> : webpackConfig.output.outputPath,</div><div class="line">      },</div><div class="line">    ]),</div><div class="line">    <span class="keyword">new</span> HtmlWebpackPlugin({</div><div class="line">      <span class="attr">template</span>: <span class="string">`<span class="subst">${__dirname}</span>/src/entry.ejs`</span>,</div><div class="line">      <span class="attr">filename</span>: production ? <span class="string">&apos;../index.html&apos;</span> : <span class="string">&apos;index.html&apos;</span>,</div><div class="line">      <span class="attr">minify</span>: production ? {</div><div class="line">        <span class="attr">collapseWhitespace</span>: <span class="literal">true</span>,</div><div class="line">      } : <span class="literal">null</span>,</div><div class="line">      <span class="attr">hash</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">headScripts</span>: production ? <span class="literal">null</span> : [<span class="string">&apos;/roadhog.dll.js&apos;</span>],</div><div class="line">    }),</div><div class="line">  ])</div><div class="line"></div><div class="line">  <span class="comment">// Alias</span></div><div class="line">  webpackConfig.resolve.alias = {</div><div class="line">    <span class="attr">components</span>: <span class="string">`<span class="subst">${__dirname}</span>/src/components`</span>,</div><div class="line">    <span class="attr">utils</span>: <span class="string">`<span class="subst">${__dirname}</span>/src/utils`</span>,</div><div class="line">    <span class="attr">config</span>: <span class="string">`<span class="subst">${__dirname}</span>/src/utils/config`</span>,</div><div class="line">    <span class="attr">enums</span>: <span class="string">`<span class="subst">${__dirname}</span>/src/utils/enums`</span>,</div><div class="line">    <span class="attr">services</span>: <span class="string">`<span class="subst">${__dirname}</span>/src/services`</span>,</div><div class="line">    <span class="attr">models</span>: <span class="string">`<span class="subst">${__dirname}</span>/src/models`</span>,</div><div class="line">    <span class="attr">routes</span>: <span class="string">`<span class="subst">${__dirname}</span>/src/routes`</span>,</div><div class="line">    <span class="attr">themes</span>: <span class="string">`<span class="subst">${__dirname}</span>/src/themes`</span>,</div><div class="line">  }</div><div class="line"></div><div class="line">  <span class="keyword">return</span> webpackConfig</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ul>
+<li>&#x5C06;public&#x6587;&#x4EF6;&#x5939;&#x79FB;&#x52A8;&#x81F3;src&#x6587;&#x4EF6;&#x5939;&#x4E0B;</li>
+<li>roadhog&#x5347;&#x7EA7;&#x81F3;&#x6700;&#x65B0;&#x7248;</li>
+<li>&#x4F7F;&#x7528;ejs&#x6253;&#x5305;HTML&#x6A21;&#x677F;</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/webpack/">webpack</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2017/12/01/JS-浏览器宽高/">
+        <span class="next-text nav-default">浏览器宽高</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>
