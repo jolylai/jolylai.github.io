@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Genertor"/>
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/27/JS-Generator/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Genertor · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Genertor
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Nov 27, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Generator函数"><span class="toc-text">Generator函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yield-和-return"><span class="toc-text">yield 和 return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for…of-循环"><span class="toc-text">for…of 循环</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>Generator&#x51FD;&#x6570;<br><a id="more"></a></p>
+<h2 id="Generator&#x51FD;&#x6570;"><a href="#Generator&#x51FD;&#x6570;" class="headerlink" title="Generator&#x51FD;&#x6570;"></a>Generator&#x51FD;&#x6570;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>) </span>{</div><div class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="number">2</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+<ul>
+<li>generator&#x51FD;&#x6570;&#x8FD4;&#x56DE;Itorator&#x5BF9;&#x8C61;</li>
+</ul>
+<h2 id="yield-&#x548C;-return"><a href="#yield-&#x548C;-return" class="headerlink" title="yield &#x548C; return"></a>yield &#x548C; return</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>) </span>{</div><div class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="number">2</span>;</div><div class="line">}</div><div class="line"><span class="keyword">let</span> f = foo()</div><div class="line">f.next()  <span class="comment">//{value: 1, done: false}</span></div><div class="line">f.next()  <span class="comment">//{value: 2, done: false}</span></div><div class="line">f.next()  <span class="comment">//{value: undefined, done: true}</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo1</span>(<span class="params"></span>) </span>{</div><div class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">}</div><div class="line"><span class="keyword">let</span> f1 = foo1()</div><div class="line">f1.next()  <span class="comment">//{value: 1, done: false}</span></div><div class="line">f1.next()  <span class="comment">//{value: 2, done: true}</span></div><div class="line">f1.next()  <span class="comment">//{value: undefined, done: true}</span></div></pre></td></tr></table></figure>
+<ul>
+<li>yield &#x8FD4;&#x56DE;&#x7684;done&#x72B6;&#x6001;&#x4E3A;false</li>
+<li>return &#x8FD4;&#x56DE;&#x7684;done&#x72B6;&#x6001;&#x4E3A;true,&#x5E76;&#x4E0D;&#x6267;&#x884C;return&#x540E;&#x9762;&#x7684;&#x8BED;&#x53E5;</li>
+</ul>
+<h2 id="for&#x2026;of-&#x5FAA;&#x73AF;"><a href="#for&#x2026;of-&#x5FAA;&#x73AF;" class="headerlink" title="for&#x2026;of &#x5FAA;&#x73AF;"></a>for&#x2026;of &#x5FAA;&#x73AF;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>) </span>{</div><div class="line">  <span class="keyword">yield</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="number">2</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="number">3</span>;</div><div class="line">  <span class="keyword">return</span> <span class="number">4</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> foo()) {</div><div class="line">  <span class="built_in">console</span>.log(value)</div><div class="line">}</div><div class="line"><span class="comment">// 1 2 3</span></div></pre></td></tr></table></figure>
+<ul>
+<li>&#x4E00;&#x65E6;next&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x7684;done&#x5C5E;&#x6027;&#x4E3A;true&#xFF0C;for&#x2026;of&#x5FAA;&#x73AF;&#x5C31;&#x4F1A;&#x4E2D;&#x6B62;&#xFF0C;&#x4E14;&#x4E0D;&#x5305;&#x542B;&#x8BE5;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;return&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x7684;6&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x5728;for&#x2026;of&#x5FAA;&#x73AF;&#x4E4B;&#x4E2D;&#x3002;</li>
+<li>&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#xFF08;&#x2026;&#xFF09;&#x3001;&#x89E3;&#x6784;&#x8D4B;&#x503C;&#x548C;Array.from&#x65B9;&#x6CD5;&#x5185;&#x90E8;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x90FD;&#x662F;&#x904D;&#x5386;&#x5668;&#x63A5;&#x53E3;&#x3002;<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">numbers</span> (<span class="params"></span>) </span>{</div><div class="line">  <span class="keyword">yield</span> <span class="number">1</span></div><div class="line">  <span class="keyword">yield</span> <span class="number">2</span></div><div class="line">  <span class="keyword">return</span> <span class="number">3</span></div><div class="line">  <span class="keyword">yield</span> <span class="number">4</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// &#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;</span></div><div class="line">[...numbers()] <span class="comment">// [1, 2]</span></div><div class="line"></div><div class="line"><span class="comment">// Array.from &#x65B9;&#x6CD5;</span></div><div class="line"><span class="built_in">Array</span>.from(numbers()) <span class="comment">// [1, 2]</span></div><div class="line"></div><div class="line"><span class="comment">// &#x89E3;&#x6784;&#x8D4B;&#x503C;</span></div><div class="line"><span class="keyword">let</span> [x, y] = numbers();</div><div class="line">x <span class="comment">// 1</span></div><div class="line">y <span class="comment">// 2</span></div><div class="line"></div><div class="line"><span class="comment">// for...of &#x5FAA;&#x73AF;</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> n <span class="keyword">of</span> numbers()) {</div><div class="line">  <span class="built_in">console</span>.log(n)</div><div class="line">}</div><div class="line"><span class="comment">// 1</span></div><div class="line"><span class="comment">// 2</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/">JavaScript</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/12/01/React-Gatsby/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Gatsby</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/24/CSS-Font/">
+        <span class="next-text nav-default">Font</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>
