@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Angular 管道"/>
+
+
+
+
+  <meta name="keywords" content="Angular," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/01/02/Angular-管道/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Angular 管道 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Angular 管道
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 2, 2018
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#内置管道"><span class="toc-text">内置管道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义管道"><span class="toc-text">自定义管道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#纯管道与非纯管道（重点理解）"><span class="toc-text">纯管道与非纯管道（重点理解）</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x5185;&#x7F6E;&#x7BA1;&#x9053;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x7BA1;&#x9053;&#x3001;&#x7EAF;&#x7BA1;&#x9053;&#x3001;&#x975E;&#x7EAF;&#x7BA1;&#x9053;</p>
+<a id="more"></a>
+<h2 id="&#x5185;&#x7F6E;&#x7BA1;&#x9053;"><a href="#&#x5185;&#x7F6E;&#x7BA1;&#x9053;" class="headerlink" title="&#x5185;&#x7F6E;&#x7BA1;&#x9053;"></a>&#x5185;&#x7F6E;&#x7BA1;&#x9053;</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>DatePipe {{ birthday | date: &apos;yy/MM/dd EEE&apos; }}<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>JsonPipe {{ Json | json }}<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>UpperCasePipe {{ UpperCase | uppercase }}<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>LowerCasePipe {{ LowerCase | lowercase }}<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Decimal {{ Decimal | number: &apos;3.1-5&apos; }}<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>CurrencyPipe  {{ money | currency: &apos;USD&apos; : true: &apos;3.1-5&apos; }}<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>PercentPipe {{ PercentPipe | percent }}<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>SlicePipe {{ SlicePipe | slice: start: end }}<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>DatePipe<br>&#x5355;&#x6807;&#x5FD7;: &#x2018;y/M/d h:m:s&#x2019; &#x2018;y/M/d H:m:s&#x2019;(24&#x5C0F;&#x65F6;&#x5236;)<br>&#x53CC;&#x6807;&#x5FD7;: &#x2018;yy/MM/dd hh:mm:ss&#x2019; &#x2018;yy/MM/dd hh:mm:ss&#x2019;(24&#x5C0F;&#x65F6;&#x5236;)<br>&#x6708;: &#x2018;MMM&#x201D; (Jun) &#x2018;MMMM&#x2019;(June)<br>&#x661F;&#x671F;: &#x2018;EEE&#x2019; (Fri) &#x2018;EEEE&#x2019; (Friday)</p>
+</li>
+<li><p>Decimal<br>expression | number: {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}</p>
+<ul>
+<li>minIntegerDigits: &#x6574;&#x6570;&#x90E8;&#x5206;&#x4FDD;&#x7559;&#x6700;&#x5C0F;&#x7684;&#x4F4D;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;1</li>
+<li>minFractionDigits: &#x5C0F;&#x6570;&#x90E8;&#x5206;&#x4FDD;&#x7559;&#x6700;&#x5C0F;&#x7684;&#x4F4D;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0</li>
+<li>maxFractionDigits: &#x5C0F;&#x6570;&#x90E8;&#x5206;&#x4FDD;&#x7559;&#x6700;&#x5927;&#x7684;&#x4F4D;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;3</li>
+</ul>
+</li>
+<li><p>CurrencyPipe<br>expression | currency[: currencyCode[: symboDisplay[: digitInfo]]]</p>
+<ul>
+<li>currencyCode: &#x683C;&#x5F0F;&#x5316;&#x7684;&#x76EE;&#x6807;&#x8D27;&#x5E01;&#x683C;&#x5F0F;&#x3002;CNY(&#x4EBA;&#x6C11;&#x5E01;)&#x3001;USD(&#x7F8E;&#x5143;)&#x3001;RUR(&#x6B27;&#x5143;)</li>
+<li>symbolDisplay&#xFF1A; &#x8BE5;&#x7C7B;&#x578B;&#x8D27;&#x5E01;&#x7684;&#x54EA;&#x79CD;&#x683C;&#x5F0F;&#x663E;&#x793A;&#xFF0C;&#x5E03;&#x5C14;&#x503C;&#xFF0C;true&#xFF08;&#xFFE5;&#xFF09;&#xFF0C;false&#xFF08;&#x4EBA;&#x6C11;&#x5E01;&#xFF09;</li>
+<li>digitInfo: &#x4E0E;Decimal&#x683C;&#x5F0F;&#x4E00;&#x81F4;</li>
+</ul>
+</li>
+<li><p>PercentPipe<br>expression | percent[: digitInfo]</p>
+<ul>
+<li>digitInfo: &#x4E0E;Decimal&#x683C;&#x5F0F;&#x4E00;&#x81F4;</li>
+</ul>
+</li>
+<li><p>SlicePipe<br>expression | slice: start[: end]<br>&#x57FA;&#x4E8E;Array.prototype.slice()&#x548C;String.prototype.slice()</p>
+</li>
+</ul>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x7BA1;&#x9053;"><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x7BA1;&#x9053;" class="headerlink" title="&#x81EA;&#x5B9A;&#x4E49;&#x7BA1;&#x9053;"></a>&#x81EA;&#x5B9A;&#x4E49;&#x7BA1;&#x9053;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { Pipe, PipeTransform } <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span></div><div class="line"></div><div class="line">@Pipe({ <span class="attr">name</span>: <span class="string">&apos;sexReform&apos;</span>, <span class="attr">pure</span>: <span class="literal">false</span> })</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">SexReform</span> <span class="title">implements</span> <span class="title">PipeTransform</span> </span>{</div><div class="line">  transform(val: string): string {</div><div class="line">    <span class="keyword">switch</span> (val) {</div><div class="line">      <span class="keyword">case</span> <span class="string">&apos;male&apos;</span>: <span class="keyword">return</span> <span class="string">&apos;&#x7537;&apos;</span>;</div><div class="line">      <span class="keyword">case</span> <span class="string">&apos;female&apos;</span>: <span class="keyword">return</span> <span class="string">&apos;&#x5973;&apos;</span>;</div><div class="line">      <span class="keyword">default</span>: <span class="keyword">return</span> <span class="string">&apos;&#x6027;&#x522B;&#x672A;&#x77E5;&apos;</span></div><div class="line">    }</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+<ul>
+<li>@Pipe&#x4E2D;name&#x4E3A;&#x7BA1;&#x9053;&#x7684;&#x540D;&#x79F0;&#xFF0C;pure&#x6307;&#x5B9A;&#x4E3A;&#x7EAF;&#x7BA1;&#x9053;&#x6216;&#x8005;&#x975E;&#x7EAF;&#x7BA1;&#x9053;</li>
+<li>transform&#x4E2D;&#x7684;&#x53C2;&#x6570;</li>
+<li>&#x5728;declarations&#x4E2D;&#x5F15;&#x5165;&#x7BA1;&#x9053;</li>
+</ul>
+<h2 id="&#x7EAF;&#x7BA1;&#x9053;&#x4E0E;&#x975E;&#x7EAF;&#x7BA1;&#x9053;&#xFF08;&#x91CD;&#x70B9;&#x7406;&#x89E3;&#xFF09;"><a href="#&#x7EAF;&#x7BA1;&#x9053;&#x4E0E;&#x975E;&#x7EAF;&#x7BA1;&#x9053;&#xFF08;&#x91CD;&#x70B9;&#x7406;&#x89E3;&#xFF09;" class="headerlink" title="&#x7EAF;&#x7BA1;&#x9053;&#x4E0E;&#x975E;&#x7EAF;&#x7BA1;&#x9053;&#xFF08;&#x91CD;&#x70B9;&#x7406;&#x89E3;&#xFF09;"></a>&#x7EAF;&#x7BA1;&#x9053;&#x4E0E;&#x975E;&#x7EAF;&#x7BA1;&#x9053;&#xFF08;&#x91CD;&#x70B9;&#x7406;&#x89E3;&#xFF09;</h2><ul>
+<li><p>&#x7EAF;&#x7BA1;&#x9053;</p>
+<blockquote>
+<p>Angular&#x53EA;&#x6709;&#x5728;&#x5B83;&#x68C0;&#x6D4B;&#x5230;&#x8F93;&#x5165;&#x503C;&#x53D1;&#x751F;&#x4E86;&#x7EAF;&#x53D8;&#x66F4;&#x65F6;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x7EAF;&#x7BA1;&#x9053;&#x3002;&#x7EAF;&#x53D8;&#x66F4;&#x662F;&#x6307;&#x5BF9;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x503C;(String&#x3001;Number&#x3001;Boolean&#x3001;Symbol)&#x7684;&#x66F4;&#x6539;&#xFF0C; &#x6216;&#x8005;&#x5BF9;&#x5BF9;&#x8C61;&#x5F15;&#x7528;(Date&#x3001;Array&#x3001;Function&#x3001;Object)&#x7684;&#x66F4;&#x6539;&#x3002;</p>
+</blockquote>
+</li>
+<li><p>&#x975E;&#x7EAF;&#x7BA1;&#x9053;</p>
+<blockquote>
+<p>Angular&#x4F1A;&#x5728;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x53D8;&#x66F4;&#x68C0;&#x6D4B;&#x5468;&#x671F;&#x4E2D;&#x6267;&#x884C;&#x975E;&#x7EAF;&#x7BA1;&#x9053;&#x3002; &#x975E;&#x7EAF;&#x7BA1;&#x9053;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x5F88;&#x591A;&#x6B21;&#xFF0C;&#x548C;&#x6BCF;&#x4E2A;&#x6309;&#x952E;&#x6216;&#x6BCF;&#x6B21;&#x9F20;&#x6807;&#x79FB;&#x52A8;&#x4E00;&#x6837;&#x9891;&#x7E41;&#x3002;</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Angular/">Angular</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/01/02/Angular-路由/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Angular 路由</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/01/02/Angular-架构总览/">
+        <span class="next-text nav-default">Angular 架构总览</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>
