@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Angular 项目结构"/>
+
+
+
+
+  <meta name="keywords" content="Angular," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/01/07/Angular-项目结构/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Angular 项目结构 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Angular 项目结构
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 7, 2018
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#App模块"><span class="toc-text">App模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#module"><span class="toc-text">module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由"><span class="toc-text">路由</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Admin模块"><span class="toc-text">Admin模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#module-1"><span class="toc-text">module</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由-1"><span class="toc-text">路由</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#center页面"><span class="toc-text">center页面</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x4E00;&#x4E2A;Angular&#x9879;&#x76EE;&#x6B63;&#x5E38;&#x7531;&#x5F88;&#x591A;&#x4E2A;&#x9875;&#x9762;&#x6784;&#x6210;&#xFF0C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x53C8;&#x7531;&#x5F88;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x6784;&#x6210;&#xFF0C;&#x5982;&#x4F55;&#x53BB;&#x7EC4;&#x7EC7;&#x9879;&#x76EE;&#x4EE3;&#x7801;&#x7684;&#x7ED3;&#x6784;<br>app&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x7EC4;&#x7EC7;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x6A21;&#x5757;&#xFF0C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x6A21;&#x5757;&#x4E2D;&#x5305;&#x542B;&#x6709;&#x51E0;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x5982;&#x4E3B;&#x9875;&#xFF0C;&#x7F16;&#x8F91;&#x9875;&#xFF0C;&#x8BE6;&#x60C5;&#x9875;&#xFF0C;</p>
+<a id="more"></a>
+<h2 id="App&#x6A21;&#x5757;"><a href="#App&#x6A21;&#x5757;" class="headerlink" title="App&#x6A21;&#x5757;"></a>App&#x6A21;&#x5757;</h2><h3 id="module"><a href="#module" class="headerlink" title="module"></a>module</h3><p>/app/app.module.ts<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { BrowserModule } <span class="keyword">from</span> <span class="string">&apos;@angular/platform-browser&apos;</span>;</div><div class="line"><span class="keyword">import</span> { NgModule } <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span>;</div><div class="line"><span class="keyword">import</span> { FormsModule } <span class="keyword">from</span> <span class="string">&apos;@angular/forms&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> { AppComponent } <span class="keyword">from</span> <span class="string">&apos;./app.component&apos;</span>;</div><div class="line"><span class="keyword">import</span> { AppRoutingModule } <span class="keyword">from</span> <span class="string">&apos;./app-routing.module&apos;</span>;</div><div class="line"><span class="keyword">import</span> { AdminModule } <span class="keyword">from</span> <span class="string">&apos;./admin/admin.module&apos;</span>;</div><div class="line"></div><div class="line"></div><div class="line">@NgModule({</div><div class="line">  <span class="attr">declarations</span>: [</div><div class="line">    AppComponent</div><div class="line">  ],</div><div class="line">  <span class="attr">imports</span>: [ AdminModule, BrowserModule, AppRoutingModule],</div><div class="line">  <span class="attr">providers</span>: [],</div><div class="line">  <span class="attr">bootstrap</span>: [AppComponent]</div><div class="line">})</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>{ }</div></pre></td></tr></table></figure></p>
+<ul>
+<li>&#x5F15;&#x5165;Admin&#x6A21;&#x5757;&#x548C;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x5E76;&#x5728;import&#x4E2D;&#x751F;&#x660E;</li>
+</ul>
+<h3 id="&#x8DEF;&#x7531;"><a href="#&#x8DEF;&#x7531;" class="headerlink" title="&#x8DEF;&#x7531;"></a>&#x8DEF;&#x7531;</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { NgModule } <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span>;</div><div class="line"><span class="keyword">import</span> { Routes, RouterModule } <span class="keyword">from</span> <span class="string">&apos;@angular/router&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> routes: Routes = [</div><div class="line">  { <span class="attr">path</span>: <span class="string">&apos;&apos;</span>,   <span class="attr">redirectTo</span>: <span class="string">&apos;/home&apos;</span>, <span class="attr">pathMatch</span>: <span class="string">&apos;full&apos;</span> }</div><div class="line">];</div><div class="line"></div><div class="line">@NgModule({</div><div class="line">    <span class="attr">imports</span>: [RouterModule.forRoot(routes)],</div><div class="line">    <span class="attr">exports</span>: [RouterModule]</div><div class="line">})</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppRoutingModule</span> </span>{ }</div></pre></td></tr></table></figure>
+<h2 id="Admin&#x6A21;&#x5757;"><a href="#Admin&#x6A21;&#x5757;" class="headerlink" title="Admin&#x6A21;&#x5757;"></a>Admin&#x6A21;&#x5757;</h2><h3 id="module-1"><a href="#module-1" class="headerlink" title="module"></a>module</h3><p>app/home.module.ts<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { NgModule } <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span>;</div><div class="line"><span class="keyword">import</span> { CommonModule } <span class="keyword">from</span> <span class="string">&apos;@angular/common&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> { AdminComponent } <span class="keyword">from</span> <span class="string">&apos;./admin.component&apos;</span>;</div><div class="line"><span class="keyword">import</span> { CenterComponent } <span class="keyword">from</span> <span class="string">&apos;./center&apos;</span>;</div><div class="line"><span class="keyword">import</span> { EditComponent } <span class="keyword">from</span> <span class="string">&apos;./edit&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> { AdminRoutingModule } <span class="keyword">from</span> <span class="string">&apos;./admin-routing.module&apos;</span>;</div><div class="line"><span class="keyword">import</span> { SharedModule } <span class="keyword">from</span> <span class="string">&apos;../shared/shared.module&apos;</span>;</div><div class="line"><span class="keyword">import</span> { QuestionnaireModule } <span class="keyword">from</span> <span class="string">&apos;../shared/questionnaire/questionnaire.module&apos;</span>;</div><div class="line"><span class="keyword">import</span> { CenterSharedModule } <span class="keyword">from</span> <span class="string">&apos;./center/shared/center-shared.module&apos;</span>;</div><div class="line"><span class="keyword">import</span> { EditSharedModule } <span class="keyword">from</span> <span class="string">&apos;./edit/shared/edit-shared.module&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> { TabsModule } <span class="keyword">from</span> <span class="string">&apos;ngx-bootstrap&apos;</span>;</div><div class="line"></div><div class="line">@NgModule({</div><div class="line">  <span class="attr">imports</span>: [CommonModule, AdminRoutingModule, SharedModule, TabsModule.forRoot(), QuestionnaireModule, CenterSharedModule, EditSharedModule],</div><div class="line">  <span class="attr">declarations</span>: [</div><div class="line">    AdminComponent,</div><div class="line">    CenterComponent,</div><div class="line">    EditComponent</div><div class="line">  ]</div><div class="line">})</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AdminModule</span> </span>{ }</div></pre></td></tr></table></figure></p>
+<ul>
+<li>module&#x7528;&#x4E0E;&#x7EC4;&#x7EC7;home&#x6A21;&#x5757;&#x4E2D;&#x6240;&#x9700;&#x7684;&#x9875;&#x9762;</li>
+<li>&#x5F15;&#x5165;&#x9875;&#x9762;&#x7EC4;&#x4EF6;&#x548C;&#x516C;&#x5171;&#x7EC4;&#x4EF6;&#x7684;Module</li>
+</ul>
+<h3 id="&#x8DEF;&#x7531;-1"><a href="#&#x8DEF;&#x7531;-1" class="headerlink" title="&#x8DEF;&#x7531;"></a>&#x8DEF;&#x7531;</h3><p>/app/admin/admin-routing.module.ts<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { NgModule } <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span>;</div><div class="line"><span class="keyword">import</span> { Routes, RouterModule } <span class="keyword">from</span> <span class="string">&apos;@angular/router&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> { AdminComponent } <span class="keyword">from</span> <span class="string">&apos;./admin.component&apos;</span>;</div><div class="line"><span class="keyword">import</span> { CenterComponent } <span class="keyword">from</span> <span class="string">&apos;./center/center.component&apos;</span>;</div><div class="line"><span class="keyword">import</span> { EditComponent } <span class="keyword">from</span> <span class="string">&apos;./edit/edit.component&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> { AuthGuard } <span class="keyword">from</span> <span class="string">&apos;../core/services/auth-guard.service&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> routes: Routes = [</div><div class="line">    {</div><div class="line">        <span class="attr">path</span>: <span class="string">&apos;admin&apos;</span>,</div><div class="line">        <span class="attr">component</span>: AdminComponent,</div><div class="line">        <span class="attr">canActivate</span>: [AuthGuard],</div><div class="line">        <span class="attr">children</span>: [</div><div class="line">          {</div><div class="line">            <span class="attr">path</span>: <span class="string">&apos;&apos;</span>,</div><div class="line">            <span class="attr">children</span>: [</div><div class="line">              { <span class="attr">path</span>: <span class="string">&apos;center&apos;</span>, <span class="attr">component</span>: CenterComponent },</div><div class="line">              { <span class="attr">path</span>: <span class="string">&apos;edit/:id&apos;</span>, <span class="attr">component</span>: EditComponent }</div><div class="line">            ]</div><div class="line">          }</div><div class="line">        ]</div><div class="line">    }</div><div class="line">];</div><div class="line"></div><div class="line">@NgModule({</div><div class="line">    <span class="attr">imports</span>: [RouterModule.forChild(routes)],</div><div class="line">    <span class="attr">exports</span>: [RouterModule]</div><div class="line">})</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AdminRoutingModule</span> </span>{ }</div></pre></td></tr></table></figure></p>
+<p>/core/services/auth-guard.service<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { Injectable }       <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span>;</div><div class="line"><span class="keyword">import</span> { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} <span class="keyword">from</span> <span class="string">&apos;@angular/router&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> { UserService } <span class="keyword">from</span> <span class="string">&apos;./user.service&apos;</span>;</div><div class="line"></div><div class="line">@Injectable()</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AuthGuard</span> <span class="title">implements</span> <span class="title">CanActivate</span> </span>{</div><div class="line"></div><div class="line">    <span class="keyword">constructor</span>(private userService:UserService, private route:Router) { }</div><div class="line"></div><div class="line">    canActivate(route: ActivatedRouteSnapshot, <span class="attr">state</span>: RouterStateSnapshot) {</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.userService.isLogin) {</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        }</div><div class="line">        <span class="keyword">this</span>.route.navigate([<span class="string">&apos;/login&apos;</span>],{<span class="attr">queryParams</span>:{<span class="attr">returnUrl</span>:state.url}});</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<h2 id="center&#x9875;&#x9762;"><a href="#center&#x9875;&#x9762;" class="headerlink" title="center&#x9875;&#x9762;"></a>center&#x9875;&#x9762;</h2><p>/app/admin/center/index.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">&quot;./center.component&quot;</span>;</div><div class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">&apos;./shared/questionnaire-controls/index&apos;</span>;</div><div class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">&apos;./shared/questionnaire-detail/index&apos;</span>;</div><div class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">&apos;./shared/questionnaire-item/index&apos;</span>;</div></pre></td></tr></table></figure></p>
+<p>/app/admin/center/shared/<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">&apos;./questionnaire-item/index&apos;</span>;</div><div class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">&apos;./questionnaire-detail/index&apos;</span>;</div><div class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">&apos;./questionnaire-controls/index&apos;</span>;</div></pre></td></tr></table></figure></p>
+<p>/app/admin/center/shared/center-shared.module.ts<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { NgModule } <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span>;</div><div class="line"><span class="keyword">import</span> { CommonModule } <span class="keyword">from</span> <span class="string">&apos;@angular/common&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> { QuestionnaireItemComponent } <span class="keyword">from</span> <span class="string">&apos;./questionnaire-item/index&apos;</span>;</div><div class="line"><span class="keyword">import</span> { QuestionnaireDetailComponent } <span class="keyword">from</span> <span class="string">&apos;./questionnaire-detail/index&apos;</span>;</div><div class="line"><span class="keyword">import</span> { QuestionnaireControlsComponent } <span class="keyword">from</span> <span class="string">&apos;./questionnaire-controls/index&apos;</span>;</div><div class="line"></div><div class="line">@NgModule({</div><div class="line">  <span class="attr">imports</span>: [CommonModule],</div><div class="line">  <span class="attr">declarations</span>: [QuestionnaireItemComponent, QuestionnaireDetailComponent, QuestionnaireControlsComponent],</div><div class="line">  <span class="attr">exports</span>: [QuestionnaireItemComponent, QuestionnaireDetailComponent, QuestionnaireControlsComponent, CommonModule]</div><div class="line">})</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">CenterSharedModule</span> </span>{ }</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Angular/">Angular</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/01/02/Angular-路由/">
+        <span class="next-text nav-default">Angular 路由</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>

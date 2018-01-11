@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Angular 表单"/>
+
+
+
+
+  <meta name="keywords" content="Angular," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/12/18/Angular-表单/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Angular 表单 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Angular 表单
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Dec 18, 2017
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#模板驱动表单"><span class="toc-text">模板驱动表单</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#初始模板"><span class="toc-text">初始模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引入FormsModule"><span class="toc-text">引入FormsModule</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ngModel进行数据双向绑定"><span class="toc-text">ngModel进行数据双向绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单校验"><span class="toc-text">表单校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS样式"><span class="toc-text">CSS样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#隐藏和显示校验信息"><span class="toc-text">隐藏和显示校验信息</span></a></li></ol></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>Angular&#x5BF9;&#x8868;&#x5355;&#x7684;&#x5904;&#x7406;</p>
+<a id="more"></a>
+<h1 id="&#x6A21;&#x677F;&#x9A71;&#x52A8;&#x8868;&#x5355;"><a href="#&#x6A21;&#x677F;&#x9A71;&#x52A8;&#x8868;&#x5355;" class="headerlink" title="&#x6A21;&#x677F;&#x9A71;&#x52A8;&#x8868;&#x5355;"></a>&#x6A21;&#x677F;&#x9A71;&#x52A8;&#x8868;&#x5355;</h1><h2 id="&#x521D;&#x59CB;&#x6A21;&#x677F;"><a href="#&#x521D;&#x59CB;&#x6A21;&#x677F;" class="headerlink" title="&#x521D;&#x59CB;&#x6A21;&#x677F;"></a>&#x521D;&#x59CB;&#x6A21;&#x677F;</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hero Form<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">required</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"> </div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;alterEgo&quot;</span>&gt;</span>Alter Ego<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;alterEgo&quot;</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"> </div><div class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success&quot;</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"> </div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { Component } <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> { Hero }    <span class="keyword">from</span> <span class="string">&apos;./hero&apos;</span>;</div><div class="line"></div><div class="line">@Component({</div><div class="line">  <span class="attr">selector</span>: <span class="string">&apos;app-hero-form&apos;</span>,</div><div class="line">  <span class="attr">templateUrl</span>: <span class="string">&apos;./hero-form.component.html&apos;</span></div><div class="line">})</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroFormComponent</span> </span>{</div><div class="line"></div><div class="line">  powers = [<span class="string">&apos;Really Smart&apos;</span>, <span class="string">&apos;Super Flexible&apos;</span>,</div><div class="line">            <span class="string">&apos;Super Hot&apos;</span>, <span class="string">&apos;Weather Changer&apos;</span>];</div><div class="line"></div><div class="line">  model = <span class="keyword">new</span> Hero(<span class="number">18</span>, <span class="string">&apos;Dr IQ&apos;</span>, <span class="keyword">this</span>.powers[<span class="number">0</span>], <span class="string">&apos;Chuck Overstreet&apos;</span>);</div><div class="line"></div><div class="line">  submitted = <span class="literal">false</span>;</div><div class="line"></div><div class="line">  onSubmit() { <span class="keyword">this</span>.submitted = <span class="literal">true</span>; }</div><div class="line"></div><div class="line">  <span class="comment">// <span class="doctag">TODO:</span> Remove this when we&apos;re done</span></div><div class="line">  get diagnostic() { <span class="keyword">return</span> <span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.model); }</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="&#x5F15;&#x5165;FormsModule"><a href="#&#x5F15;&#x5165;FormsModule" class="headerlink" title="&#x5F15;&#x5165;FormsModule"></a>&#x5F15;&#x5165;FormsModule</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { FormsModule } <span class="keyword">from</span> <span class="string">&apos;@angular/forms&apos;</span>;</div><div class="line"></div><div class="line">@NgModule({</div><div class="line">  <span class="attr">imports</span>: {</div><div class="line">    FormsModule</div><div class="line">  }</div><div class="line">})</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>{ }</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x5E94;&#x7528;&#x5C31;&#x80FD;&#x8BBF;&#x95EE;&#x6A21;&#x677F;&#x9A71;&#x52A8;&#x8868;&#x5355;&#x7684;&#x6240;&#x6709;&#x7279;&#x6027;&#xFF0C;&#x5305;&#x62EC;ngModel&#x3002;</li>
+</ul>
+<h2 id="ngModel&#x8FDB;&#x884C;&#x6570;&#x636E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;"><a href="#ngModel&#x8FDB;&#x884C;&#x6570;&#x636E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;" class="headerlink" title="ngModel&#x8FDB;&#x884C;&#x6570;&#x636E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;"></a>ngModel&#x8FDB;&#x884C;&#x6570;&#x636E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</h2><p>&#x4F55;&#x4E3A;&#x6570;&#x636E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;: &#x6570;&#x636E;&#x4ECE;&#x8F93;&#x5165;&#x6846;&#x6D41;&#x52A8;&#x5230;&#x6A21;&#x578B;&#xFF0C;&#x518D;&#x53CD;&#x5411;&#x6D41;&#x52A8;&#x56DE;&#x6765;&#x3002;<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span></span></div><div class="line">       <span class="attr">required</span></div><div class="line">       [(<span class="attr">ngModel</span>)]=<span class="string">&quot;model.name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span>&gt;</div><div class="line">TODO: remove this: {{model.name}}</div></pre></td></tr></table></figure></p>
+<ul>
+<li>[(ngModel)]=&#x201D;model.name&#x201D;,&#x5C06;input&#x4E2D;&#x7684;&#x503C;&#x4E0E;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;model.name&#x8FDB;&#x884C;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#xFF0C;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x7684;&#x63A7;&#x5236;&#x6743;&#xFF0C;&#x7528;&#x4E8E;&#x8868;&#x5355;&#x9A8C;&#x8BC1;&#x3002;</li>
+<li>&#x5728;&#x8868;&#x5355;&#x4E2D;&#x4F7F;&#x7528;[(ngModel)]&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x5B9A;&#x4E49;name&#x5C5E;&#x6027;&#xFF0C;angular&#x7528;&#x5B83;&#x6765;&#x6CE8;&#x518C;&#x7EC4;&#x4EF6;&#x3002;</li>
+<li>name&#x53EF;&#x4EE5;&#x4E3A;&#x4EFB;&#x610F;&#x552F;&#x4E00;&#x503C;&#xFF0C;&#x4F46;&#x53D6;&#x5177;&#x6709;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x66F4;&#x597D;</li>
+</ul>
+<p>&#x58F0;&#x660E;&#x6A21;&#x677F;&#x53D8;&#x91CF;<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> #<span class="attr">heroForm</span>=<span class="string">&quot;ngForm&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>Angular&#x4F1A;&#x5728;<form>&#x6807;&#x7B7E;&#x4E0A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x5E76;&#x9644;&#x52A0;&#x4E00;&#x4E2A;NgForm&#x6307;&#x4EE4;&#x3002;</form></li>
+<li>&#x5B83;&#x4F1A;&#x63A7;&#x5236;&#x90A3;&#x4E9B;&#x5E26;&#x6709;ngModel&#x6307;&#x4EE4;&#x548C;name&#x5C5E;&#x6027;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x76D1;&#x542C;&#x4ED6;&#x4EEC;&#x7684;&#x5C5E;&#x6027;&#xFF08;&#x5305;&#x62EC;&#x5176;&#x6709;&#x6548;&#x6027;&#xFF09;&#x3002; &#x5B83;&#x8FD8;&#x6709;&#x81EA;&#x5DF1;&#x7684;valid&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x53EA;&#x6709;&#x5728;&#x5B83;&#x5305;&#x542B;&#x7684;&#x6BCF;&#x4E2A;&#x63A7;&#x4EF6;&#x90FD;&#x6709;&#x6548;&#x65F6;&#x624D;&#x662F;&#x771F;&#x3002;</li>
+</ul>
+<h2 id="&#x8868;&#x5355;&#x6821;&#x9A8C;"><a href="#&#x8868;&#x5355;&#x6821;&#x9A8C;" class="headerlink" title="&#x8868;&#x5355;&#x6821;&#x9A8C;"></a>&#x8868;&#x5355;&#x6821;&#x9A8C;</h2><p>input&#x5143;&#x7D20;&#x7684;class&#x7C7B;<br>&#x662F;&#x5426;&#x8BBF;&#x95EE;&#x8FC7;: ng-touched  ng-untouchde<br>&#x503C;&#x662F;&#x5426;&#x53D8;&#x5316;: ng-dirty    ng-pristine<br>&#x503C;&#x662F;&#x5426;&#x6709;&#x6548;: ng-valid    ng-invalid</p>
+<h2 id="CSS&#x6837;&#x5F0F;"><a href="#CSS&#x6837;&#x5F0F;" class="headerlink" title="CSS&#x6837;&#x5F0F;"></a>CSS&#x6837;&#x5F0F;</h2><p>&#x65B0;&#x5EFA;&#x6837;&#x5F0F;&#x6587;&#x4EF6;&#xFF0C;src/assets/forms.css<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.ng-valid</span><span class="selector-attr">[required]</span>, <span class="selector-class">.ng-valid</span><span class="selector-class">.required</span>  {</div><div class="line">  <span class="attribute">border-left</span>: <span class="number">5px</span> solid <span class="number">#42A948</span>; <span class="comment">/* green */</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="selector-class">.ng-invalid</span><span class="selector-pseudo">:not(form)</span>  {</div><div class="line">  <span class="attribute">border-left</span>: <span class="number">5px</span> solid <span class="number">#a94442</span>; <span class="comment">/* red */</span></div><div class="line">}</div></pre></td></tr></table></figure></p>
+<p>&#x5728;index.html&#x4E2D;&#x7684;<head>&#x5F15;&#x5165;<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;assets/forms.css&quot;</span>&gt;</span></div></pre></td></tr></table></figure></head></p>
+<h2 id="&#x9690;&#x85CF;&#x548C;&#x663E;&#x793A;&#x6821;&#x9A8C;&#x4FE1;&#x606F;"><a href="#&#x9690;&#x85CF;&#x548C;&#x663E;&#x793A;&#x6821;&#x9A8C;&#x4FE1;&#x606F;" class="headerlink" title="&#x9690;&#x85CF;&#x548C;&#x663E;&#x793A;&#x6821;&#x9A8C;&#x4FE1;&#x606F;"></a>&#x9690;&#x85CF;&#x548C;&#x663E;&#x793A;&#x6821;&#x9A8C;&#x4FE1;&#x606F;</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span></span></div><div class="line">       <span class="attr">required</span></div><div class="line">       [(<span class="attr">ngModel</span>)]=<span class="string">&quot;model.name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span></div><div class="line">       #<span class="attr">name</span>=<span class="string">&quot;ngModel&quot;</span>&gt;</div><div class="line"><span class="tag">&lt;<span class="name">div</span> [<span class="attr">hidden</span>]=<span class="string">&quot;name.valid || name.pristine&quot;</span></span></div><div class="line">     <span class="attr">class</span>=<span class="string">&quot;alert alert-danger&quot;</span>&gt;</div><div class="line">  Name is required</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><input> &#x6DFB;&#x52A0; #name=&#x201D;ngModel&#x201D;</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">{{ diagnostic}}</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span> [<span class="attr">hidden</span>]=<span class="string">&quot;submitted&quot;</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hero Form<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">form</span> (<span class="attr">ngSubmit</span>)=<span class="string">&quot;onSubmit()&quot;</span> #<span class="attr">heroForm</span>=<span class="string">&quot;ngForm&quot;</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">required</span> [(<span class="attr">ngModel</span>)]=<span class="string">&quot;model.name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> #<span class="attr">spy</span> #<span class="attr">name</span>=<span class="string">&quot;ngModel&quot;</span> /&gt;</span> TODO: remove this: {{spy.className}}</div><div class="line">      <span class="tag">&lt;<span class="name">div</span> [<span class="attr">hidden</span>]=<span class="string">&quot;name.valid || name.pristine&quot;</span> <span class="attr">class</span>=<span class="string">&quot;alert alert-danger&quot;</span>&gt;</span>Name is required<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;alterEgo&quot;</span>&gt;</span>Alter Ego<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;alterEgo&quot;</span> [(<span class="attr">ngModel</span>)]=<span class="string">&quot;model.alterEgo&quot;</span> <span class="attr">name</span>=<span class="string">&quot;alterEgo&quot;</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;power&quot;</span>&gt;</span>Hero Power<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;power&quot;</span> <span class="attr">required</span> [(<span class="attr">ngModel</span>)]=<span class="string">&quot;model.power&quot;</span> <span class="attr">name</span>=<span class="string">&quot;power&quot;</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">option</span> *<span class="attr">ngFor</span>=<span class="string">&quot;let power of powers&quot;</span> [<span class="attr">value</span>]=<span class="string">&quot;power&quot;</span>&gt;</span>{{ power }}<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default&quot;</span> (<span class="attr">click</span>)=<span class="string">&quot;newHero(); heroForm.reset()&quot;</span>&gt;</span>New Hero<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default&quot;</span> (<span class="attr">click</span>)=<span class="string">&quot;newHero(); heroForm.reset()&quot;</span>&gt;</span>New Hero<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success&quot;</span> [<span class="attr">disabled</span>]=<span class="string">&quot;!heroForm.form.valid&quot;</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> [<span class="attr">hidden</span>]=<span class="string">&quot;!submitted&quot;</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>You submitted the following:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xs-3&quot;</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xs-9  pull-left&quot;</span>&gt;</span>{{ model.name }}<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xs-3&quot;</span>&gt;</span>Alter Ego<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xs-9 pull-left&quot;</span>&gt;</span>{{ model.alterEgo }}<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xs-3&quot;</span>&gt;</span>Power<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xs-9 pull-left&quot;</span>&gt;</span>{{ model.power }}<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-primary&quot;</span> (<span class="attr">click</span>)=<span class="string">&quot;submitted=false&quot;</span>&gt;</span>Edit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { Component, OnInit } <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span>;</div><div class="line"><span class="keyword">import</span> { Hero } <span class="keyword">from</span> <span class="string">&apos;../hero&apos;</span></div><div class="line"></div><div class="line">@Component({</div><div class="line">  <span class="attr">selector</span>: <span class="string">&apos;app-hero-form&apos;</span>,</div><div class="line">  <span class="attr">templateUrl</span>: <span class="string">&apos;./hero-form.component.html&apos;</span>,</div><div class="line">  <span class="attr">styleUrls</span>: [<span class="string">&apos;./hero-form.component.css&apos;</span>]</div><div class="line">})</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroFormComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>{</div><div class="line"></div><div class="line">  powers = [<span class="string">&apos;Really Smart&apos;</span>, <span class="string">&apos;Super Flexible&apos;</span>,</div><div class="line">    <span class="string">&apos;Super Hot&apos;</span>, <span class="string">&apos;Weather Changer&apos;</span>];</div><div class="line"></div><div class="line">  model = <span class="keyword">new</span> Hero(<span class="number">18</span>, <span class="string">&apos;Dr IQ&apos;</span>, <span class="keyword">this</span>.powers[<span class="number">0</span>], <span class="string">&apos;Chunck OverStreet&apos;</span>)</div><div class="line"></div><div class="line">  submitted = <span class="literal">false</span></div><div class="line"></div><div class="line">  onSubmit() {</div><div class="line">    <span class="keyword">this</span>.submitted = <span class="literal">true</span></div><div class="line">  }</div><div class="line"></div><div class="line">  newHero() {</div><div class="line">    <span class="keyword">this</span>.model = <span class="keyword">new</span> Hero(<span class="number">42</span>, <span class="string">&apos;&apos;</span>, <span class="string">&apos;&apos;</span>)</div><div class="line">  }</div><div class="line">  <span class="keyword">constructor</span>() { }</div><div class="line"></div><div class="line">  ngOnInit() {</div><div class="line">  }</div><div class="line"></div><div class="line">  get diagnostic() { <span class="keyword">return</span> <span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.model) }</div><div class="line"></div><div class="line">}</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Angular/">Angular</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/12/18/Note-17年总结/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">2017个人总结</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/12/15/Angular-父组件监听子组件事件/">
+        <span class="next-text nav-default">父组件监听子组件事件</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>
