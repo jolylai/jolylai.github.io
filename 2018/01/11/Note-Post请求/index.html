@@ -11,12 +11,12 @@
 
 
 
-  <meta name="description" content="Thanks Giving"/>
+  <meta name="description" content="Post请求"/>
 
 
 
 
-  <meta name="keywords" content="Letter," />
+  <meta name="keywords" content="Note," />
 
 
 
@@ -30,7 +30,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2017/11/23/Letter-ThanksGivingDay/"/>
+<link rel="canonical" href="http://yoursite.com/2018/01/11/Note-Post请求/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
@@ -41,7 +41,7 @@
 
 
 
-    <title> Thanks Giving · Jolylai </title>
+    <title> Post请求 · Jolylai </title>
   </head>
 
   <body>
@@ -130,23 +130,46 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          Thanks Giving
+          Post请求
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          Nov 23, 2017
+          Jan 11, 2018
         </span>
       </div>
     </header>
 
     
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#post请求格式"><span class="toc-text">post请求格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node"><span class="toc-text">node</span></a></li></ol>
+        </div>
+      </div>
+    
 
     <div class="post-content">
       
-        <p>Write this to you in Thianks Giving Day.<br><a id="more"></a><br>I really treasure the time we are together.</p>
-<p>Appreciate the fate brought you into my life and falled in love with you.</p>
+        <p>Post&#x81F3;&#x540E;&#x53F0;&#x63A5;&#x6536;&#x5230;&#x7684;&#x4E3A;&#x7A7A;<br><a id="more"></a></p>
+<h2 id="post&#x8BF7;&#x6C42;&#x683C;&#x5F0F;"><a href="#post&#x8BF7;&#x6C42;&#x683C;&#x5F0F;" class="headerlink" title="post&#x8BF7;&#x6C42;&#x683C;&#x5F0F;"></a>post&#x8BF7;&#x6C42;&#x683C;&#x5F0F;</h2><ol>
+<li><p>&#x5B57;&#x7B26;&#x4E32;: &#x2018;name=code_bunny&amp;age=12&#x2019;<br>&#x8FD9;&#x79CD;&#x683C;&#x5F0F;&#x7684;&#x8BF7;&#x6C42;&#x4F53;,&#x9700;&#x8981;&#x914D;&#x7F6E;&#x8BF7;&#x6C42;&#x5934; &#x2018;Content-Type&#x2019;:&#x2019;application/x-www-form-urlencoded&#x2019;</p>
+</li>
+<li><p>json: {name:&#x2019;code_bunny&#x2019;,age:12}<br>&#x8FD9;&#x79CD;&#x683C;&#x5F0F;&#x7684;&#x8BF7;&#x6C42;&#x4F53;,&#x9700;&#x8981;&#x914D;&#x7F6E;&#x8BF7;&#x6C42;&#x5934; &#x2018;Content-Type&#x2019;:&#x2019;application/json;charset=UTF-8&#x2019;</p>
+</li>
+<li><p>jquery&#x9ED8;&#x8BA4;&#x7B2C;&#x4E00;&#x79CD;&#x8BF7;&#x6C42;&#xFF0C;angular&#x9ED8;&#x8BA4;&#x7B2C;&#x4E8C;&#x79CD;&#x8BF7;&#x6C42;</p>
+</li>
+<li><p>&#x8BF7;&#x6C42;&#x4F53;&#x683C;&#x5F0F;&#x548C;&#x8BF7;&#x6C42;&#x5934;&#x7684;Content-Type&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF0C;&#x5426;&#x5219;&#x540E;&#x53F0;&#x63A5;&#x6536;&#x5230;&#x7684;&#x8BF7;&#x6C42;&#x63D0;&#x90FD;&#x4F1A;&#x662F;&#x7A7A;&#x7684;. </p>
+</li>
+</ol>
+<h2 id="node"><a href="#node" class="headerlink" title="node"></a>node</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">&apos;express&apos;</span>);</div><div class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">&apos;body-parser&apos;</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line"><span class="comment">// parse application/x-www-form-urlencoded</span></div><div class="line">app.use(bodyParser.urlencoded({ <span class="attr">extended</span>: <span class="literal">false</span> }));</div><div class="line"></div><div class="line"><span class="comment">// parse application/json</span></div><div class="line">app.use(bodyParser.json());</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x4F7F;&#x7528;bodyParser.urlencoded(),&#x4F7F;node&#x540E;&#x53F0;&#x652F;&#x6301;&#x4E86;&#x7B2C;&#x4E00;&#x79CD;&#x8BF7;&#x6C42;&#x4F53;.</li>
+<li>&#x4F7F;&#x7528;bodyParser.json(),&#x4F7F;node&#x540E;&#x53F0;&#x652F;&#x6301;&#x4E86;&#x7B2C;&#x4E8C;&#x79CD;&#x8BF7;&#x6C42;&#x4F53;.</li>
+<li>&#x540E;&#x5B9A;&#x4E49;&#x7684;&#x4E0D;&#x4F1A;&#x8986;&#x76D6;&#x5148;&#x5B9A;&#x4E49;&#x7684;&#x2026; &#x4E5F;&#x5C31;&#x662F;&#x8BF4;,&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x540C;&#x65F6;&#x652F;&#x6301;&#x4E86;&#x8FD9;&#x4E24;&#x79CD;&#x8BF7;&#x6C42;&#x4F53;. </li>
+<li>&#x867D;&#x7136;&#x8BF7;&#x6C42;&#x4F53;&#x7684;&#x683C;&#x5F0F;&#x4E0D;&#x540C;,&#x4F46;&#x662F;&#x7ECF;&#x8FC7;node&#x89E3;&#x6790;&#x540E;,&#x4ED6;&#x4EEC;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x7684;&#x90FD;&#x662F;json&#x683C;&#x5F0F;&#x7684;&#x5BF9;&#x8C61;.</li>
+</ul>
 
       
     </div>
@@ -155,22 +178,22 @@
       <footer class="post-footer">
         <div class="post-tags">
           
-            <a href="/tags/Letter/">Letter</a>
+            <a href="/tags/Note/">Note</a>
           
         </div>
 
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2017/12/01/CSS-Font/">
+      <a class="prev" href="/2018/01/14/JS-Ajax/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Font</span>
+        <span class="prev-text nav-default">JS Ajax</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
-      <a class="next" href="/2017/11/15/JS-Canvas/">
-        <span class="next-text nav-default">Canvas</span>
+      <a class="next" href="/2018/01/11/Angular-mock/">
+        <span class="next-text nav-default">Angular Mock开发</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>

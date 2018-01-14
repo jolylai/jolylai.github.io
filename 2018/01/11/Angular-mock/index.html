@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Angular Mock开发"/>
+
+
+
+
+  <meta name="keywords" content="Angular," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jolylai">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.0.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/01/11/Angular-mock/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.0" />
+
+
+
+  
+
+
+
+    <title> Angular Mock开发 · Jolylai </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Jolylai</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Jolylai</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/tags">
+        Tags
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Angular Mock开发
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 11, 2018
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注册"><span class="toc-text">注册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mock"><span class="toc-text">Mock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>&#x524D;&#x540E;&#x7AEF;&#x5206;&#x79BB;&#x65F6;&#xFF0C;&#x540E;&#x7AEF;&#x63A5;&#x53E3;&#x8FD8;&#x6CA1;&#x6709;&#x5F00;&#x53D1;&#x597D;&#x7684;&#x65F6;&#x5019;&#x524D;&#x7AEF;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="http://ng-alain.com/docs/mock" target="_blank" rel="external">Mock</a>&#x6839;&#x636E;&#x6240;&#x9700;&#x9020;&#x51FA;&#x6240;&#x9700;&#x6570;&#x636E;&#xFF0C;&#x901A;&#x8FC7;http&#x62E6;&#x622A;&#x8FD4;&#x56DE;&#x6240;&#x9700;&#x7684;&#x6570;&#x636E;</p>
+<a id="more"></a>
+<h2 id="&#x5B89;&#x88C5;"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add @delon/mock --dev</div></pre></td></tr></table></figure>
+<h2 id="&#x6CE8;&#x518C;"><a href="#&#x6CE8;&#x518C;" class="headerlink" title="&#x6CE8;&#x518C;"></a>&#x6CE8;&#x518C;</h2><p>src/app/app.module.ts<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &#x4F7F;&#x7528;http&#x6A21;&#x5757;,&#x4E0D;&#x7136;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;HttpClient</span></div><div class="line"><span class="keyword">import</span> { HttpClientModule } <span class="keyword">from</span> <span class="string">&quot;@angular/common/http&quot;</span>;</div><div class="line"></div><div class="line"><span class="comment">// Mock</span></div><div class="line"><span class="keyword">import</span> { DelonMockModule } <span class="keyword">from</span> <span class="string">&quot;@delon/mock&quot;</span>;</div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> MOCKDATA <span class="keyword">from</span> <span class="string">&quot;../../_mock&quot;</span>;</div><div class="line"></div><div class="line"><span class="comment">// &#x53EA;&#x5728;&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x4E0B;&#x4F7F;&#x7528;Mock</span></div><div class="line"><span class="keyword">import</span> { environment } <span class="keyword">from</span> <span class="string">&quot;../environments/environment&quot;</span>;</div><div class="line"><span class="keyword">const</span> MOCKMODULE = !environment.production ? [DelonMockModule.forRoot({ <span class="attr">data</span>: MOCKDATA })] : []</div><div class="line"></div><div class="line">@NgModule({</div><div class="line">  <span class="attr">imports</span>: [</div><div class="line">    HttpClientModule,</div><div class="line">    ...MOCKMODULE</div><div class="line">  ]</div><div class="line">})</div></pre></td></tr></table></figure></p>
+<ul>
+<li>MockOption<ul>
+<li>data: any = &#x2018;&#x2019;         mock&#x6570;&#x636E;&#x89C4;&#x77E9;</li>
+<li>delay: number = 300    &#x8BF7;&#x6C42;&#x5EF6;&#x8FDF;&#x6BEB;&#x79D2;&#x6570;</li>
+<li>force: boolean = false &#x662F;&#x5426;&#x5F3A;&#x5236;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x90FD;Mock&#xFF0C;true &#x8868;&#x793A;&#x5F53;&#x8BF7;&#x6C42;&#x7684;URL&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#x76F4;&#x63A5;&#x8FD4;&#x56DE; 404 &#x9519;&#x8BEF;&#xFF0C;false &#x8868;&#x793A;&#x672A;&#x547D;&#x4E2D;&#x65F6;&#x53D1;&#x9001;&#x771F;&#x5B9E;HTTP&#x8BF7;&#x6C42;</li>
+<li>log: boolean = true    &#x662F;&#x5426;&#x6253;&#x5370; Mock &#x8BF7;&#x6C42;&#x4FE1;&#x606F;&#xFF0C;&#x5F25;&#x8865;&#x6D4F;&#x89C8;&#x5668;&#x65E0;Network&#x4FE1;&#x606F;</li>
+</ul>
+</li>
+</ul>
+<h2 id="Mock"><a href="#Mock" class="headerlink" title="Mock"></a>Mock</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &#x5B89;&#x88C5;&#x4F9D;&#x8D56;</span></div><div class="line">yarn add mockjs --dev</div></pre></td></tr></table></figure>
+<ul>
+<li>&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA; _mock&#x6587;&#x4EF6;&#x5939;</li>
+</ul>
+<p>_mock/index.ts<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &#x7EDF;&#x4E00;&#x7BA1;&#x7406; mock &#x63A5;&#x53E3;</span></div><div class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">&apos;./_api&apos;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>&#x7EDF;&#x4E00;&#x7BA1;&#x7406; mock &#x63A5;&#x53E3;</li>
+</ul>
+<p>_mock/pai.ts<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { MockRequest } <span class="keyword">from</span> <span class="string">&quot;@delon/mock&quot;</span>;</div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Mock <span class="keyword">from</span> <span class="string">&quot;mockjs&quot;</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getList</span>(<span class="params">body</span>) </span>{</div><div class="line">  <span class="keyword">return</span> Mock.mock({</div><div class="line">    <span class="string">&apos;list|100&apos;</span>: [{</div><div class="line">      <span class="string">&apos;id|+1&apos;</span>: <span class="number">1</span>,</div><div class="line">      <span class="attr">name</span>: <span class="string">&apos;@cname&apos;</span>,</div><div class="line">    }]</div><div class="line">  })</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> APIS = {</div><div class="line">  <span class="string">&apos;POST /api/list&apos;</span>: <span class="function">(<span class="params">req: MockRequest</span>) =&gt;</span> getList(req.body)</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<ul>
+<li>&#x66F4;&#x591A;<a href="http://mockjs.com/examples.html" target="_blank" rel="external">mock</a>&#x6570;&#x636E;&#x5B9E;&#x4F8B;</li>
+</ul>
+<h2 id="&#x4F7F;&#x7528;"><a href="#&#x4F7F;&#x7528;" class="headerlink" title="&#x4F7F;&#x7528;"></a>&#x4F7F;&#x7528;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> { Component, OnInit } <span class="keyword">from</span> <span class="string">&apos;@angular/core&apos;</span>;</div><div class="line"><span class="keyword">import</span> { HttpClient } <span class="keyword">from</span> <span class="string">&quot;@angular/common/http&quot;</span>;</div><div class="line"></div><div class="line">@Component({</div><div class="line">  <span class="attr">selector</span>: <span class="string">&apos;app-root&apos;</span>,</div><div class="line">  <span class="attr">templateUrl</span>: <span class="string">&apos;./app.component.html&apos;</span>,</div><div class="line">  <span class="attr">styleUrls</span>: [<span class="string">&apos;./app.component.css&apos;</span>],</div><div class="line">})</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>{</div><div class="line">  <span class="keyword">constructor</span>(private _http: HttpClient) { }</div><div class="line"></div><div class="line">  ngOnInit() {</div><div class="line">    <span class="keyword">this</span>._http.post(<span class="string">&apos;/api/list&apos;</span>, {}).subscribe(<span class="function"><span class="params">res</span> =&gt;</span> { <span class="built_in">console</span>.log(<span class="string">&apos;res&apos;</span>, res); })</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Angular/">Angular</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/01/11/Note-Post请求/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Post请求</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/01/11/Angular-mock(KAIFA-LAIGL--laigl--2018-01-11-11,12,20)/">
+        <span class="next-text nav-default">Angular Mock开发</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:2635850288@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/jolylai" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/since-new/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jolylai</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+  <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.0.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.0.0"></script>
+
+  </body>
+</html>
